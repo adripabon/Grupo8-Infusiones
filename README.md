@@ -1,7 +1,7 @@
 # Grupo8-Infusiones
 Proyecto Integrador
 
-Descripción de la Oferta de Productos:
+Descripción de la Oferta de Productos: Venta de Infusiones
 
 Descripción del Público al que apunta:
 
