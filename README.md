@@ -3,10 +3,10 @@ Proyecto Integrador
 
 Descripción de la Oferta de Productos: Venta de Infusiones
 
-Descripción del Público al que apunta:
+Descripción del Público al que apunta: Gente que consuma Té y Café
 
 Descripción de los integrantes del Grupo:
-Romina
+Romina Valentini
 Adriana Pabón
 Joaquín Cernik
 Juan Fernando Tautiva
