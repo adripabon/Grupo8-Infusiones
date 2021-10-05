@@ -26,4 +26,5 @@
 
 [Tienda Juan Valdez](https://www.tiendajuanvaldez.com/ ): Lo seleccionamos por la forma en la que se presentan los productos y se distribuyen en la página de inicio.
 
-Link del Repositorio: https://github.com/adripabon/Grupo8-Infusiones
+
+**Link del Repositorio: https://github.com/adripabon/Grupo8-Infusiones
