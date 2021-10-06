@@ -28,3 +28,11 @@
 
 
 **Link del Repositorio:** https://github.com/adripabon/Grupo8-Infusiones
+
+## Documentación del proyecto
+Se encuentra en la carpeta denominada **Documentación** la cual contiene:
+```
+- Boceto.
+- Sprint
+- Wireframe
+```

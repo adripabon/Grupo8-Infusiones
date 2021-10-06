@@ -1,0 +1,23 @@
+{
+  "name": "Grupo8-Infusiones",
+  "version": "1.0.0",
+  "description": "**Descripción de la Oferta de Productos:** Venta de Infusiones",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adripabon/Grupo8-Infusiones.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/adripabon/Grupo8-Infusiones/issues"
+  },
+  "homepage": "https://github.com/adripabon/Grupo8-Infusiones#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
