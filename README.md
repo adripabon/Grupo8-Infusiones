@@ -11,7 +11,7 @@
 - Adriana Pabón
 - Joaquín Cernik
 - Juan Fernando Tautiva
-- Rammi Cisterna
+- Ramiro Cisterna
 ```
 
 **Inspiración en referente del mercado:** Nuestras referencias son:
