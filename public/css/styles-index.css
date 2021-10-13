@@ -1,0 +1,158 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #ebebeb;
+}
+
+h2 {
+    font-weight: 400;
+    color: #273940;
+}
+
+p {
+    font-weight: 300;
+    color: #54594D;
+}
+
+/* HEADER */
+
+header {
+    background-color: #9aa681;
+    border: 3px solid #5A7356;
+}
+
+header .header-block{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 10px;
+}
+
+.logo{
+    align-self: stretch;
+    width: 50%;
+    
+}
+
+header img{
+    width: 100%;
+}
+
+header .menu{
+    display: none;
+
+}
+
+header nav ul {
+    
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #273940;
+    align-content: center;
+    border-radius: 6px;
+}
+  
+header nav ul li {
+    float: left;
+}
+
+header nav ul li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+header nav ul li a:hover {
+    background-color: #111;
+}
+
+header div.header-icon i {
+    font-size: 2rem;
+}
+
+header .burger-menu {
+    text-align: center;
+    background-color: #273940;
+    color: white;
+    padding: 15px;
+    border-radius: 5px;
+    width: fit-content;
+    margin: auto;
+    margin-bottom: 3px;
+}
+
+/*BANNER*/
+
+.banner{
+    position: relative;
+}
+
+.banner img {
+    width: 100%;
+    padding: 10px 5px;
+}
+
+section .banner-description{
+    text-align: center;
+    padding: 5px 10px;
+}
+
+/* MOBILE */
+@media (min-width: 368px){
+    
+    header div.header-icon i {
+        font-size: 3rem;
+    }
+    
+}
+
+/* TABLET */
+@media (min-width: 768px) {
+    header .header-block{
+        margin: 10px;
+    }
+    
+    div.logo{
+        align-content: center;
+        width: 30%;
+    }
+    
+    header .menu{
+        display: flex;
+    }
+
+    header .burger-menu{
+        display: none;
+    }
+}
+
+/* PC */
+
+@media (min-width: 1200px) {
+    div.logo{
+        align-content: center;
+        width: 25%;
+    }
+
+    header .header-block {
+        max-width: 1200px;
+        padding: 10px;
+        margin:auto
+    }
+
+    .banner {
+        max-width: 1200px;
+        margin: auto;
+
+    }
+    
+}
