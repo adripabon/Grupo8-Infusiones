@@ -209,6 +209,10 @@ main section article a {
         margin: 8px 0px;
         width: 33%;
     }
+
+    p {
+        font-size: 15px;
+    }
   
 }
 
@@ -230,6 +234,10 @@ main section article a {
         max-width: 1200px;
         margin: auto;
 
+    }
+
+    p {
+        font-size: 25px;
     }
     
 }
