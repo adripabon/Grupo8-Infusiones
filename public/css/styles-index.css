@@ -14,6 +14,10 @@ h2, h3 {
     color: #273940;
 }
 
+a{
+    text-decoration: none;
+}
+
 p {
     font-weight: 300;
     color: #54594D;
@@ -21,6 +25,10 @@ p {
 }
 
 /* HEADER */
+
+header .link-index{
+    width: 55%;
+}
 
 header ,footer {
     background-color: #9aa681;
@@ -36,7 +44,7 @@ header .header-block{
 
 .logo{
     align-self: stretch;
-    width: 50%;
+    width: 100%;
     
 }
 
@@ -69,15 +77,11 @@ header nav ul li a {
     color: white;
     text-align: center;
     padding: 14px 16px;
-    text-decoration: none;
-}
-
-header nav ul li a:hover {
-    background-color: #111;
 }
 
 header div.header-icon i {
     font-size: 2rem;
+    color: #333;
 }
 
 header .burger-menu {
@@ -140,7 +144,6 @@ main section article img {
 }
 
 main section article a {
-    text-decoration: none;
     margin-bottom: 10px;
 }
 
@@ -212,7 +215,6 @@ footer ul li {
 }
 
 footer article a{
-    text-decoration: none;
     color: #333;
     padding-left: 7px;
 }
@@ -265,9 +267,13 @@ footer .social .fab {
         margin: 10px;
     }
     
+    header .link-index{
+        width: 25%;
+    }
+
     .logo{
         align-content: center;
-        width: 30%;
+        width: 100%;
     }
     
     header .menu{
@@ -363,7 +369,6 @@ footer .social .fab {
 @media (min-width: 1200px) {
     .logo{
         align-content: center;
-        width: 25%;
     }
 
     header .header-block, main {
@@ -393,7 +398,6 @@ footer .social .fab {
     }
 
     main section article a{
-        text-decoration: none;
         color: #333;
     }
 
