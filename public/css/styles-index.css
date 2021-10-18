@@ -253,8 +253,10 @@ footer .social .fab {
     font-size: 2rem
 }
 
+/* responsive devices*/
+
 /* MOBILE */
-@media (min-width: 368px){
+@media (min-width: 425px){
     
     header div.header-icon i {
         font-size: 3rem;
@@ -372,7 +374,7 @@ footer .social .fab {
     }
 
     header .header-block, main {
-        max-width: 1400px;
+        max-width: 1200px;
         padding: 10px;
         margin:auto
     }
