@@ -1,0 +1,176 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+}
+
+h2 {
+    font-weight: 600;
+    color: #273940;
+}
+
+/* HEADER */
+
+header, footer {
+    background-color: #9aa681;
+    width: 100%;
+    margin: 0;
+}
+
+header .header-block{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.logo{
+    align-self: stretch;
+    width: 50%;
+}
+
+header img{
+    width: 50%;
+}
+
+header nav ul {    
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #273940;
+    align-content: center;
+    border-radius: 6px;
+}
+  
+header nav ul li {
+    float: left;
+}
+
+header nav ul li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+header nav ul li a:hover {
+    background-color: #111;
+}
+
+header div.header-icon i {
+    font-size: 2rem;
+}
+
+header .burger-menu {
+    text-align: center;
+    background-color: #273940;
+    color: white;
+    padding: 15px;
+    border-radius: 5px;
+    width: fit-content;
+    margin: auto;
+    margin-bottom: 3px;
+    position: relative;
+    top:-20px;
+}
+
+i{
+    color: white;
+    margin: 5px;
+}
+
+/* MAIN */
+
+body{
+    background-color: #F2C0A2;
+}
+
+/* INICIO DEL FLEXBOX */
+
+main { 
+    display: flex;
+    justify-content: flex-start;
+}
+
+.foto-article { 
+    width: 50%;
+}
+
+.article-products{
+    
+    margin: 9px;
+    align-items: center;
+    flex-grow: 1;
+}
+
+main .carrito{
+    color: white;
+    margin: 10px;
+    font-size: 30px  ;
+}
+
+/* FIN DEL FLEXBOX */
+
+.titulo{
+    font-weight: 2000;
+    font-size: 40px;
+    width: 80%;
+    color: #A66D3C;
+    text-align: left;
+}
+
+main section .div-price{
+    height: 100px;
+    flex-wrap: wrap;
+    padding: 0px 10px;
+    align-items: center;
+}
+
+main section .price {
+    width: 50%;
+    color: #999;
+    text-align: left;
+    font-size: 25px;
+    text-decoration: line-through;
+}
+
+main section .price-discount{
+    width: 200%;
+    color: #5A7356;
+    font-weight: bold;
+    font-size: 25px;
+}
+    
+main section .discount{
+    width: 30%;
+    font-weight: bold;
+    text-align: left;
+    font-size: 20px;
+}
+
+p {
+    font-weight: 800;
+    color: #54594D;
+    text-align: left;
+    font-size: 15px;
+}
+
+/* FOOTER */
+
+footer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+footer .logo {
+    width: 50%;
+}
+
+footer .h4{
+    text-decoration: none;
+    color: #333;
+    margin: 15px;
+}

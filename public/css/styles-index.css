@@ -231,9 +231,9 @@ footer .footer-logo{
 footer .footer-article{
     display: flex;
     flex-wrap: wrap;
-    justify-content: flex-start;
     align-items: center;
     padding-left: 5px;
+    flex-direction: column;
 }
 
 footer .footer-contact{
