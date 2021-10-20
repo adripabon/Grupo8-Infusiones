@@ -83,6 +83,12 @@ i{
 
 /* LOGIN*/
 
+form a{
+    text-decoration: none;
+    color: #273940;
+    font-weight: bold;
+}
+
 .loginForm{
     display:flex;
     flex-direction:column;
