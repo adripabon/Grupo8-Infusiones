@@ -203,7 +203,7 @@ main .div-bag, main .div-bag  i {
 
 /* FOOTER */
 
-footer {
+.section-block {
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
@@ -342,7 +342,7 @@ footer .social .fab {
 
     /* FOOTER */
     
-    footer .logo {
+        footer .logo {
         width: 100%;
     }
 
@@ -437,7 +437,7 @@ footer .social .fab {
 
 
 
-    main .div-bag i{
+    main .div-bag i,  main .div-bag a{
         display: flex;
         align-items: center;
         justify-content: space-around;
@@ -459,5 +459,11 @@ footer .social .fab {
         width: 35%;
         font-size: 1.5rem;
         padding: 20px 40px 0px;
+    }
+
+    footer .section-block {
+        max-width: 1200px;
+        padding: 10px;
+        margin:auto
     }
 }

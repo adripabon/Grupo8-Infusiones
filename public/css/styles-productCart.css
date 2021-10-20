@@ -9,6 +9,9 @@ main section.section-productCart{
     width: 100%;
 }
 
+main section table tbody{
+    width: 100%;
+}
 
 main section .shop-table{
     display: flex;
@@ -18,6 +21,111 @@ main section .shop-table{
 }
 
 main section .size-woocommerce_thumbnail{
-    width: 80%;
+    width:100%;
 }
 
+main section .cart-item{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+main section .product-thumbnail, .product-name, .product-price, .product-quantity, .product-subtotal{
+    width: 20%;
+    font-size: 1rem;
+    text-align: center;
+    color: #333;
+    font-size: 1rem;
+}
+
+main section .product-remove{
+    padding-left: 5px;
+}
+
+main section .title-shop-table, .product-price-currencySymbol{
+    font-weight:bold ;
+}
+
+main section div.quantity{
+    display: flex;
+    justify-content: flex-start;
+    align-content: space-around;
+}
+
+div.quantity input {
+    padding: 0 5px;
+    min-width: 25px;
+    height: 42px;
+    border: 2px solid rgba(129,129,129,.2);
+    background: 0 0;
+    box-shadow: none;
+    text-align: center;
+    color: #999;
+}
+div .quantity-input-text{
+    width: 30px;
+}
+
+.minus, .plus {
+    cursor: pointer;
+}
+
+/* DETAIL */
+
+main section form .detail{
+    display: flex;
+    border: 2px solid #999;
+    border-radius: 10px;
+    padding: 5px;
+    margin: 5px;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+main section form .detail .title-detail{
+    display: flex;
+    width: 100%;
+}
+
+main section .detail .price{
+    width: 100%;
+}
+
+/* FOOTER */
+
+footer {
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+}
+
+@media (min-width: 1200px) {
+    .header-block , main, .section-block {
+        max-width: 1200px;
+        padding: 10px;
+        margin:auto
+    }
+
+    main section .form-productCart {
+        display: flex;
+        width: 100%;
+        align-items: flex-end;
+        justify-content: space-around;
+    }
+
+    main section form .shop-table{
+        width: 60%;
+    }
+
+    main section form .detail{
+        width: 40%;
+        display: flex;
+        border: 2px solid #999;
+        border-radius: 10px;
+        padding: 5px;
+        margin: 5px;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+    
+}
