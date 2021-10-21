@@ -57,7 +57,8 @@ header .menu{
 
 }
 
-header nav ul {    
+header nav ul {
+    
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -76,11 +77,11 @@ header nav ul li a {
     color: white;
     text-align: center;
     padding: 14px 16px;
-    text-decoration: none;
 }
 
-header div.header-icon i {
+header div.header-icon i, .fa-cart-plus{
     font-size: 2rem;
+    color: #333;
 }
 
 header .burger-menu {
@@ -92,20 +93,36 @@ header .burger-menu {
     width: fit-content;
     margin: auto;
     margin-bottom: 3px;
-    position: relative;
-    top:-20px;
 }
 
+/* MAIN */
+
+main section article a {
+    margin-bottom: 10px;
+}
+
+main .div-bag, main .div-bag  i {
+    display: none;
+}
 
 /* INICIO DEL FLEXBOX */
 
-main { 
+section { 
     display: flex;
-    justify-content: flex-start;
+    align-items: center;
 }
 
 .foto-article { 
-    width: 50%;
+    width: 40%;
+    padding: 10px;
+}
+
+main section .div-price{
+    padding: 0px 10px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: flex-start;
 }
 
 .article-products{
@@ -121,25 +138,15 @@ main .carrito{
     font-size: 30px  ;
 }
 
-/* FIN DEL FLEXBOX */
+
 
 .titulo{
-    font-weight: 2000;
     font-size: 40px;
-    width: 80%;
     color: #A66D3C;
     text-align: left;
 }
 
-main section .div-price{
-    height: 100px;
-    flex-wrap: wrap;
-    padding: 0px 10px;
-    align-items: center;
-}
-
 main section .price {
-    width: 50%;
     color: #999;
     text-align: left;
     font-size: 25px;
@@ -147,25 +154,31 @@ main section .price {
 }
 
 main section .price-discount{
-    width: 200%;
-    color: #5A7356;
-    font-weight: bold;
-    font-size: 25px;
-}
-    
-main section .discount{
-    width: 30%;
-    font-weight: bold;
-    text-align: left;
-    font-size: 20px;
+    display: flex;
+    color: #999;
+    font-size: 15px;
+    text-decoration: line-through;
 }
 
-p {
-    font-weight: 800;
-    color: #54594D;
-    text-align: left;
-    font-size: 15px;
+main section .discount{
+    width: 30%;
+    display: flex;
+    color: #5A7356;
+    font-weight: bold;
 }
+
+.article-products{
+    background-color: white;
+    border-radius: 10px;
+    margin: 3px 0px 9px 0px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+
+/* FIN DEL FLEXBOX */
 
 /* FOOTER */
 
@@ -217,4 +230,228 @@ footer .social {
 
 footer .social .fab {
     font-size: 2rem
+}
+
+/* responsive devices*/
+
+/* MOBILE */
+@media (min-width: 425px){
+    
+    header div.header-icon i {
+        font-size: 3rem;
+    }
+}
+
+/* TABLET */
+@media (min-width: 768px) {
+    header .header-block{
+        margin: 10px;
+    }
+    
+    header .link-index{
+        width: 25%;
+    }
+
+    .logo{
+        align-content: center;
+        width: 100%;
+    }
+    
+    header .menu{
+        display: flex;
+    }
+
+    header .burger-menu{
+        display: none;
+    }
+
+    section .banner-description{
+        position: absolute;
+        text-align: center;
+        width: 350px;
+        left: 20px;
+        bottom: 50px;
+        background-color: #F2C0A2;
+        fill-opacity: 0.7;
+        border: 1px solid #f0b189;
+    }
+
+    /* MAIN */
+    
+    main section h2{
+        padding-left: 15px;
+        text-align: left;
+
+    }
+
+    .article-products{
+        background-color: white;
+        border-radius: 10px;
+        margin: 8px 0px;
+        width: 33%;
+    }
+
+    main h1{
+        
+        font-size: 30px;
+    }
+
+    main p {
+        font-size: 15px;
+    }
+
+    main section .description-product{
+        font-weight: 300;
+        color: #54594D;
+        text-align: center;
+    }
+
+    main section .title-product {
+        display: block;
+    }
+
+    main section .price{
+        width: 30%;
+        display: flex;
+    }
+
+    main section .p-about-us{
+        padding: 10px 0px;
+    }
+
+    /* FOOTER */
+    
+        footer .logo {
+        width: 100%;
+    }
+
+    footer .footer-logo{
+        width: 30%;
+        text-align: center;
+    }
+
+    footer .footer-article{
+        display: flex;
+        flex-direction: column;
+        padding: 10px 5px 0px;
+    }
+
+    footer .footer-contact{
+        width: 40%;
+        display: flex;
+        flex-direction: column;
+        padding: 10px 40px 0px;
+    }
+
+}
+
+/* PC */
+
+@media (min-width: 1200px) {
+    .logo{
+        align-content: center;
+    }
+
+    header .header-block, main {
+        max-width: 1200px;
+        padding: 10px;
+        margin:auto
+    }
+
+    .banner, main {
+        max-width: 1200px;
+        margin: auto;
+
+    }
+
+    /* MAIN */
+
+    main h1{
+        
+        font-size: 40px;
+    }
+
+    main section .title-product {
+        font-size: 25px;
+    }
+    main p {
+        font-size: 24px;
+    }
+
+    main section article a{
+        color: #333;
+    }
+
+    main section .div-price{
+        margin: 10px 10px
+    }
+
+    main .div-img-bag{
+        position: relative;
+    }
+
+    main .div-bag {
+        position: absolute;
+        width: 84%;
+        left: 27px;
+        bottom: 13px;
+        background-color: #9aa681;
+        fill-opacity: 0.7;
+        border: 1px solid #5A7356;
+        height: 49px;
+        display: flex;
+        text-align: center;
+        align-items: center;
+        justify-content: space-around;
+        
+    }
+
+    main .div-bag{
+        visibility: hidden;
+        transition: all 200ms ;
+    }
+
+    .div-img-bag:hover .div-bag{
+        visibility: visible;
+    }
+
+
+
+    main .div-bag i,  main .div-bag a{
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        font-size: 1.5rem
+    }
+
+    /* FLEXBOX */
+
+   .article-products{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+   }
+
+    /* FOOTER */
+
+    footer .footer-logo{
+        width: 35%;
+    }
+
+    footer .footer-article{
+        font-size: 1.5rem;
+        padding: 20px 5px 0px;
+    }
+
+    footer .footer-contact{
+        width: 35%;
+        font-size: 1.5rem;
+        padding: 20px 40px 0px;
+    }
+
+    footer .section-block {
+        max-width: 1200px;
+        padding: 10px;
+        margin:auto
+    }
 }
