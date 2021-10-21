@@ -111,6 +111,12 @@ i{
     background-color: #273940;
     color: white;
 }
+.botonIngreso{
+    transition: all 0.5s;
+}
+.botonIngreso:hover{
+    background-color:#111
+}
 
 /* responsive devices*/
 
