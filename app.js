@@ -29,5 +29,9 @@ app.get('/product-details', (req, res) => {
     res.sendFile(path.join(__dirname, './views/productDetails.html'));
 })
 
+app.get('/registro', (req, res) => {
+    res.sendFile(path.join(__dirname, './views/registro.html'));
+})
+
 app.listen(PUERTO, () => console.log(`Servidor escuchando por el puerto ${PUERTO}`)
 );
