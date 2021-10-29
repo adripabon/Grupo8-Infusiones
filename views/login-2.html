@@ -8,6 +8,7 @@
     integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/styles-login.css">
+    <link rel="stylesheet" href="/css/styles-index.css">
     <title>Ingresa tu cuenta</title>
 </head>
 <body>
@@ -27,7 +28,7 @@
                 </ul>
             </nav>
             <div class="header-icon">
-                <a href="/login"><i class="fas fa-user-circle"></i></a>
+                <a href="/login-2"><i class="fas fa-user-circle"></i></a>
                 <a href="/product-cart"><i class="fas fa-shopping-bag"></i></a>
             </div>
         </div>
@@ -35,20 +36,39 @@
             <i class="fas fa-bars"></i>
         </div>
     </header>
-    <div class="loginForm">
-        <div class="boton-register">
-            <a href="/login-2"><button class="boton-login">Iniciar sesion</button>
-             <a href="/login"><button class="register">Registrar</button></a>
-         </div>
-    <form class="register-box">
-        <label>Usuario:</label>
-    <input type="text" class="usuario" name="usuario" minlength="3">
+    <main>
 
-    <label>Contraseña:</label>
-    <input type="password" class="contrasena" name="contrasena" placeholder="" minlength="2">
+        
+        <form class="formLogin">
+           <div class="form">
+               <h1>Inicía Sesión</h1>
+                
 
-    <button type="submit">Enviar</button>
-    </form>
+                <div class="grupo">
+                    <label>Usuario</label>
+                    <input type="text" class="usuario" name="usuario">
+                </div>    
+
+                <div class="grupo">
+                    <label>Password</label>
+                    <input type="password" class="usuario" name="usuario">
+                </div>  
+
+                
+
+                <button class="">Iniciar sesion<a href="/login-2"></a></button>
+                
+                
+           
+         
+            </div>
+        
+            <p>No tienes una cuenta? <a href="">Registrate aqui</a></p>
+        </form>
+    
+        
+    </main>
+    
 </div>
 
 

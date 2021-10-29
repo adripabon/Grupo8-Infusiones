@@ -1,270 +1,73 @@
-*{
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
-    font-family: 'Roboto', sans-serif;
-}
-
-/* HEADER */
-
-header .link-index{
-    width: 55%;
-}
-
-header ,footer {
-    background-color: #9aa681;
-    
-}
-
-a{
-    text-decoration: none
-}
-
-header .header-block{
+main {
+    padding: 50px 0;
+    background: #649173;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #DBD5A4, #649173);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #DBD5A4, #649173); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     display: flex;
     align-items: center;
-    justify-content: space-around;
-    margin-top: 10px;
+    justify-content: center;
+    height: 500px;
 }
-
-.logo{
-    align-self: stretch;
-    width: 100%;
-    
-}
-
-header img{
-    width: 100%;
-}
-
-header .menu{
-    display: none;
+h1 {
+    font-weight: 700;
 
 }
 
-header nav ul {
-    
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #273940;
-    align-content: center;
-    border-radius: 6px;
-}
-  
-header nav ul li {
-    float: left;
-}
+form {
 
-header nav ul li a {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
+    background-color: white;
+    padding: 30px 70px 100px 70px;
+    box-shadow: 0 0  6px 0 rgb(255, 255,255, 0.8);
+    border-radius: 10px;
 }
-
-header div.header-icon i {
-    font-size: 3rem;
-    color: #333;
-}
-
-header .burger-menu {
-    text-align: center;
-    background-color: #273940;
-    color: white;
-    padding: 15px;
-    border-radius: 5px;
-    width: fit-content;
+.formLogin {
+    width: 80%;
     margin: auto;
-    margin-bottom: 3px;
 }
 
-i{
-    color: white;
-    margin: 5px;
+form .grupo {
+    position: relative;
+    margin: 20px;
+}
+input{
+    background:none;
+    color: black;
+    padding: 10px 10px 10px 5px;
+    display: block;
+    border: none;
+    border-bottom: 1px solid;
+    border-top: none;
+}
+input:focus{
+    outline: none;
+}
+label {
+    color:#c6c6c6;
+    position: absolute;
+    bottom: 0px;
+    left: 5px;
+    top :10px;
+    transition: 0.5s ease-in-out;
+    pointer-events: none;
+    border-color: none;
+}
+button {
+    font-family:'roboto';
+    background-color: none;
+    border: none;
+    display: block;
+    width: 100%;
+    margin: 10px 0;
+    
+    height: 50px;
+    font-size: 20px;
+    cursor: pointer;
+
 }
 
-/* LOGIN*/
-
-    
-    .loginForm{
-        display:flex;
-        flex-direction:column;
-        align-items: center;
-        justify-content: center;
-        padding: 15px;
-        margin:20px;
-        box-shadow: 0px 0px 5px #5A7356;
-        color:grey
-
-    }
-
-    .register-box{
-        display:flex;
-        flex-direction:column;
-        align-items: center;
-        justify-content: center
-    
-    }
-    
-    .loginForm input, label{
-        padding: 10px;
-    }
-    
-    .loginForm input{
-        height: 5px;
-        border: 1px solid #273940 ;
-        width: 45vw;
-    }
-    
-    .boton-register{
-        display:block;
-        padding:25px;
-    }
-
-    .loginForm button{
-        padding: 8px;
-        margin-top:10px;
-        border-radius: 8px;
-        background-color: #5A7356;
-        color: white;
-    }
-
-    .fas{
-        transition: all 0.5s
-    }
-    .fas:hover{
-        color:white} 
-   
-    
-/* responsive devices*/
-
-/* MOBILE */
-@media (max-width: 425px){
-    
-    header div.header-icon i {
-        font-size: 3rem;
-    }
-
-    .loginForm input{
-    width: 50%;    
-    }
-
-    form a{
-        text-decoration: none;
-        color: #273940;
-        font-weight: bold;
-    }
-    
-    
-}
-
-/* TABLET */
-@media (min-width: 768px) {
-    header .header-block{
-        margin: 10px;
-    }
-    
-    header .link-index{
-        width: 25%;
-    }
-
-    .logo{
-        align-content: center;
-        width: 100%;
-    }
-    
-    header .menu{
-        display: flex;
-    }
-
-    header .burger-menu{
-        display: none;
-    }
-
-
-    /*register*/
-    form a{
-        text-decoration: none;
-        color: #273940;
-        font-weight: bold;
-    }
-    
-    
-        
-    
-    .loginForm{
-        display:flex;
-        flex-direction:column;
-        align-items: center;
-        justify-content: center;
-        padding: 15px;
-        margin:20px 600px ;
-        width:30%;
-        box-shadow: 0px 0px 5px #5A7356;
-        color:grey;
-
-    }
-
-    .register-box{
-        display:flex;
-        flex-direction:column;
-        align-items: center;
-        justify-content: center
-    }
-
-   
-    
-    .register-box input, label{
-        padding: 10px;
-    }
-    
-    .register-box input{
-        height: 5px;
-        border: 1px solid grey ;
-        border-radius: 5px;
-        background-color:whitesmoke ;
-        width: 15vw;
-    }
-    
-    .boton-register{
-        display:block;
-        padding:25px;
-    }
-
-    .register-box button{
-        padding: 8px;
-        margin-top:10px;
-        border-radius: 8px;
-        background-color: #5A7356;
-        color: white;
-    }
-
-    .boton-login{
-        background-color: #d598a0;
-        color: white;
-    }
-    button{
-        transition: all 0.5s;
-    }
-    button:hover{
-        background-color:#273940
-    }
-     
-}
-
-/* PC */
-
-@media (min-width: 1200px) {
-    .logo{
-        align-content: center;
-    }
-
-    header .header-block {
-        max-width: 1200px;
-        padding: 10px;
-        margin:auto
-    }
-    
+input:focus~label,
+input:valid~label{
+    top: -14px;
+    font-size: 15px;
+    color: black;
 }
