@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/styles-myProducts.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700&display=swap" rel="stylesheet">
+    <title>Mis productos</title>
+</head>
+<body>
+    <main>
+    <h1>Mis productos</h1>
+    <div class="productsBox">    
+    <form class="myProducts">
+
+    <label>Nombre de mi producto:</label>    
+    <input type="text" name="name" class="myProducts" placeholder="Café Colina Grano 454g Juan Valdez">
+    <br>
+
+    <label>Descripcion:</label>    
+    <input type="text" name="description" class="myProducts" placeholder="Cafe descafeinado con un gusto especial a vainilla">
+    <br>
+
+    <label>Pone la imagen de tu producto aqui</label>    
+    <input class="fyle" type="file" accept=".jpg, .png, .jpeg, .svg" name="image" class="myProducts">
+    <br>
+
+    <label>Categoria:</label>  
+     
+    <div class="radio">
+    <input type="radio" id="cafe" value="cafe" name="category" class="myProducts"> <label for="cafe">Cafe</label>
+    <input type="radio" id="te" value="te" name="category" class="myProducts"> <label for="te">Te</label>   
+    <input type="radio" id="insumos" value="insumos" name="category" class="myProducts"> <label for="insumos">Insumos</label>   
+     <br>
+    </div>
+
+    <label>Precio:</label>
+    <input class="price" type="text" name="price" placeholder="$200">
+    <br>
+
+    <button type="submit">Subir producto</button> 
+    <br>
+
+    <p>Para editar un producto ya existente<a href=""> toca aqui</a></p>
+
+    </form>
+    </div>
+    </main>
+</body>
+</html>

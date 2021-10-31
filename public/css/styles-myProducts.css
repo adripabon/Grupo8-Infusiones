@@ -1,0 +1,115 @@
+
+*{
+
+    box-sizing: border-box;
+    font-family: "roboto";
+    margin: 0
+}
+
+a{
+    text-decoration: none;
+}
+
+
+
+body {
+    padding: 50px 0;
+    background: #649173;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #DBD5A4, #649173);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #DBD5A4, #649173); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    height: 500px;
+}
+
+h1 {
+    font-weight: 700;
+    text-align: center;
+    color: aliceblue;
+    padding: 10px 10px;
+
+}
+
+form {
+
+    background-color: white;
+    padding: 30px 70px 100px 70px;
+    box-shadow: 0 0  6px 0 rgb(255, 255,255, 0.8);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items:center
+
+}
+
+input{
+    background:none;
+    color: black;
+    padding: 10px 10px 10px 5px;
+    display: flex;
+    border: none;
+    border-bottom: 1px solid;
+    border-top: none;
+    width: 100%;
+    margin-top: 10px;
+}
+input:focus{
+    outline: none;
+}
+label {
+   
+    transition: 0.5s ease-in-out;
+    pointer-events: none;
+    border-color: none;
+}
+button {
+    font-family:'roboto';
+    background-color: none;
+    border: none;
+    display: block;
+    width: 100%;
+    margin: 10px 0;
+    
+    height: 50px;
+    font-size: 20px;
+    cursor: pointer;
+
+}
+
+.radio
+{
+    
+    padding: 0px 10px;
+    margin-bottom: 20px;
+    margin-top: 0px;
+}
+
+.price{
+    margin-top:0;
+}
+
+.productsBox{
+    display: flex;
+    justify-content: center;
+}
+
+
+
+input:focus~label,
+input:valid~label{
+    top: -14px;
+    font-size: 15px;
+    color: black;
+}
+
+/*celular*/
+@media (min-width: 425px),(max-width:777px){
+    form {
+        width: 80%;
+    }
+}
+
+@media (min-width:778px){
+    form{
+        width:40%
+    }
+}
