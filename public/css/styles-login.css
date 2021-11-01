@@ -20,7 +20,7 @@ form {
     box-shadow: 0 0  6px 0 rgb(255, 255,255, 0.8);
     border-radius: 10px;
 }
-.formLogin {
+.form{
     width: 80%;
     margin: auto;
 }
@@ -51,23 +51,23 @@ label {
     pointer-events: none;
     border-color: none;
 }
-button {
+.button-login {
     font-family:'roboto';
-    background-color: none;
+    
+    color: #000;
     border: none;
     display: block;
     width: 100%;
     margin: 10px 0;
-    
+    background-color: none;
     height: 50px;
     font-size: 20px;
     cursor: pointer;
+    transition: all 1s;
+    
 
 }
-
-input:focus~label,
-input:valid~label{
-    top: -14px;
-    font-size: 15px;
-    color: black;
+.button-login:hover{
+    background-color:#1E90FF;
+    
 }

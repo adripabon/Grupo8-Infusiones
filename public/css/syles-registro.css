@@ -35,7 +35,7 @@ form .grupo{
     position: relative;
     margin: 20px;
 }
- input {
+input {
      background: none;
      color: black;
      padding: 10px 10px 10px 5px  ;
@@ -46,7 +46,7 @@ form .grupo{
      border-top: none;
  }
  input:focus{
-     outline: none;
+    outline: none;
  }
  label {
     color:#c6c6c6;
@@ -78,4 +78,7 @@ button {
     font-size: 15px;
     cursor: pointer;
 
+}
+button:hover{
+    color: red;
 }
