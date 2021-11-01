@@ -4,35 +4,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Coffee</title>
+    <title>CoffTe</title>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/styles-index.css">
 </head>
 <body>
-    <header>
-        <div class="header-block">    
-            <a class="link-index" href="/">
-                <div class="logo">
-                    <img src="/images/logo-800x300.fw.png" alt="Coffetee">
-                </div>
-            </a>
-            <nav class="menu">
-                <ul>
-                    <li><a href="/">Infusiones</a></li>
-                    <li><a href="/">Café</a></li>
-                    <li><a href="/">Insumos</a></li>
-                </ul>
-            </nav>
-            <div class="header-icon">
-                <a href="/login-2"><i class="fas fa-user-circle"></i></a>
-                <a href="/product-cart"><i class="fas fa-shopping-bag"></i></a>
-            </div>
-        </div>
-        <div class="burger-menu">
-            <i class="fas fa-bars"></i>
-        </div>
-    </header>
+    <!-- INCLUDE HEADER -->
+    <%- include('./partials/header')  %>
+
     <section class="banner">
         <img src="/images/tea-geefcd29f9_800x350.jpg" alt="Banner">
         <div class="banner-description">
@@ -49,7 +29,7 @@
                 
                 <article class="article-products">
                     <div class="coffee">
-                        <a href="/product-details">
+                        <a href="/product/product-details">
                             <img src="/images/coffee-g0459fe78a_500x500.jpg" alt="">
                             <h3>Café</h3>
                         </a>
@@ -78,10 +58,10 @@
                 
                 <article class="article-products">
                     <div class="coffee">
-                        <a href="/product-details">
+                        <a href="/product/product-details">
                             <div class="div-img-bag">
                                 <img src="/images/coffee-g0459fe78a_500x500.jpg" alt="">
-                                <a href="/product-cart"><div class="div-bag"><i class="fas fa-cart-plus"></i></div></a>
+                                <a href="/product/product-cart"><div class="div-bag"><i class="fas fa-cart-plus"></i></div></a>
                             </div>
                             <div class="div-price">
                                 <p class="price-discount">$ 1700</p>
@@ -99,7 +79,7 @@
                         <a href="/">
                             <div class="div-img-bag">
                                 <img src="/images/herbal-tea-g041759343_500x500.jpg" alt="">
-                                <a href="/product-cart"><div class="div-bag"><i class="fas fa-cart-plus"></i></div></a>
+                                <a href="/product/product-cart"><div class="div-bag"><i class="fas fa-cart-plus"></i></div></a>
                             </div>
                             <div class="div-price">
                                 <p class="price-discount"></p>
@@ -118,7 +98,7 @@
                         <a href="/">
                             <div class="div-img-bag">
                                 <img src="/images/cup-of-tea-g4cf6758b1_500x500.jpg" alt="">
-                                <a href="/product-cart"><div class="div-bag" ><i class="fas fa-cart-plus"></i></div></a>
+                                <a href="/product/product-cart"><div class="div-bag" ><i class="fas fa-cart-plus"></i></div></a>
                             </div>
                             <div class="div-price">
                                 <p class="price-discount">$ 1700</p>
@@ -137,33 +117,8 @@
             <p class="p-about-us">Lorem ipsum dolor sit amet consectetur adipisicing elit. At unde velit minus quas incidunt nihil, a non voluptate. Corrupti eaque iste amet, fugit dignissimos vitae quaerat nisi dolorem minima culpa quasi totam porro aspernatur neque asperiores mollitia. Praesentium, maiores beatae!</p>
         </section>
     </main>
-    <footer>
-        <section class="section-block">
-            <article class="footer-logo">
-                <img class="logo" src="/images/logo-800x300.fw.png" alt="Coffetee">
-            </article>
-            <article class="footer-article">
-                <h4>TÉRMINOS Y CONDICIONES</h4>
-                <nav>
-                    <ul>
-                        <li><a href="/">Términos y condiciones</a></li>
-                        <li><a href="/">Entrega del producto</a></li>
-                        <li><a href="/">Preguntas frecuentes</a></li>
-                    </ul>
-                </nav>
-            </article>
-            <article class="footer-contact">
-                <h4>CONTÁCTANOS</h4>
-                <a href=""><i class="fas fa-phone-square-alt"></i>+57 4 3004948484</a>
-                <a href=""><i class="far fa-clock"></i>Lunes a viernes 07:00 18:00</a>
-                <a href=""><i class="fas fa-envelope"></i>Email</a>
-            </article>
-            <article class="social">
-                <a href=""><i class="fab fa-facebook-square"></i></a>
-                <a href=""><i class="fab fa-twitter-square"></i></a>
-                <a href=""><i class="fab fa-instagram-square"></i></a>
-            </article>
-        </section>
-    </footer>
+    
+    <!-- INCLUDE FOOTER -->
+    <%- include('./partials/footer')  %>
 </body>
 </html>

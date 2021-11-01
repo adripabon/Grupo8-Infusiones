@@ -11,29 +11,9 @@
     <link rel="stylesheet" href="/css/styles-productCart.css">
 </head>
 <body>
-    <header>
-        <div class="header-block">    
-            <a class="link-index" href="/">
-                <div class="logo">
-                    <img src="/images/logo-800x300.fw.png" alt="Coffetee">
-                </div>
-            </a>
-            <nav class="menu">
-                <ul>
-                    <li><a href="/">Infusiones</a></li>
-                    <li><a href="/">Café</a></li>
-                    <li><a href="/">Insumos</a></li>
-                </ul>
-            </nav>
-            <div class="header-icon">
-                <a href="/login"><i class="fas fa-user-circle"></i></a>
-                <a href="/product-cart"><i class="fas fa-shopping-bag"></i></a>
-            </div>
-        </div>
-        <div class="burger-menu">
-            <i class="fas fa-bars"></i>
-        </div>
-    </header>
+    <!-- INCLUDE HEADER -->
+    <%- include('../partials/header')  %>
+
     <main>
         <section class="section-productCart">
             <form class="form-productCart">
@@ -109,33 +89,8 @@
             
         </section>
     </main>
-    <footer>
-        <section class="section-block">
-            <article class="footer-logo">
-                <img class="logo" src="/images/logo-800x300.fw.png" alt="Coffetee">
-            </article>
-            <article class="footer-article">
-                <h4>TÉRMINOS Y CONDICIONES</h4>
-                <nav>
-                    <ul>
-                        <li><a href="/">Términos y condiciones</a></li>
-                        <li><a href="/">Entrega del producto</a></li>
-                        <li><a href="/">Preguntas frecuentes</a></li>
-                    </ul>
-                </nav>
-            </article>
-            <article class="footer-contact">
-                <h4>CONTÁCTANOS</h4>
-                <a href=""><i class="fas fa-phone-square-alt"></i>+57 4 3004948484</a>
-                <a href=""><i class="far fa-clock"></i>Lunes a viernes 07:00 18:00</a>
-                <a href=""><i class="fas fa-envelope"></i>Email</a>
-            </article>
-            <article class="social">
-                <a href=""><i class="fab fa-facebook-square"></i></a>
-                <a href=""><i class="fab fa-twitter-square"></i></a>
-                <a href=""><i class="fab fa-instagram-square"></i></a>
-            </article>
-        </section>
-    </footer>
+    
+    <!-- INCLUDE FOOTER -->
+    <%- include('../partials/footer')  %>
 </body>
 </html>

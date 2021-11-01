@@ -36,3 +36,6 @@ Se encuentra en la carpeta denominada **Documentación** la cual contiene:
 - Sprint
 - Wireframe
 ```
+
+## Tablero de control
+Se implementa en TRELLO.

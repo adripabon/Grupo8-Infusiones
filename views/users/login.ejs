@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+    integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/styles-index.css">
+    <link rel="stylesheet" href="/css/styles-login.css">
+    <title>Ingresa tu cuenta</title>
+</head>
+<body>    
+    <!-- INCLUDE HEADER -->
+    <%- include('../partials/header')  %>
+
+    <main>        
+        <form class="formLogin" action="/">
+           <div class="form">
+               <h1>Inicía Sesión</h1>           
+
+                <div class="grupo">
+                    <label>Usuario</label>
+                    <input type="text" class="usuario" name="usuario">
+                </div>    
+
+                <div class="grupo">
+                    <label>Password</label>
+                    <input type="password" class="usuario" name="usuario">
+                </div>   
+
+                <button class="">Iniciar sesion</button>
+         
+            </div>
+            <p>No tienes una cuenta? <a href="/user/register">Registrate aqui</a></p>
+        </form>
+    
+    </main>
+
+    <!-- INCLUDE FOOTER -->
+    <%- include('../partials/footer')  %>
+</body>
+</html>
