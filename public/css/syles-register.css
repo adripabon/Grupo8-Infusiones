@@ -1,20 +1,15 @@
-header{
 
-
-}
-.logo img {
-    
-}
 main {
     padding: 50px 0;
-    background: #649173;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #DBD5A4, #649173);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #DBD5A4, #649173); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-        display: flex;
+    max-width:none;
+    background-image: url("/images/tee_background.jpg");
+    background-color: #fff;
+    display: flex;
     justify-content: center;
-    align-items: center;   
-    height: 1000px;                   
+    align-items: center;                    
 }
+
+
 
 h1 {
     
@@ -23,7 +18,7 @@ h1 {
 form {
     background-color: white;
     padding: 40px 70px;
-    box-shadow: 0 0  6px 0 rgb(255, 255,255, 0.8);
+    box-shadow: 0 0 6px 0 rgb(157 144 144 / 80%);
     border-radius: 10px;
 
 }

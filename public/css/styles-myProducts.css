@@ -12,21 +12,19 @@ a{
 
 
 
-body {
-    /* padding: 50px 0; */
-    /* background: #649173; */  /* fallback for old browsers */
-    /* background: -webkit-linear-gradient(to right, #DBD5A4, #649173);  */ /* Chrome 10-25, Safari 5.1-6 */
-    /* background: linear-gradient(to right, #DBD5A4, #649173);  *//* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-   /*  height: 500px; */
 
-   background-image: url("/images/tee_background.jpg");
-   background-color: #fff;
+main{
+    padding: 50px 0px;
+    padding: 50px 0;
+    max-width:none;
+    background-image: url("/images/tee_background.jpg");
+    background-color: #fff;
 }
 
 h1 {
     font-weight: 700;
     text-align: center;
-    color: aliceblue;
+    color: #333;
     padding: 10px 10px;
 
 }
@@ -110,10 +108,27 @@ input:valid~label{
     form {
         width: 80%;
     }
+    
 }
 
-@media (min-width:778px){
+@media (min-width:768px){
     form{
         width:55%
+    }
+
+    .radio{
+        display: flex;
+        width: 60%;
+        justify-content: space-around;
+        align-items: baseline;
+    }
+}
+
+@media (min-width:1200px){
+    .radio{
+        display: flex;
+        width: 40%;
+        justify-content: space-around;
+        align-items: baseline;
     }
 }

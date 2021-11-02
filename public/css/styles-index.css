@@ -31,8 +31,9 @@ header .link-index{
 }
 
 header ,footer {
-    background-color: #9aa681;
-    border: 3px solid #5A7356;
+    /* background-color: #9aa681;
+    border: 3px solid #5A7356; */
+    background: linear-gradient(to left, #DBD5A4, #649173);
 }
 
 header .header-block{
@@ -252,6 +253,10 @@ footer .social {
 
 footer .social .fab {
     font-size: 2rem
+}
+
+footer .footer-h4{
+    /* color: aliceblue; */
 }
 
 /* responsive devices*/
