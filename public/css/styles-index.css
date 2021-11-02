@@ -306,6 +306,10 @@ footer .footer-h4{
         display: none;
     }
 
+    header .header-block{
+        justify-content: space-evenly;
+    }
+
     .banner-description{
         position: absolute;
         text-align: center;
