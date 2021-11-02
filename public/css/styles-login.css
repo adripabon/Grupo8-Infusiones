@@ -6,11 +6,9 @@ main {
 }
 h1 {
     font-weight: 700;
-
 }
 
 form {
-
     background-color: white;
     padding: 30px 70px 100px 70px;
     box-shadow: 0 0 6px 0 rgb(157 144 144 / 80%);
