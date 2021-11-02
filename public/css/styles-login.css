@@ -1,12 +1,8 @@
 main {
     padding: 50px 0;
-    background: #649173;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #DBD5A4, #649173);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #DBD5A4, #649173); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 500px;
+    max-width:none;
+    background-image: url("/images/tee_background.jpg");
+    background-color: #fff;
 }
 h1 {
     font-weight: 700;
@@ -17,11 +13,11 @@ form {
 
     background-color: white;
     padding: 30px 70px 100px 70px;
-    box-shadow: 0 0  6px 0 rgb(255, 255,255, 0.8);
+    box-shadow: 0 0 6px 0 rgb(157 144 144 / 80%);
     border-radius: 10px;
 }
-.formLogin {
-    width: 80%;
+.form{
+    width: 55%;
     margin: auto;
 }
 
@@ -51,23 +47,23 @@ label {
     pointer-events: none;
     border-color: none;
 }
-button {
+.button-login {
     font-family:'roboto';
-    background-color: none;
+    
+    color: #000;
     border: none;
     display: block;
     width: 100%;
     margin: 10px 0;
-    
+    background-color: none;
     height: 50px;
     font-size: 20px;
     cursor: pointer;
+    transition: all 1s;
+    
 
 }
-
-input:focus~label,
-input:valid~label{
-    top: -14px;
-    font-size: 15px;
-    color: black;
+.button-login:hover{
+    background-color:#1E90FF;
+    
 }
