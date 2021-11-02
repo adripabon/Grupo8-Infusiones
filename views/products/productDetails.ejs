@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+    integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/styles-productDetails.css">    
+    <title>Productos</title>
+</head>
+
+<body>
+
+    <!-- INCLUDE HEADER -->
+    <%- include('../partials/header')  %>
+
+    <main>
+        <section>
+            <article class="article-products">    
+                <img class="foto-article" src="/images/coffee-g0459fe78a_500x500.jpg" alt="Café Colombia Molido">
+                
+                <div class="div-price">
+                    <h1 class="titulo">Título del Producto</h1>
+                    <p class="price">$ Precio del Producto</p>
+                    <p class="price-discount">$ Precio con Oferta</p>                      
+                    <p class="discount">% Descuento</p>
+                    <p class="p">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maiores vel repellat tempora iure inventore? Quo cumque quae nesciunt placeat velit repudiandae perspiciatis repellat similique itaque. Porro unde impedit alias suscipit?</p>
+                </div>
+                
+                <div class="carrito">
+                    <a href="./product-cart"><i class="fas fa-cart-plus"></i></a>
+                </div>
+            </article>
+        </section> 
+    </main>
+
+    <!-- INCLUDE FOOTER -->
+    <%- include('../partials/footer')  %>
+
+</body>
+
+</html>

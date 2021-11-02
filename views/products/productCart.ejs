@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CoffTee</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/styles-index.css">
+    <link rel="stylesheet" href="/css/styles-productCart.css">
+</head>
+<body>
+    <!-- INCLUDE HEADER -->
+    <%- include('../partials/header')  %>
+
+    <main>
+        <section class="section-productCart">
+            <form class="form-productCart">
+                <table class="shop-table" cellspacing="0">
+                    <tbody>
+                        <tr class="title-shop-table">
+                            <td class="product-remove" >&nbsp;</td>
+                            <td class="product-thumbnail">&nbsp;</td>
+                            <td class="product-name">Producto</td>
+                            <td class="product-price">Precio</td>
+                            <td class="product-quantity">Cantidad</td>
+                            <td class="product-subtotal">Subtotal</td>
+                        </tr>
+                        <tr class="cart-item">
+                            <td class="product-remove">
+                                <a href="#" class="remove" >×</a> 
+                            </td>
+                            <td class="product-thumbnail">
+                                <a href="#"><img src="https://www.tiendajuanvaldez.com/wp-content/uploads/2020/05/COLINA-GRANO-454-G-FRONT1-600x600.jpg" class="size-woocommerce_thumbnail" ></a>
+                            </td>
+                            <td class="product-name" >
+                                <a href="#">Café Colina Grano 454g Juan Valdez</a> 
+                            </td>
+                            <td class="product-price" data-title="Precio">
+                                <span class="product-price-currencySymbol">$</span>20,500 
+                            </td>
+                            <td class="product-quantity" data-title="Cantidad">
+                                <div class="quantity">
+                                    <input type="button" value="-" class="minus">
+                                    <input type="text" class="quantity-input-text" value="1" title="Cantidad" size="4" placeholder="" inputmode="numeric">
+                                    <input type="button" value="+" class="plus">
+                                </div>
+                            </td>
+                            <td class="product-subtotal" data-title="Subtotal">
+                                <span class="woocommerce-Price-amount amount"><bdi><span class="woocommerce-Price-currencySymbol">$</span>20,500</bdi></span> 
+                            </td>
+                        </tr>
+                        <tr class="cart-item">
+                            <td class="product-remove">
+                                <a href="#" class="remove" >×</a> 
+                            </td>
+                            <td class="product-thumbnail">
+                                <a href="#"><img src="https://www.tiendajuanvaldez.com/wp-content/uploads/2020/05/COLINA-GRANO-454-G-FRONT1-600x600.jpg" class="size-woocommerce_thumbnail" ></a>
+                            </td>
+                            <td class="product-name" >
+                                <a href="#">Café Colina Grano 454g Juan Valdez</a> 
+                            </td>
+                            <td class="product-price" data-title="Precio">
+                                <span class="product-price-currencySymbol">$</span>20,500 
+                            </td>
+                            <td class="product-quantity" data-title="Cantidad">
+                                <div class="quantity">
+                                    <input type="button" value="-" class="minus">
+                                    <input type="text" class="quantity-input-text" value="1" title="Cantidad" size="4" placeholder="" inputmode="numeric">
+                                    <input type="button" value="+" class="plus">
+                                </div>
+                            </td>
+                            <td class="product-subtotal" data-title="Subtotal">
+                                <span class="woocommerce-Price-amount amount"><bdi><span class="woocommerce-Price-currencySymbol">$</span>20,500</bdi></span> 
+                            </td>
+                        </tr>                        
+                    </tbody>
+                </table>
+                <div class="detail">
+                    <h3 class="title-detail">TOTAL DEL CARRITO</h3>
+                    <span>Subtotal <p class="price-discount">$ 1700</p></span>
+                    <span>Enviado a <p class="send">Cordoba</p></span>
+                    <span>Precio <p class="price">$ 1241</p></span>                      
+                    <span>Descuento <p class="discount">27%</p></span>
+                    <span>Total<p class="total">$ 1241</p></span>
+                </div>
+            </form>
+            
+        </section>
+    </main>
+    
+    <!-- INCLUDE FOOTER -->
+    <%- include('../partials/footer')  %>
+</body>
+</html>
