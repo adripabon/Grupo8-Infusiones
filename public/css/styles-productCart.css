@@ -1,3 +1,8 @@
+
+.slideshow-container {
+    display: none;
+}
+
 main section a{
     color: #333;
 }
@@ -100,11 +105,7 @@ footer {
 }
 
 @media (min-width: 1200px) {
-    .header-block , main, .section-block {
-        max-width: 1200px;
-        padding: 10px;
-        margin:auto
-    }
+    
 
     main section .form-productCart {
         display: flex;

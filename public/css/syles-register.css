@@ -1,3 +1,6 @@
+.slideshow-container {
+    display: none;
+}
 
 main {
     padding: 50px 0;
