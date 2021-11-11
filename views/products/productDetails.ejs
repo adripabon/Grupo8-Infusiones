@@ -23,14 +23,14 @@
         <section>
             <article class="article-details">    
                 <div class="product-details">    
-                    <img class="foto-article" src="/images/coffee-g0459fe78a_500x500.jpg" alt="Café Colombia Molido">
+                    <img class="foto-article" src="/images/<%= product.image %>" alt="Café Colombia Molido">
                     
                     <div class="div-price">
-                        <h1 class="titulo">Título del Producto</h1>
-                        <p class="price">$ Precio del Producto</p>
+                        <h1 class="titulo"><%= product.name %></h1>
+                        <p class="price">$ <%= product.price %></p>
                         <p class="price-discount">$ Precio con Oferta</p>                      
-                        <p class="discount">% Descuento</p>
-                        <p class="p">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maiores vel repellat tempora iure inventore? Quo cumque quae nesciunt placeat velit repudiandae perspiciatis repellat similique itaque. Porro unde impedit alias suscipit?</p>
+                        <p class="discount">% <%= product.discount %></p>
+                        <p class="p"><%= product.description %></p>
                     </div>
                     
                     <div class="carrito">

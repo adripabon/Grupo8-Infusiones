@@ -11,3 +11,10 @@
 ● Si se encontró con algún impedimento: Se retira una compañera del grupo, nos queda faltando algunos productos.
 ● Qué va a hacer hoy: Realizar commit con todo el proyecto unificado.
 ```
+
+# DAILY 3
+```
+● Qué hizo ayer: Se inicica con la labor de construir los JSON y mostrar los productos destacados. 
+● Si se encontró con algún impedimento: Se deben reforzar los conocimientos del CRUD.
+● Qué va a hacer hoy: Culminar con el CRUD de productos.
+```

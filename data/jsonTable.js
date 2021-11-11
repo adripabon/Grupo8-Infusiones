@@ -22,7 +22,7 @@ let model = function(tableName) {
             let lastRow = rows.pop();
 
             if (lastRow) {
-                return ++lastRow.id;
+                return lastRow.id + 1;
             }
 
             return 1;

@@ -1,3 +1,6 @@
+const jsonTable = require('../data/jsonTable')
+const productsModel = jsonTable('products')
+
 /* Contine los controladores del index */
 const productController = {
     /*  index: (req,res)=>{
@@ -10,7 +13,11 @@ const productController = {
         res.render('products/productCart');
     },
     productDetails: (req, res) => {
-        res.render('products/productDetails');
+        let id = req.params.id
+
+        const product = productsModel.find(id)
+
+        res.render('products/productDetails', { product });
     }
 
  }

@@ -14,3 +14,11 @@
 4. Hacer menos: Desconectarnos del proyecto. 
 5. Dejar de hacer: Dejar a último momento.
 ```
+# RETROSPECTIVA SPRINT 3
+```
+1. Comenzar a hacer: Reorganizar el diseño del index, unificar diseño y ajustar formulario de crear producto.
+2. Hacer más: Programar reuniones para revisar el avance.
+3. Continuar haciendo: Reuniones de trabajo.
+4. Hacer menos: Desconectarnos del proyecto. 
+5. Dejar de hacer: Dejar a último momento.
+```

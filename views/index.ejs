@@ -49,61 +49,28 @@
         <section>
             <h2>Destacados</h2>
             <div class="products">                
-                
-                <article class="article-products">
-                    <div class="coffee">
-                        <a href="/product/product-details">
-                            <div class="div-img-bag">
-                                <img src="/images/coffee-g0459fe78a_500x500.jpg" alt="">
-                                <a href="/product/product-cart"><div class="div-bag"><i class="fas fa-cart-plus"></i></div></a>
-                            </div>
-                            <div class="div-price">
-                                <p class="price-discount">$ 1700</p>
-                                <p class="price">$ 1241</p>                      
-                                <p class="discount">27%</p>
-                            </div>
-                            <h3 class="title-product">Título de producto</h3>
-                            <p class="description-product">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Rerum eos sint repellendus veniam laborum porro doloribus exercitationem quo. Qui molestiae autem voluptates accusamus in laborum</p>
-                        </a>
-                    </div>
-                </article>
-
-                <article class="article-products">
-                    <div class="tea">
-                        <a href="/">
-                            <div class="div-img-bag">
-                                <img src="/images/herbal-tea-g041759343_500x500.jpg" alt="">
-                                <a href="/product/product-cart"><div class="div-bag"><i class="fas fa-cart-plus"></i></div></a>
-                            </div>
-                            <div class="div-price">
-                                <p class="price-discount"></p>
-                                <p class="price">$ 1241</p>                      
-                                <p class="discount"></p>
-                            </div>
-                            <h3 class="title-product">Título de producto</h3>
-                            <p class="description-product">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Rerum eos sint repellendus veniam laborum porro doloribus exercitationem quo. Qui molestiae autem voluptates accusamus in laborum</p>
-                        </a>
-                    </div>
-                   
-                </article>
-
-                <article class="article-products">
-                    <div class="supplies">
-                        <a href="/">
-                            <div class="div-img-bag">
-                                <img src="/images/cup-of-tea-g4cf6758b1_500x500.jpg" alt="">
-                                <a href="/product/product-cart"><div class="div-bag" ><i class="fas fa-cart-plus"></i></div></a>
-                            </div>
-                            <div class="div-price">
-                                <p class="price-discount">$ 1700</p>
-                                <p class="price">$ 1241</p>                      
-                                <p class="discount">27%</p>
-                            </div>
-                            <h3 class="title-product">Título de producto</h3>
-                            <p class="description-product">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Rerum eos sint repellendus veniam laborum porro doloribus exercitationem quo. Qui molestiae autem voluptates accusamus in laborum</p>
-                        </a>
-                    </div>
-                </article>
+                <!-- Consulta todos los productos destacados type=mas-vendido -->
+                <% products.forEach(product => { 
+                    if(product.type === 'mas-vendido') {   
+                %>
+                    <article class="article-products">
+                        <div class="coffee">
+                            <a href="/product/product-details/<%= product.id %>">
+                                <div class="div-img-bag">
+                                    <img src="/images/<%= product.image %>" alt="">
+                                    <a href="/product/product-cart/<%= product.id %>"><div class="div-bag"><i class="fas fa-cart-plus"></i></div></a>
+                                </div>
+                                <div class="div-price">
+                                    <p class="price-discount">$ <%= product.price %></p>
+                                    <p class="price">$ xxxxx</p>                      
+                                    <p class="discount"><%= product.discount %>%</p>
+                                </div>
+                                <h3 class="title-product"><%= product.name %></h3>
+                                <p class="description-product"><%= product.description %></p>
+                            </a>
+                        </div>
+                    </article>
+                <%  }}) %>
             </div>
         </section>
         <section>
