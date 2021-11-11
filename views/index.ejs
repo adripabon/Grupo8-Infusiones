@@ -21,7 +21,7 @@
             <h2>Productos</h2>
             <div class="products">                
                 
-                <article class="article-products">
+                <article class="article-products-seccion">
                     <div class="coffee">
                         <a href="/product/product-details">
                             <img src="/images/coffee-g0459fe78a_500x500.jpg" alt="">
@@ -30,14 +30,14 @@
                     </div>
                 </article>
 
-                <article class="article-products">
+                <article class="article-products-seccion">
                     <div class="tea">
                         <img src="/images/herbal-tea-g041759343_500x500.jpg" alt="">
                         <h3>Té</h3>
                     </div>
                 </article>
 
-                <article class="article-products">
+                <article class="article-products-seccion">
                     <div class="supplies">
                         <img src="/images/cup-of-tea-g4cf6758b1_500x500.jpg" alt="">
                         <h3>Insumos</h3>
@@ -65,8 +65,10 @@
                                     <p class="price">$ xxxxx</p>                      
                                     <p class="discount"><%= product.discount %>%</p>
                                 </div>
-                                <h3 class="title-product"><%= product.name %></h3>
-                                <p class="description-product"><%= product.description %></p>
+                                <div class="popular-products">
+                                    <h3 class="title-product"><%= product.name %></h3>
+                                    <p class="description-product tooltiptext"><%= product.description %></p>
+                                </div>
                             </a>
                         </div>
                     </article>

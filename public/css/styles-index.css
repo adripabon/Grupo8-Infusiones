@@ -162,6 +162,27 @@ main section article a {
     border-radius: 15px;
 }
 
+.popular-products{
+    margin: 0 0 1em 0;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+}
+
+.popular-products p {
+    margin: 0;
+}
+
+.article-products-seccion{
+    background-color: white;
+    border-radius: 10px;
+    margin: 3px 0px 9px 0px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
 .article-products{
     background-color: white;
     border-radius: 10px;
@@ -208,6 +229,10 @@ main section .discount{
 main .div-bag, main .div-bag  i {
     display: none;
 }
+
+/* TOOLTIP MAIN */
+
+
 
 /* FOOTER */
 
@@ -327,6 +352,13 @@ footer .footer-h4{
         padding-left: 15px;
         text-align: left;
 
+    }
+
+    .article-products-seccion{
+        background-color: white;
+        border-radius: 10px;
+        margin: 8px 0px;
+        width: 33%;
     }
 
     .article-products{
