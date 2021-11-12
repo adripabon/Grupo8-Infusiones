@@ -23,6 +23,7 @@ form {
     padding: 40px 70px;
     box-shadow: 0 0 6px 0 rgb(157 144 144 / 80%);
     border-radius: 10px;
+    width: 90%;
 
 }
 .form {
@@ -62,18 +63,34 @@ input:valid~label{
     font-size: 15px;
     color: black;
 }
-button {
+.register-button {
     font-family:'roboto';
-    background: #649173;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #DBD5A4, #649173);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #DBD5A4, #649173); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-        border: none;
+    color: #333;
+    border: none;
     display: block;
     width: 100%;
     margin: 10px 0;
-    color: black;
+    background-color: none;
+    border: 1px solid gainsboro;
     height: 50px;
-    font-size: 15px;
+    font-size: 20px;
     cursor: pointer;
+    transition: all 1s;
 
+}
+.register-button:hover{
+    background-color:#55B28C;
+    
+}
+
+@media (min-width: 768px) {
+    form {
+        width: 70%;
+    }
+}
+
+@media (min-width: 1200px) {
+    form {
+        width: 45%;
+    }
 }

@@ -21,22 +21,35 @@
 
     <main>
         <section>
-            <article class="article-details">    
+            <article>    
                 <div class="product-details">    
-                    <img class="foto-article" src="/images/<%= product.image %>" alt="Café Colombia Molido">
-                    
+                    <h2>Visualizando el producto: <%= product.name %></h2>
+                                       
                     <div class="div-price">
-                        <h1 class="titulo"><%= product.name %></h1>
-                        <p class="price">$ <%= product.price %></p>
-                        <p class="price-discount">$ Precio con Oferta</p>                      
-                        <p class="discount">% <%= product.discount %></p>
+                        <img class="foto-article" src="/images/<%= product.image %>" alt="Café Colombia Molido">
+                        <div class="block-description">
+                            <h1 class="titulo"><%= product.name %></h1>
+                            <p class="price">$ <%= product.price %></p>
+                            <p class="discount">% <%= product.discount %></p>
+                            <p class="price-discount">$ Precio con Oferta</p>
+                        </div>
                         <p class="p"><%= product.description %></p>
                     </div>
                     
                     <div class="carrito">
                         <a href="./product-cart"><i class="fas fa-cart-plus"></i></a>
                     </div>
+                    
                 </div>
+                <div class="div-button">
+                    
+                    <input type="submit" value="Editar">    
+                    
+                    <form class="form-delete" action="">
+                        <input type="submit" value="Eliminar">
+                    </form>
+                </div>
+                
             </article>
         </section> 
     </main>

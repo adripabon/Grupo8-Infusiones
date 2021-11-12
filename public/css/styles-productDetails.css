@@ -7,16 +7,16 @@ main section article a{
     color: #333;
 }
 
-/* INICIO DEL FLEXBOX */
+/* MAIN*/
 
-.article-details { 
-    display: flex;
-    align-items: center;
+main section article .product-details h2{
+    width: 100%;
 }
 
 .foto-article { 
     width: 44%;
     padding: 10px;
+    margin: auto;
 }
 
 main section .div-price{
@@ -40,46 +40,96 @@ main .carrito{
     font-size: 30px  ;
 }
 
-
-
-.titulo{
+main section article div .titulo{
     font-size: 40px;
     color: #A66D3C;
     text-align: left;
+    width: 100%;
 }
 
-main section .price {
-    color: #999;
+main section article div .price {
+    color: #333;
     text-align: left;
-    font-size: 25px;
-    text-decoration: line-through;
-}
-
-main section .price-discount{
-    display: flex;
-    color: #999;
     font-size: 15px;
     text-decoration: line-through;
+    padding: 5px 8px;
+    width: 40%;
 }
 
-main section .discount{
-    width: 30%;
+main section article div .price-discount{
+    display: flex;
+    color: #55594D;
+    text-align: left;
+    font-size: 25px;
+    text-decoration: none;
+}
+
+main section article div .discount{
+    width: 35%;
     display: flex;
     color: #5A7356;
     font-weight: bold;
 }
 
-main section article .product-details{
+main section article div.product-details{
     background-color: white;
     border-radius: 10px;
-    margin: 3px 0px 9px 0px;
+    margin: 3px 0px 0px 0px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
     align-items: center;
 }
 
+main section article div.div-price P{
+    padding: 5px 10px;
+}
 
-/* FIN DEL FLEXBOX */
+/* BUTTON */
+.div-button {
+    display: flex;
+    justify-content: flex-end;
+}
+
+input[type=submit] {
+    width: 150px;
+    background-color: none;
+    color: #333;
+    padding: 14px 20px;
+    margin: 0px 0px 8px 0px;
+    border: 1px solid gainsboro;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 1s;
+
+    font-family:'roboto';
+}
+  
+input[type=submit]:hover {
+    background-color: #55B28C;
+}
+
+.form-delete{
+    padding: 0px 10px;
+}
+
+@media (min-width: 768px) {
+    main section article div .price {
+       
+        width: auto;
+    }
+
+    main section article div .foto-article {
+        margin: unset;
+    }
+
+    main section article div.div-price{
+        display: flex;
+        align-content: space-around;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
 
 
