@@ -45,7 +45,7 @@
                     
                     <a href="/product/edit/<%= product.id %>"><input type="submit" value="Editar"></a>    
                     
-                    <form class="form-delete" action="">
+                    <form class="form-delete" method="post" action="/product/delete/<%= product.id %>?_method=DELETE">
                         <input type="submit" value="Eliminar">
                     </form>
                 </div>

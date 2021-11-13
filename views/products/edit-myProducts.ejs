@@ -1,81 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/css/styles-index.css" />
-    <link rel="stylesheet" href="/css/styles-myProducts.css" />
-    <title>Mis productos</title>
-  </head>
-  <body>
-    <!-- INCLUDE HEADER -->
-    <%- include('../partials/header')  %>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+    integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/styles-index.css" />
+  <link rel="stylesheet" href="/css/styles-myProducts.css" />
+  <title>Mis productos</title>
+</head>
+
+<body>
+  <!-- INCLUDE HEADER -->
+  <%- include('../partials/header') %>
 
     <main>
-      
       <div class="productsBox">
-        
-        <form class="myProducts" method="post" action="/product/edit/<%= product.id %>?_method=PUT">
+        <form class="myProducts" method="POST" action="/product/edit/<%= product.id %>?_method=PUT"
+          enctype="multipart/form-data">
           <h1>Edicion de producto</h1>
           <label>Nombre de mi producto:</label>
-          <input
-            type="text"
-            name="name"
-            class="myProducts"
-            value="<%= product.name %>"
-            placeholder="Café Colina Grano 454g Juan Valdez"
-          />
+          <input type="text" name="name" class="myProducts" value="<%= product.name %>"
+            placeholder="Café Colina Grano 454g Juan Valdez" />
           <br />
 
           <label>Descripcion:</label>
-          <input
-            type="text"
-            name="description"
-            class="myProducts"
-            value="<%= product.description %>"
-            placeholder="Cafe descafeinado con un gusto especial a vainilla"
-          />
+          <input type="text" name="description" class="myProducts" value="<%= product.description %>"
+            placeholder="Cafe descafeinado con un gusto especial a vainilla" />
           <br />
 
           <label>Pone la imagen de tu producto aqui</label>
-          <input
-            class="fyle"
-            type="file"
-            accept=".jpg, .png, .jpeg, .svg"
-            name="image"
-            class="myProducts"
-          />
+          <input class="fyle" type="file" accept=".jpg, .png, .jpeg, .svg" name="image" id="image" class="myProducts" />
+          
           <br />
 
           <label>Categoria:</label>
 
           <div class="radio">
-            <input
-              type="radio"
-              id="cafe"
-              value="cafe"
-              name="category"
-              class="myProducts"
-            />
+            <input type="radio" id="cafe" value="cafe" name="category" class="myProducts" />
             <label for="cafe">Cafe</label>
-            <input
-              type="radio"
-              id="te"
-              value="te"
-              name="category"
-              class="myProducts"
-            />
+            <input type="radio" id="te" value="te" name="category" class="myProducts" />
             <label for="te">Te</label>
-            <input
-              type="radio"
-              id="insumos"
-              value="insumos"
-              name="category"
-              class="myProducts"
-            />
+            <input type="radio" id="insumos" value="insumos" name="category" class="myProducts" />
             <label for="insumos">Insumos</label>
             <br />
           </div>
@@ -90,40 +59,22 @@
 
           <label>Tipo de producto</label>
           <div class="radio">
-            <input
-              type="radio"
-              id="banner"
-              value="banner"
-              name="type"
-              class="myProducts"
-            />
+            <input type="radio" id="banner" value="banner" name="type" class="myProducts" />
             <label for="banner">Banner</label>
-            <input
-              type="radio"
-              id="mas-vendido"
-              value="mas-vendido"
-              name="type"
-              class="myProducts"
-            />
+            <input type="radio" id="mas-vendido" value="mas-vendido" name="type" class="myProducts" />
             <label for="mas-vendido">Mas vendido</label>
-            <input
-              type="radio"
-              id="nuevo"
-              value="nuevo"
-              name="type"
-              class="myProducts"
-            />
+            <input type="radio" id="nuevo" value="nuevo" name="type" class="myProducts" />
 
             <label for="nuevo">Nuevo</label>
-            </div>
+          </div>
 
           <button type="submit">Guardar producto</button>
           <br />
-
         </form>
       </div>
     </main>
     <!-- INCLUDE FOOTER -->
-    <%- include('../partials/footer')  %>
-  </body>
+    <%- include('../partials/footer') %>
+</body>
+
 </html>
