@@ -18,13 +18,14 @@
       
       <div class="productsBox">
         
-        <form class="myProducts">
-          <h1>Mis productos</h1>
+        <form class="myProducts" method="post" action="/product/edit/<%= product.id %>?_method=PUT">
+          <h1>Edicion de producto</h1>
           <label>Nombre de mi producto:</label>
           <input
             type="text"
             name="name"
             class="myProducts"
+            value="<%= product.name %>"
             placeholder="Café Colina Grano 454g Juan Valdez"
           />
           <br />
@@ -34,6 +35,7 @@
             type="text"
             name="description"
             class="myProducts"
+            value="<%= product.description %>"
             placeholder="Cafe descafeinado con un gusto especial a vainilla"
           />
           <br />
@@ -79,11 +81,11 @@
           </div>
 
           <label>Precio:</label>
-          <input class="price" type="text" name="price" placeholder="$200" />
+          <input class="price" type="text" value="<%=product.price%>" name="price" placeholder="$200" />
           <br />
 
           <label>Descuento:</label>
-          <input class="discount" type="text" name="price" placeholder="20%" />
+          <input class="discount" type="text" value="<%= product.discount %>" name="price" placeholder="20%" />
           <br />
 
           <label>Tipo de producto</label>
@@ -92,7 +94,7 @@
               type="radio"
               id="banner"
               value="banner"
-              name="typeProduct"
+              name="type"
               class="myProducts"
             />
             <label for="banner">Banner</label>
@@ -100,7 +102,7 @@
               type="radio"
               id="mas-vendido"
               value="mas-vendido"
-              name="typeProduct"
+              name="type"
               class="myProducts"
             />
             <label for="mas-vendido">Mas vendido</label>
@@ -108,12 +110,14 @@
               type="radio"
               id="nuevo"
               value="nuevo"
-              name="typeProduct"
+              name="type"
               class="myProducts"
             />
+
             <label for="nuevo">Nuevo</label>
             </div>
-          <button type="submit">Subir producto</button>
+
+          <button type="submit">Guardar producto</button>
           <br />
 
         </form>

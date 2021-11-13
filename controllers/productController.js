@@ -18,7 +18,29 @@ const productController = {
         const product = productsModel.find(id)
 
         res.render('products/productDetails', { product });
+    },
+    edit: (req,res)=> {
+        let id= req.params.id;
+        const product = productsModel.find(id);
+        res.render("products/edit-myProducts", {product});
+   },
+
+   update: (req,res)=>{
+    let id= req.params.id;
+    let product = productsModel.find(id);
+    console.log(req.file);
+    if(req.file)
+            image = req.file.filename
+        else
+            image = product.image
+    product = {
+        id: product.id,
+        ...req.body,
+        image: image
     }
+    res.send("archivos enviados")
+},
+
 
  }
  
