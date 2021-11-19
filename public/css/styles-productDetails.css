@@ -1,4 +1,6 @@
-
+main{
+    padding: 95px 0px 0px 0px;
+}
 .slideshow-container {
     display: none;
 }
@@ -83,6 +85,10 @@ main section article div.product-details{
 
 main section article div.div-price P{
     padding: 5px 10px;
+}
+
+.div-productDetails {
+    height: 80px;    
 }
 
 /* BUTTON */

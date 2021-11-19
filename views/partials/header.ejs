@@ -1,27 +1,37 @@
-
 <header>
     <div class="header-container">
-        <div class="header-block">    
-            <a class="link-index" href="/">
-                <div class="logo">
-                    <img src="/images/logo-800x300.fw.png" alt="Coffetee">
-                </div>
-            </a>
-            <nav class="menu">
-                <ul>
-                    <li><a href="/">Infusiones</a></li>
-                    <li><a href="/">Café</a></li>
-                    <li><a href="/">Insumos</a></li>
-                    <li><a href="/product/myProducts">Mis productos</a></li>
+        <div class="header">
+            <nav class="navbar">
+                <!-- <a href="#" class="nav-logo">WebDev.</a> -->
+                <a class="link-index" href="/">
+                    <div class="logo">
+                        <img src="/images/logo-800x300.fw.png" alt="Coffetee">
+                    </div>
+                </a>
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Infusiones</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Café</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Insumos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/product/myProducts" class="nav-link">Nuevo Producto</a>
+                    </li>
                 </ul>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+                <div class="header-icon">
+                    <a href="/user/login"><i class="fas fa-user-circle"></i></a>
+                    <a href="/product/product-cart"><i class="fas fa-shopping-bag"></i></a>
+                </div>
             </nav>
-            <div class="header-icon">
-                <a href="/user/login"><i class="fas fa-user-circle"></i></a>
-                <a href="/product/product-cart"><i class="fas fa-shopping-bag"></i></a>
-            </div>
-            <div class="burger-menu">
-                <i class="fas fa-bars"></i>
-            </div>
         </div>
         <div class="slideshow-container">
 
@@ -94,6 +104,23 @@
               }
               slides[slideIndex-1].style.display = "block";  
               dots[slideIndex-1].className += " active";
+            }
+
+            const hamburger = document.querySelector(".hamburger");
+            const navMenu = document.querySelector(".nav-menu");
+            const navLink = document.querySelectorAll(".nav-link");
+
+            hamburger.addEventListener("click", mobileMenu);
+            navLink.forEach(n => n.addEventListener("click", closeMenu));
+
+            function mobileMenu() {
+                hamburger.classList.toggle("active");
+                navMenu.classList.toggle("active");
+            }
+
+            function closeMenu() {
+                hamburger.classList.remove("active");
+                navMenu.classList.remove("active");
             }
             </script>
         <!--div class="banner">

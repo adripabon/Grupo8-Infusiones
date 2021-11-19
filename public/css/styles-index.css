@@ -41,9 +41,11 @@ header .link-index{
     width: 55%;
 }
 
-.logo{
+.logo img{
     align-self: stretch;
-    width: 100%;
+    
+    width: auto;
+    height: 70px
     
 }
 
@@ -78,16 +80,7 @@ header nav ul li a {
     padding: 14px 16px;
 }
 
-header div.header-icon i {
-    font-size: 2rem;
-    color: #333;
-}
 
-header .header-icon{
-    width: 40%;
-    display: flex;
-    justify-content: flex-end;
-}
 
 header .burger-menu {
     display: flex;
@@ -299,20 +292,21 @@ footer .footer-h4{
 /* responsive devices*/
 
 /* MOBILE */
-@media (min-width: 425px){
+/* @media (min-width: 425px){
     header div.header-icon i {
         font-size: 3rem;
     }
-}
+} */
 
 /* TABLET */
 @media (min-width: 768px) {
+    
     header .header-block{
         height: 100px;
     }
-    header .header-icon{
+    /* header .header-icon{
         width: 10%;
-    }
+    } */
     
     header .link-index{
         width: 25%;

@@ -2,11 +2,12 @@
     display: none;
 }
 main {
-    padding: 50px 0;
+    padding: 90px 0;
     max-width:none;
     background-image: url("/images/tee_background.jpg");
     background-color: #fff;
 }
+
 h1 {
     font-weight: 700;
 }
@@ -18,7 +19,7 @@ form {
     border-radius: 10px;
 }
 .form{
-    width: 55%;
+    width: 85%;
     margin: auto;
 }
 
@@ -48,6 +49,14 @@ label {
     pointer-events: none;
     border-color: none;
 }
+
+input:focus~label,
+input:valid~label{
+    top: -14px;
+    font-size: 15px;
+    color: black;
+}
+
 .button-login {
     font-family:'roboto';
     
@@ -62,10 +71,23 @@ label {
     font-size: 20px;
     cursor: pointer;
     transition: all 1s;
-    
 
 }
 .button-login:hover{
     background-color:#55B28C;
     
+}
+
+@media (min-width: 768px) {
+    .form{
+        width: 65%;
+        margin: auto;
+    }
+}
+
+@media (min-width: 1200px) {
+    .form{
+        width: 65%;
+        margin: auto;
+    }
 }

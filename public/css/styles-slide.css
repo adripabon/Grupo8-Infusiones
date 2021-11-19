@@ -8,7 +8,7 @@ img {vertical-align: middle;}
 .slideshow-container {
 
     position: relative;
-    top: -36px;
+    top: 15px;
     z-index: 1;
     margin: auto;
 }
@@ -86,7 +86,7 @@ img {vertical-align: middle;}
 
 .header-navegation{
     text-align: center;
-    top: -43px;
+    top: 5px;
     position: relative;
 }
 
@@ -101,6 +101,12 @@ img {vertical-align: middle;}
 }
 
 /* On smaller screens, decrease text size */
-@media only screen and (max-width: 300px) {
+@media only screen and (max-width: 768px) {
   .prev, .next,.text {font-size: 11px}
+
+  .header-navegation{
+   
+    top: 6px;
+   
+  }
 }
