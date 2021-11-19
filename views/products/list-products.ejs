@@ -14,16 +14,16 @@
 </head>
 <body>
     <!-- INCLUDE HEADER -->
-    <%- include('./partials/header')  %>
+    <%- include('../partials/header')  %>
 
     <main>
-        <section>
+        <!-- <section>
             <h2>Productos</h2>
             <div class="products">                
                 
                 <article class="article-products-seccion">
                     <div class="coffee">
-                        <a href="/product/list-products?type=café">
+                        <a href="/product/product-details">
                             <img src="/images/coffee-g0459fe78a_500x500.jpg" alt="">
                             <h3>Café</h3>
                         </a>
@@ -32,31 +32,25 @@
 
                 <article class="article-products-seccion">
                     <div class="tea">
-                        <a href="/product/list-products?type=te">
-                            <img src="/images/herbal-tea-g041759343_500x500.jpg" alt="">
-                            <h3>Té</h3>
-                        </a>
+                        <img src="/images/herbal-tea-g041759343_500x500.jpg" alt="">
+                        <h3>Té</h3>
                     </div>
                 </article>
 
                 <article class="article-products-seccion">
                     <div class="supplies">
-                        <a href="/product/list-products?type=insumos">
-                            <img src="/images/cup-of-tea-g4cf6758b1_500x500.jpg" alt="">
-                            <h3>Insumos</h3>
-                        </a>
+                        <img src="/images/cup-of-tea-g4cf6758b1_500x500.jpg" alt="">
+                        <h3>Insumos</h3>
                     </div>
                 </article>
                 
             </div>
-        </section>
+        </section> -->
         <section>
-            <h2>Destacados</h2>
+            <h2>Tipo de productos: <%= locals.typeProduct ? locals.typeProduct : 'todos' %></h2>
             <div class="products">                
                 <!-- Consulta todos los productos destacados type=mas-vendido -->
-                <% products.forEach(product => { 
-                    if(product.type === 'mas-vendido') {   
-                %>
+                <% products.forEach(product => { %>
                     <article class="article-products">
                         <div class="coffee">
                             <a href="/product/product-details/<%= product.id %>">
@@ -76,16 +70,12 @@
                             </a>
                         </div>
                     </article>
-                <%  }}) %>
+                <% }) %>
             </div>
-        </section>
-        <section>
-            <h1>¿Quienes somos?</h1>
-            <p class="p-about-us">Lorem ipsum dolor sit amet consectetur adipisicing elit. At unde velit minus quas incidunt nihil, a non voluptate. Corrupti eaque iste amet, fugit dignissimos vitae quaerat nisi dolorem minima culpa quasi totam porro aspernatur neque asperiores mollitia. Praesentium, maiores beatae!</p>
         </section>
     </main>
     
     <!-- INCLUDE FOOTER -->
-    <%- include('./partials/footer')  %>
+    <%- include('../partials/footer')  %>
 </body>
 </html>

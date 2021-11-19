@@ -18,11 +18,16 @@ const upload= multer({storage:storage})
 
 const productController = require('../controllers/productController')
 
-router.get("/myProducts", productController.myProducts);
+
 router.get("/product-cart", productController.productCart);
 
+/* LIST PRODUCT */
+router.get("/list-products",productController.listProducts )
+
+
 /* CREATE PRODUCT */
-router.post("/create",upload.single('image'), productController.create )
+router.get("/myProducts", productController.create);
+router.post("/create",upload.single('image'), productController.processCreate )
 
 /* GET PRODUCT */
 router.get("/product-details/:id", productController.productDetails);

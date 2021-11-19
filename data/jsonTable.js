@@ -30,6 +30,11 @@ let model = function(tableName) {
         all() {
             return this.readFile();
         },
+        filter(field, text){
+            let rows = this.readFile();
+            
+           return rows.filter(elemento => elemento[field] === text);
+        },
         find(id) {
             let rows = this.readFile();
             return rows.find(row => row.id == id)

@@ -3,14 +3,27 @@ const productsModel = jsonTable("products");
 
 /* Contine los controladores del index */
 const productController = {
+
   /*  index: (req,res)=>{
          res.render('index',{about, 'menu': listaPlatos})
      }, */
-  myProducts: (req, res) => {
-    res.render("products/myProducts");
-  },
+  
   productCart: (req, res) => {
     res.render("products/productCart");
+  },
+  listProducts: (req, res) =>{
+    let typeProduct = req.query.type
+    
+    res.locals.typeProduct = typeProduct
+
+    let products = []
+    if(typeProduct){
+      products = productsModel.filter('category',typeProduct)
+      //console.log(productsModel.filter('category',typeProduct));
+    }else{
+      products = productsModel.all()
+    }
+    res.render('products/list-products', {products})
   },
   productDetails: (req, res) => {
     let id = req.params.id;
@@ -44,7 +57,10 @@ const productController = {
 
     res.render("products/productDetails", { product });
   },
-  create: (req,res) => {
+  create: (req, res) => {
+    res.render("products/myProducts");
+  },
+  processCreate: (req,res) => {
     let id = productsModel.nextId()
     let image = ''
 
