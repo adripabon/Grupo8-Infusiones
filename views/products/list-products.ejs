@@ -9,7 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/styles-slide.css">
     <link rel="stylesheet" href="/css/styles-navbar.css">
-    <link rel="stylesheet" href="/css/styles-index.css">
+    <link rel="stylesheet" href="/css/styles-list-product.css">
 
 </head>
 <body>
@@ -17,35 +17,6 @@
     <%- include('../partials/header')  %>
 
     <main>
-        <!-- <section>
-            <h2>Productos</h2>
-            <div class="products">                
-                
-                <article class="article-products-seccion">
-                    <div class="coffee">
-                        <a href="/product/product-details">
-                            <img src="/images/coffee-g0459fe78a_500x500.jpg" alt="">
-                            <h3>Café</h3>
-                        </a>
-                    </div>
-                </article>
-
-                <article class="article-products-seccion">
-                    <div class="tea">
-                        <img src="/images/herbal-tea-g041759343_500x500.jpg" alt="">
-                        <h3>Té</h3>
-                    </div>
-                </article>
-
-                <article class="article-products-seccion">
-                    <div class="supplies">
-                        <img src="/images/cup-of-tea-g4cf6758b1_500x500.jpg" alt="">
-                        <h3>Insumos</h3>
-                    </div>
-                </article>
-                
-            </div>
-        </section> -->
         <section>
             <h2>Tipo de productos: <%= locals.typeProduct ? locals.typeProduct : 'todos' %></h2>
             <div class="products">                
