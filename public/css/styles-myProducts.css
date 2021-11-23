@@ -39,7 +39,7 @@ form {
     display: flex;
     flex-direction: column;
     text-align: center;
-    align-items:center
+    align-items:center;
 
 }
 
@@ -53,6 +53,7 @@ input{
     border-top: none;
     width: 100%;
     margin-top: 10px;
+    font-weight: 400;
 }
 input:focus{
     outline: none;
@@ -94,7 +95,10 @@ button {
     justify-content: center;
 }
 
-
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: rgb(214, 205, 205);
+    opacity: 1; /* Firefox */
+  }
 
 input:focus~label,
 input:valid~label{

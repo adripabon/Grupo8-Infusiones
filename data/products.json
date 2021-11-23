@@ -44,10 +44,7 @@
   "name": "Rooibos Caramelo",
   "description": "eget tempus vel pede morbi porttitor lorem id ligula suspendisse ornare consequat lectus in est risus auctor sed tristique in tempus sit amet sem fusce consequat nulla nisl",
   "category": "insumos",
-  "price": [
-   "4057.03,0",
-   ""
-  ],
+  "price": 4057.03,
   "type": "mas-vendido",
   "image": "PRODUCTS-1636821188576.jpg"
  },
@@ -286,7 +283,7 @@
   "name": "Gold en Monkey",
   "description": "viverra dapibus nulla suscipit ligula in lacus curabitur at ipsum ac tellus semper interdum mauris ullamcorper purus sit amet nulla quisque arcu libero rutrum ac lobortis vel",
   "price": 1771.4,
-  "discount": 33,
+  "discount": 0,
   "category": "insumos",
   "image": "PRODUCTS-xanela-paraiso.jpg",
   "type": "banner"

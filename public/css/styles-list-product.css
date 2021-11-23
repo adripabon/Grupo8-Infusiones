@@ -233,7 +233,8 @@ main section .price-discount{
 }
 
 main section .price{
-    width: 20%;
+    width: auto;
+    padding: 0px 10px 0px 0px;
     display: flex;
 }
 
@@ -407,7 +408,7 @@ footer .footer-h4{
     }
 
     main section .price{
-        width: 30%;
+        width: auto;
         display: flex;
     }
 

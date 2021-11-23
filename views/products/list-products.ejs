@@ -30,9 +30,18 @@
                                     <a href="/product/product-cart/<%= product.id %>"><div class="div-bag"><i class="fas fa-cart-plus"></i></div></a>
                                 </div>
                                 <div class="div-price">
-                                    <p class="price-discount">$ <%= product.price %></p>
-                                    <p class="price">$ xxxxx</p>                      
-                                    <p class="discount"><%= product.discount %>%</p>
+                                    <!-- Se valida si el producto tiene descuento -->
+                                    <% if (product.discount != 0 && product.discount != undefined) { 
+                                        let priceDiscount =  product.price - ((product.discount / 100) * product.price)
+                                        priceDiscount = Math.round(priceDiscount)
+                                    %>
+                                        <p class="price-discount">$ <%= product.price %></p>
+                                        <p class="price">$ <%= priceDiscount %></p>                      
+                                        <p class="discount"><%= product.discount %>%</p>
+                                    <% }else{ %>
+                                        <p class="price">$ <%= product.price %></p>
+                                    <% } %>
+                                    
                                 </div>
                                 <div class="popular-products">
                                     <h3 class="title-product"><%= product.name %></h3>

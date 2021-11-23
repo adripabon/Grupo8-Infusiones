@@ -112,6 +112,8 @@ header .burger-menu {
 }
 
 .price{
+    width: auto;
+    padding: 0px 10px 0px 0px;
     color: #54594D;
     text-align: left;
     font-weight: 400;
@@ -224,7 +226,7 @@ main section .price-discount{
 }
 
 main section .price{
-    width: 20%;
+    width: auto;
     display: flex;
 }
 
@@ -398,7 +400,7 @@ footer .footer-h4{
     }
 
     main section .price{
-        width: 30%;
+        width: auto;
         display: flex;
     }
 
