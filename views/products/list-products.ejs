@@ -18,7 +18,7 @@
 
     <main>
         <section>
-            <h2>Tipo de productos: <%= locals.typeProduct ? locals.typeProduct : 'todos' %></h2>
+            <h1><%= locals.typeProduct ? locals.typeProduct : 'todos' %></h1>
             <div class="products">                
                 <!-- Consulta todos los productos destacados type=mas-vendido -->
                 <% products.forEach(product => { %>

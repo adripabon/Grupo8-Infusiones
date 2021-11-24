@@ -9,11 +9,6 @@ body {
     background-color: white;
 }
 
-main{
-    padding: 90px 0px 20px 0px;
-    max-width:none;
-}
-
 h2, h3 {
     font-weight: 400;
     color: #273940;
@@ -30,10 +25,6 @@ p {
 }
 
 /* HEADER */
-
-.slideshow-container, .header-navegation{
-    display: none;
-}
 
 header .header-block{
     position: relative;
@@ -121,6 +112,8 @@ header .burger-menu {
 }
 
 .price{
+    width: auto;
+    padding: 0px 10px 0px 0px;
     color: #54594D;
     text-align: left;
     font-weight: 400;
@@ -212,11 +205,8 @@ main .product-section-title{
 
 main h1{
     font-weight: 400;
-    font-size: 30px;
     text-align: center;
     font-size: 35px;
-    color: #273940;
-    text-transform: capitalize;
 }
 
 main section .div-price{
@@ -237,7 +227,6 @@ main section .price-discount{
 
 main section .price{
     width: auto;
-    padding: 0px 10px 0px 0px;
     display: flex;
 }
 

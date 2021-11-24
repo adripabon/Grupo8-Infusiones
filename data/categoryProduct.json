@@ -1,0 +1,17 @@
+[
+    {
+        "id": 1,
+        "name": "insumos",
+        "descripcion": "Insumos"
+    },
+    {
+        "id": 2,
+        "name": "te",
+        "descripcion": "Te"
+    },
+    {
+        "id": 3,
+        "name": "café",
+        "descripcion": "Café"
+    }
+]

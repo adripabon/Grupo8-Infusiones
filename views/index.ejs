@@ -63,14 +63,14 @@
                     if(product.type === 'mas-vendido') {   
                 %>
                     <article class="article-products">
-                        <div class="coffee">
+                        <div class="coffee div-product">
                             <a href="/product/product-details/<%= product.id %>">
                                 <div class="div-img-bag">
                                     <img src="/images/<%= product.image %>" alt="">
-                                    <a href="/product/product-cart/<%= product.id %>"><div class="div-bag"><i class="fas fa-cart-plus"></i></div></a>
+                                    
                                 </div>
                                 <div class="div-price">
-                                    <!-- Se valida si el producto tiene descuento -->
+                                    <% /* Validamos si tiene o no promoción */ %>
                                     <% if (product.discount != 0 && product.discount != undefined) { 
                                         let priceDiscount =  product.price - ((product.discount / 100) * product.price)
                                         priceDiscount = Math.round(priceDiscount)
@@ -84,7 +84,8 @@
                                 </div>
                                 <div class="popular-products">
                                     <h3 class="title-product"><%= product.name %></h3>
-                                    <p class="description-product tooltiptext"><%= product.description %></p>
+                                    <a href="/product/product-cart/<%= product.id %>"><div class="div-bag">¡Comprar ya!<i class="fas fa-cart-plus"></i></div></a>
+                                    <p class="description-product tooltiptext"><%= //product.description %></p>
                                 </div>
                             </a>
                         </div>

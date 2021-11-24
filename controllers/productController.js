@@ -1,6 +1,9 @@
 const jsonTable = require("../data/jsonTable");
 const productsModel = jsonTable("products");
 
+const categoryProduct = jsonTable("categoryProduct");
+const typeProduct = jsonTable("typeProduct");
+
 /* Contine los controladores del index */
 const productController = {
 
@@ -35,7 +38,9 @@ const productController = {
   edit: (req, res) => {
     let id = req.params.id;
     const product = productsModel.find(id);
-    res.render("products/edit-myProducts", { product });
+    const category = categoryProduct.all()
+    const type = typeProduct.all()
+    res.render("products/edit-myProducts", { product, category, type });
   },
 
   update: (req, res) => {

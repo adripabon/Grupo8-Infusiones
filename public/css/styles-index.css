@@ -6,7 +6,7 @@
 }
 
 body {
-    background-color: white;
+    background-color: #f4f4f4;
 }
 
 h2, h3 {
@@ -80,8 +80,6 @@ header nav ul li a {
     padding: 14px 16px;
 }
 
-
-
 header .burger-menu {
     display: flex;
     text-align: center;
@@ -131,13 +129,17 @@ main section h2{
 main section .products{
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: space-around;
 }
 
 main section .title-product{
     text-align: center;
     padding-bottom: 10px;
-    display: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    align-content: stretch;
+    height: 50px;
 }
 
 main section article img {
@@ -150,11 +152,10 @@ main section article a {
 }
 
 .coffee, .tea, .supplies  {
-    width: 85%;
+    width:90%;
     text-align: center;
-    background-color: #F2C0A2;
+    background-color: white;
     margin: auto;
-    border-radius: 15px;
 }
 
 main .article-products-seccion .product-section{
@@ -174,7 +175,7 @@ main .product-section-title{
 }
 
 .popular-products{
-    margin: 0 0 1em 0;
+    margin: 0 0 0 0;
     overflow: hidden;
     display: -webkit-box;
     -webkit-line-clamp: 4;
@@ -186,8 +187,7 @@ main .product-section-title{
 }
 
 .article-products-seccion{
-    background-color: white;
-    border-radius: 10px;
+    
     margin: 3px 0px 9px 0px;
     display: flex;
     justify-content: flex-start;
@@ -195,12 +195,12 @@ main .product-section-title{
 }
 
 .article-products{
-    background-color: white;
-    border-radius: 10px;
-    margin: 3px 0px 9px 0px;
+    box-shadow: 0 3px 12px rgba(0,0,0,.1);
+    margin: 8px 15px;
     display: flex;
     justify-content: flex-start;
     align-items: center;
+    position: relative;
 }
 
 main h1{
@@ -237,8 +237,31 @@ main section .discount{
     font-weight: bold;
 }
 
-main .div-bag, main .div-bag  i {
-    display: none;
+main .div-bag {
+    width: 100%;
+    background-color: #2c2a29;
+    border-radius: 0;
+    color: #fff;
+    border-top: 1px solid #c4c4c4;
+    height: 47px !important;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+main .div-bag i{
+    padding: 0px 5px;
+}
+
+.div-product{
+    position:inherit;
+    transition:all .4s ease;
+}
+
+.article-products:hover .div-product{
+    box-shadow: 0px 0px 20px 7px rgba(65,65,65,0.32);
+    top: -10px;
 }
 
 /* TOOLTIP MAIN */
@@ -303,9 +326,6 @@ footer .social .fab {
     font-size: 2rem
 }
 
-footer .footer-h4{
-    /* color: aliceblue; */
-}
 
 /* responsive devices*/
 
@@ -322,10 +342,7 @@ footer .footer-h4{
     header .header-block{
         height: 100px;
     }
-    /* header .header-icon{
-        width: 10%;
-    } */
-    
+       
     header .link-index{
         width: 25%;
     }
@@ -367,17 +384,16 @@ footer .footer-h4{
     }
 
     .article-products-seccion{
-        background-color: white;
-        border-radius: 10px;
+       
         margin: 8px 0px;
         width: 33%;
     }
 
     .article-products{
-        background-color: white;
-        border-radius: 10px;
-        margin: 8px 0px;
-        width: 33%;
+       
+        margin: 8px 10px;
+        width: 30%;
+        box-shadow: 0 3px 12px rgb(0 0 0 / 10%);
     }
 
     main h1{
@@ -393,10 +409,6 @@ footer .footer-h4{
         font-weight: 300;
         color: #54594D;
         text-align: center;
-    }
-
-    main section .title-product {
-        display: block;
     }
 
     main section .price{
@@ -517,44 +529,22 @@ footer .footer-h4{
 
     main section .div-price{
         margin: 10px 10px
-    }
+    }  
 
-    main .div-img-bag{
-        position: relative;
-    }
-
-    main .div-bag {
-        position: absolute;
-        width: 84%;
-        left: 27px;
-        bottom: 13px;
-        background-color: #9aa681;
-        fill-opacity: 0.7;
-        border: 1px solid #5A7356;
-        height: 49px;
-        display: flex;
-        text-align: center;
-        align-items: center;
-        justify-content: space-around;
-        
-    }
-
-    main .div-bag{
+    .div-bag{
         visibility: hidden;
-        transition: all 200ms ;
+        transition:all .1s ease;        
     }
 
-    .div-img-bag:hover .div-bag{
+    .article-products:hover .div-bag {
         visibility: visible;
     }
-
-
 
     main .div-bag i,  main .div-bag a{
         display: flex;
         align-items: center;
         justify-content: space-around;
-        font-size: 1.5rem
+        /* font-size: 1.5rem */
     }
 
     /* FOOTER */
