@@ -77,19 +77,7 @@ header nav ul li a {
     display: block;
     color: white;
     text-align: center;
-    padding: 14px 16px;
-}
-
-header .burger-menu {
-    display: flex;
-    text-align: center;
-    background-color: #273940;
-    color: white;
-    padding: 15px;
-    border-radius: 5px;
-    width: fit-content;
-    margin: auto;
-    margin-bottom: 3px;
+    padding: 10px 12px;
 }
 
 /*BANNER*/
@@ -143,7 +131,7 @@ main section .title-product{
 }
 
 main section article img {
-    width: 90%;
+    width: 70%;
     padding: 10px;
 }
 
@@ -230,8 +218,35 @@ main section .price{
     display: flex;
 }
 
+main section .div-discount{
+    border: 1px solid #F2CA69;
+    position: absolute;
+    top: 20px;
+    left: 0px;
+    background-color: #F2CA69;
+    border-radius: 0px 40px 40px 0px;
+    width: 20%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+main .div-edit{
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    background-color: #F2CA69;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 39%);
+}
+
+main .div-edit i {
+    color: black;
+    font-size: 20px;
+    padding: 5px;
+}
+
 main section .discount{
-    width: 30%;
+    /* width: 30%; */
     display: flex;
     color: #5A7356;
     font-weight: bold;
@@ -376,7 +391,14 @@ footer .social .fab {
     }
 
     /* MAIN */
-    
+    .div-product {
+        width: 100%;
+    }
+
+    main section article img {
+        width: 90%;
+    }
+
     main section h2{
         padding-left: 15px;
         text-align: left;
@@ -528,7 +550,7 @@ footer .social .fab {
     }
 
     main section .div-price{
-        margin: 10px 10px
+        margin: 4px 10px
     }  
 
     .div-bag{
