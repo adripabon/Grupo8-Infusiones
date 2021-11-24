@@ -10,7 +10,7 @@
                 </a>
                 <ul class="nav-menu">
                     <li class="nav-item">
-                        <a href="/product/list-products?type=te" class="nav-link">Infusiones</a>
+                        <a href="/product/list-products?type=te" class="nav-link">Te</a>
                     </li>
                     <li class="nav-item">
                         <a href="/product/list-products?type=café" class="nav-link">Café</a>
@@ -18,9 +18,7 @@
                     <li class="nav-item">
                         <a href="/product/list-products?type=insumos" class="nav-link">Insumos</a>
                     </li>
-                    <li class="nav-item">
-                        <a href="/product/myProducts" class="nav-link">Nuevo Producto</a>
-                    </li>
+                    
                 </ul>
                 <div class="hamburger">
                     <span class="bar"></span>
@@ -28,7 +26,16 @@
                     <span class="bar"></span>
                 </div>
                 <div class="header-icon">
-                    <a href="/user/login"><i class="fas fa-user-circle"></i></a>
+                    <div class="dropdown">
+                        <a class="dropbtn" href="#" ><i class="fas fa-user-circle"></i></a>
+                        <!-- <button class="dropbtn">Dropdown</button> -->
+                        <div class="dropdown-content">
+                          <a href="#">Mi usuario</a>
+                          <a href="/product/myProducts">Nuevo producto</a>
+                        </div>
+                      </div>
+
+                    
                     <a href="/product/product-cart"><i class="fas fa-shopping-bag"></i></a>
                 </div>
             </nav>

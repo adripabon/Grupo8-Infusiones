@@ -117,7 +117,7 @@ main section h2{
 main section .products{
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: flex-start;
 }
 
 main section .title-product{
@@ -195,6 +195,7 @@ main h1{
     font-weight: 400;
     text-align: center;
     font-size: 35px;
+    text-transform: capitalize;
 }
 
 main section .div-price{
