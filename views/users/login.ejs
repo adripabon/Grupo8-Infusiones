@@ -1,44 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
-    integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+        integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/styles-index.css">
     <link rel="stylesheet" href="/css/styles-navbar.css">
     <link rel="stylesheet" href="/css/styles-login.css">
-    
+
     <title>Ingresa tu cuenta</title>
-    <script type="text/javascript" src="https://ff.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=hSsTzTUjJb6X8LloV0BP5-z86XTa0K5FIUN2NOaRf1MwrPSoN3wUZUiSs2NYPcHUyFC9SnGCnTiWTk-dUCml87w_YOu2NB39oFWp6GwkKDY8HeSaZn6uNPcvGpu_3OUbyqxaxD1rHNLCZCXD8lekg9tRMbm6vR4jcqF1A23_TuBzBjg4081jBiUtJid-_pA6GXLoZdBOfhA-DeW25NdcPGfQvn71_GKSBMZvY2Bee6_uC1kdPeTSZ7w13CD3fpKeQzW7XInxSpciWxeKAtttS2rkITEfHotlrP5wT6Q6kL8EW8Ug0nYLbPZyrbUC4rfuDchN0LX1SRQUTPiIQU1ubb2SslIU5P0gjFSeMDj7j1RBePKZXy3uDBZe5_ZdigwTx03_9qmgPGImo6mgZgl_qMSJ0bvNNw38zWSiFTT8UynkV80HIi1A2xQ1kn9zF8G86VSSQU2xVfLALcoXg_-ppujYVUmTtydGKMdOMJcml50h01_P9lnTY980_5POYnNb3MMsZ8g3IF0wEvEpmmGfCuG_sLm5JjkpTnzZHFt6e24MgRrR5mIEykYQpfA3Yt9zx4z-0o8O0r8VXBeUi6wrs6dSadUBW4iTUrKcyKZWETd3eEGkAQvcm_oef-vDX1nKUpnU2vD25g4se7cEpsjfgQp3P5VtJ7zH1Ct87qJmOy5Vfp79lw5WRpw5qILmuga5yFvmwqVJswPkoEnAhfgL5kGB4_E-MU8eUCBfXfCErYGThmZQElwRg2zGdn3Avss0Gt3-Vypdi0uJlODu0YzimSdRzXkodKUWAvVSohGgk38At8wZ9VyadL9JjJAkNx8NrJLX4G-H_rGU4QFLJ9_83T1bdX8G1_i2-uJ9LEoaAC_WGq6AsJutQfHwtGsotfdoxzFQa0HGRCJMehnTXmamrxf3WAMJg0VyGuV1ZT5h2Ecw7rIroTAvQPGFm1z3JRz9gwKKG8RvSSxHaF7NLO5j4MF-EYzjNPINoc2j0nWA6QWANjD9iumiBw4LtcGVhaf1Ua2JKWgPqk-2tZcMFKY-NMutKt_p9K4W6EF6_xgD7ApSCKDUEEE63k35WYim-CK7J5q_dOg-cZ1GGniXZUqT72oeTb_mibxwU5KildQVY9ZvwdemfboD1vmMxkhoxpzC-Oc0EN13fUOiEsQcNU8hg-v6GTqgYve9rLhTJd0dti-UeMkD7kzdFZgU6SJ_pNkRvkRV1EWTThY6euWGLKIiUA" nonce="48af59d806fb1771dceb1d34b1850b3a" charset="UTF-8"></script><link rel="stylesheet" crossorigin="anonymous" href="https://ff.kis.v2.scr.kaspersky-labs.com/E3E8934C-235A-4B0E-825A-35A08381A191/abn/main.css?attr=aHR0cHM6Ly9tYWlsLWF0dGFjaG1lbnQuZ29vZ2xldXNlcmNvbnRlbnQuY29tL2F0dGFjaG1lbnQvdS8wLz91aT0yJmlrPWVlZjIzYzIzMzgmYXR0aWQ9MC4xJnBlcm1tc2dpZD1tc2ctZjoxNzE1MjcwNzA0MDk4NzA1NzU3JnRoPTE3Y2RkZDllMTM3MDAxNWQmdmlldz1hdHQmZGlzcD1zYWZlJnJlYWxhdHRpZD1mX2t2aGFweTNpMCZzYWRkYmF0PUFOR2pkSjhvY3pyUWlkWE9GdDBocmtTSTM3cWlCNWRrYmp4aU9oR2Fhb2ZVaFZjdjNBUW5kdHdXRk5YQVZERDMxamw3RzZVdldHQkc4d19SWFVVdkl0MXlRNEFpZnctdllOT2lUVGdpLUlCdm5VVmpyYVAxZi1fbk5Ic2o5MDlqNm1KMmpRQkY3NEdXVHJHZGlSVWpHYVd5YUZ1dm9mNzVELS1OeVdrRjRnSEJEcDNoTW9hUFZSWWVBVmxtOGduTkh0UFFsNWplbFJsa0hnN3hyY1lvRUhhOVBUc1dFMjdqQW9kdTRTX3JGM1VNNXFwRUdaSXZmU29ydFpnX3UtYU84SnN3V2lDTzBxdzE2cHVnTEh0XzQtLWxyUi1HYy02Sk85ZWpaakVqblBTU1M3SFpyanlSR2d5OUhFYUlVREcyZEFCbFFlSmFQV1Z1MlV1UWFpRzBBclZwVFFuOUFVX2N0eTIyb0hVNXR6S1ZKYWNIWTgwOV9jdGJDSnYxRUYyYkFfMTkyRF8zQWREWHNiMVhRTVczTTFmTDVtV2o4YWdfZjI5ODZGT0xJUFZXc21xTmp2ay1pWkVqT3lCeFF1TEVqSmRyenRodVFYQ2VHQ3dYUUk0UVZxOUQtWGZGRGZtUXpKdUVBcmlKNnZzeDIwbG8yellneVkyWFJBcnVpZ2ZMNWtDd21SMmxlN0FPTllrSnJZQVJFZWZPaHRPSnhPa1R0VmRDMGVEeTl5QmN6SEJwR0RNLWo2TnQxSHZhemllZVktV0RkZnpVOUkwLVFibkplS2dwTm1XZ3NUaVNQNmJzZy1IclAtb3ZBVHBTSGQycGUtN2dJRTBiT1JxUlhqal9XaVBTZE5SUnRSMm4wQWdxZ3NZaXowRTF5NHVQVTNoVTdCUWIzNmlLY3JORUNRSWllNDRuS1dCa1dlalNSMU0"/></head>
-<body>  
+    <script type="text/javascript"
+        src="https://ff.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=hSsTzTUjJb6X8LloV0BP5-z86XTa0K5FIUN2NOaRf1MwrPSoN3wUZUiSs2NYPcHUyFC9SnGCnTiWTk-dUCml87w_YOu2NB39oFWp6GwkKDY8HeSaZn6uNPcvGpu_3OUbyqxaxD1rHNLCZCXD8lekg9tRMbm6vR4jcqF1A23_TuBzBjg4081jBiUtJid-_pA6GXLoZdBOfhA-DeW25NdcPGfQvn71_GKSBMZvY2Bee6_uC1kdPeTSZ7w13CD3fpKeQzW7XInxSpciWxeKAtttS2rkITEfHotlrP5wT6Q6kL8EW8Ug0nYLbPZyrbUC4rfuDchN0LX1SRQUTPiIQU1ubb2SslIU5P0gjFSeMDj7j1RBePKZXy3uDBZe5_ZdigwTx03_9qmgPGImo6mgZgl_qMSJ0bvNNw38zWSiFTT8UynkV80HIi1A2xQ1kn9zF8G86VSSQU2xVfLALcoXg_-ppujYVUmTtydGKMdOMJcml50h01_P9lnTY980_5POYnNb3MMsZ8g3IF0wEvEpmmGfCuG_sLm5JjkpTnzZHFt6e24MgRrR5mIEykYQpfA3Yt9zx4z-0o8O0r8VXBeUi6wrs6dSadUBW4iTUrKcyKZWETd3eEGkAQvcm_oef-vDX1nKUpnU2vD25g4se7cEpsjfgQp3P5VtJ7zH1Ct87qJmOy5Vfp79lw5WRpw5qILmuga5yFvmwqVJswPkoEnAhfgL5kGB4_E-MU8eUCBfXfCErYGThmZQElwRg2zGdn3Avss0Gt3-Vypdi0uJlODu0YzimSdRzXkodKUWAvVSohGgk38At8wZ9VyadL9JjJAkNx8NrJLX4G-H_rGU4QFLJ9_83T1bdX8G1_i2-uJ9LEoaAC_WGq6AsJutQfHwtGsotfdoxzFQa0HGRCJMehnTXmamrxf3WAMJg0VyGuV1ZT5h2Ecw7rIroTAvQPGFm1z3JRz9gwKKG8RvSSxHaF7NLO5j4MF-EYzjNPINoc2j0nWA6QWANjD9iumiBw4LtcGVhaf1Ua2JKWgPqk-2tZcMFKY-NMutKt_p9K4W6EF6_xgD7ApSCKDUEEE63k35WYim-CK7J5q_dOg-cZ1GGniXZUqT72oeTb_mibxwU5KildQVY9ZvwdemfboD1vmMxkhoxpzC-Oc0EN13fUOiEsQcNU8hg-v6GTqgYve9rLhTJd0dti-UeMkD7kzdFZgU6SJ_pNkRvkRV1EWTThY6euWGLKIiUA"
+        nonce="48af59d806fb1771dceb1d34b1850b3a" charset="UTF-8"></script>
+    <link rel="stylesheet" crossorigin="anonymous"
+        href="https://ff.kis.v2.scr.kaspersky-labs.com/E3E8934C-235A-4B0E-825A-35A08381A191/abn/main.css?attr=aHR0cHM6Ly9tYWlsLWF0dGFjaG1lbnQuZ29vZ2xldXNlcmNvbnRlbnQuY29tL2F0dGFjaG1lbnQvdS8wLz91aT0yJmlrPWVlZjIzYzIzMzgmYXR0aWQ9MC4xJnBlcm1tc2dpZD1tc2ctZjoxNzE1MjcwNzA0MDk4NzA1NzU3JnRoPTE3Y2RkZDllMTM3MDAxNWQmdmlldz1hdHQmZGlzcD1zYWZlJnJlYWxhdHRpZD1mX2t2aGFweTNpMCZzYWRkYmF0PUFOR2pkSjhvY3pyUWlkWE9GdDBocmtTSTM3cWlCNWRrYmp4aU9oR2Fhb2ZVaFZjdjNBUW5kdHdXRk5YQVZERDMxamw3RzZVdldHQkc4d19SWFVVdkl0MXlRNEFpZnctdllOT2lUVGdpLUlCdm5VVmpyYVAxZi1fbk5Ic2o5MDlqNm1KMmpRQkY3NEdXVHJHZGlSVWpHYVd5YUZ1dm9mNzVELS1OeVdrRjRnSEJEcDNoTW9hUFZSWWVBVmxtOGduTkh0UFFsNWplbFJsa0hnN3hyY1lvRUhhOVBUc1dFMjdqQW9kdTRTX3JGM1VNNXFwRUdaSXZmU29ydFpnX3UtYU84SnN3V2lDTzBxdzE2cHVnTEh0XzQtLWxyUi1HYy02Sk85ZWpaakVqblBTU1M3SFpyanlSR2d5OUhFYUlVREcyZEFCbFFlSmFQV1Z1MlV1UWFpRzBBclZwVFFuOUFVX2N0eTIyb0hVNXR6S1ZKYWNIWTgwOV9jdGJDSnYxRUYyYkFfMTkyRF8zQWREWHNiMVhRTVczTTFmTDVtV2o4YWdfZjI5ODZGT0xJUFZXc21xTmp2ay1pWkVqT3lCeFF1TEVqSmRyenRodVFYQ2VHQ3dYUUk0UVZxOUQtWGZGRGZtUXpKdUVBcmlKNnZzeDIwbG8yellneVkyWFJBcnVpZ2ZMNWtDd21SMmxlN0FPTllrSnJZQVJFZWZPaHRPSnhPa1R0VmRDMGVEeTl5QmN6SEJwR0RNLWo2TnQxSHZhemllZVktV0RkZnpVOUkwLVFibkplS2dwTm1XZ3NUaVNQNmJzZy1IclAtb3ZBVHBTSGQycGUtN2dJRTBiT1JxUlhqal9XaVBTZE5SUnRSMm4wQWdxZ3NZaXowRTF5NHVQVTNoVTdCUWIzNmlLY3JORUNRSWllNDRuS1dCa1dlalNSMU0" />
+</head>
+
+<body>
     <!-- INCLUDE HEADER -->
-    <%- include('../partials/header')  %>
+    <%- include('../partials/header') %>
 
-    <main>
-        <form class="form" method="POST" id="form" action="/">
-           <div class="form">
-               <h1>Inicía Sesión</h1>
-                
-                <div class="grupo">
-                    <input type="text" class="usuario" name="usuario" required>
-                    <label>Usuario</label>
-                </div>    
+        <main>
+            <form class="form" method="POST" id="form" action="/user/login">
+                <div class="form">
+                    <h1>Inicía Sesión</h1>
 
-                <div class="grupo">
-                    <input type="password" class="usuario" name="usuario" required>
-                    <label>Password</label>
-                </div>  
-                
-                <button class="button-login">Iniciar sesion<a href="user/login"></a></button>
-            </div>
-            <p>No tienes una cuenta? <a href="/user/register">Registrate aqui</a></p>
-        </form>  
-    </main>
+                    <div class="grupo">
+                        <input type="email" class="usuario" name="email">
+                        <% if (locals.errors && errors.email) { %>
+                            <span class="barra">
+                                <%= errors.email.msg %>
+                            </span>
+                            <% } %>
+                                <label>Usuario</label>
+                    </div>
 
-    <!-- INCLUDE FOOTER -->
-    <%- include('../partials/footer')  %>
+                    <div class="grupo">
+                        <input type="password" class="usuario" name="password">
+                        <label>Password</label>
+                    </div>
+                    <div class="grupo group-remember">
+                        <input type="checkbox" class="usuario" name="remember">
+                        <label class="remember">Recordar usuario</label>
+                    </div>
+
+                    <button class="button-login">Iniciar sesion<a href="user/login"></a></button>
+                </div>
+                <p>No tienes una cuenta? <a href="/user/register">Registrate aqui</a></p>
+            </form>
+        </main>
+
+        <!-- INCLUDE FOOTER -->
+        <%- include('../partials/footer') %>
 </body>
+
 </html>

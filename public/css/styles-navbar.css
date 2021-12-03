@@ -72,6 +72,18 @@ header .header-icon{
     
 }
 
+.navbar-avatar{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.navbar-avatar img{
+    width: 100px;
+    height: 100px;
+    border: 1px solid darkgrey
+}
+
 /* MENU PROFILE */
 
 

@@ -5,7 +5,7 @@
                 <!-- <a href="#" class="nav-logo">WebDev.</a> -->
                 <a class="link-index" href="/">
                     <div class="logo">
-                        <img src="/images/logo-800x300.fw.png" alt="Coffetee">
+                        <img src="/images/logo-800x300.fw.png" alt="Coffetee" />
                     </div>
                 </a>
                 <ul class="nav-menu">
@@ -18,7 +18,6 @@
                     <li class="nav-item">
                         <a href="/product/list-products?type=insumos" class="nav-link">Insumos</a>
                     </li>
-                    
                 </ul>
                 <div class="hamburger">
                     <span class="bar"></span>
@@ -27,90 +26,119 @@
                 </div>
                 <div class="header-icon">
                     <div class="dropdown">
-                        <a class="dropbtn" href="#" ><i class="fas fa-user-circle"></i></a>
+                        <a class="dropbtn" href="#"><i class="fas fa-user-circle"></i></a>
                         <!-- <button class="dropbtn">Dropdown</button> -->
                         <div class="dropdown-content">
-                          <a href="#">Mi usuario</a>
-                          <a href="/product/myProducts">Nuevo producto</a>
+                            <% if (locals.isLogged) { %>
+                                <a href="/user/profile">
+                                    <div class="navbar-avatar">
+                                        <img src="/images/avatar/<%= locals.userLogged.avatar %>" width="40"
+                                            style="border-radius: 100%" />
+                                        <p>
+                                            <%= locals.userLogged.first_name %>
+                                        </p>
+                                        <p>
+                                            Administrador: <%= locals.userLogged.isAdmin===true ? ' Si' : ' No' %>
+                                        </p>
+                                    </div>
+                                </a>
+                                <% if (locals.userLogged.isAdmin) { %>
+                                    <a href="/product/myProducts">Nuevo producto</a>
+                                    <% } %>
+                                        <a href="/user/logout">Cerrar sesión</a>
+                                        <% }else{ %>
+                                            <a href="/user/login">Iniciar sesión</a>
+                                            <% } %>
                         </div>
-                      </div>
+                    </div>
 
-                    
                     <a href="/product/product-cart"><i class="fas fa-shopping-bag"></i></a>
                 </div>
             </nav>
         </div>
         <div class="slideshow-container">
-
             <div class="mySlides fade">
-              <div class="numbertext">1 / 3</div>
-              <img src="/images/banner/img_banner_1.jpg" style="width:100%">
-              <div class="banner-description">
-                <p class="price">$ 400</p>
-                <h2>Título del producto</h2>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Rerum eos sint repellendus veniam laborum porro doloribus exercitationem quo. Qui molestiae autem voluptates accusamus in laborum</p>
-                </div>
-            </div>
-            
-            <div class="mySlides fade">
-                <div class="numbertext">2 / 3</div>
-                <img src="/images/banner/img_banner_2.jpg" style="width:100%">
+                <div class="numbertext">1 / 3</div>
+                <img src="/images/banner/img_banner_1.jpg" style="width: 100%" />
                 <div class="banner-description">
                     <p class="price">$ 400</p>
                     <h2>Título del producto</h2>
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Rerum eos sint repellendus veniam laborum porro doloribus exercitationem quo. Qui molestiae autem voluptates accusamus in laborum</p>
+                    <p>
+                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Rerum eos
+                        sint repellendus veniam laborum porro doloribus exercitationem quo.
+                        Qui molestiae autem voluptates accusamus in laborum
+                    </p>
                 </div>
             </div>
-            
+
             <div class="mySlides fade">
-              <div class="numbertext">3 / 3</div>
-              <img src="/images/banner/img_banner_3.jpg" style="width:100%">
-              <div class="banner-description">
-                <p class="price">$ 400</p>
-                <h2>Título del producto</h2>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Rerum eos sint repellendus veniam laborum porro doloribus exercitationem quo. Qui molestiae autem voluptates accusamus in laborum</p>
-                
+                <div class="numbertext">2 / 3</div>
+                <img src="/images/banner/img_banner_2.jpg" style="width: 100%" />
+                <div class="banner-description">
+                    <p class="price">$ 400</p>
+                    <h2>Título del producto</h2>
+                    <p>
+                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Rerum eos
+                        sint repellendus veniam laborum porro doloribus exercitationem quo.
+                        Qui molestiae autem voluptates accusamus in laborum
+                    </p>
                 </div>
             </div>
-            <br/>
+
+            <div class="mySlides fade">
+                <div class="numbertext">3 / 3</div>
+                <img src="/images/banner/img_banner_3.jpg" style="width: 100%" />
+                <div class="banner-description">
+                    <p class="price">$ 400</p>
+                    <h2>Título del producto</h2>
+                    <p>
+                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Rerum eos
+                        sint repellendus veniam laborum porro doloribus exercitationem quo.
+                        Qui molestiae autem voluptates accusamus in laborum
+                    </p>
+                </div>
+            </div>
+            <br />
             <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
             <a class="next" onclick="plusSlides(1)">&#10095;</a>
-            
-            </div>
-           
-            
-            <div class="header-navegation">
-              <span class="dot" onclick="currentSlide(1)"></span> 
-              <span class="dot" onclick="currentSlide(2)"></span> 
-              <span class="dot" onclick="currentSlide(3)"></span> 
-            </div>
-            
-            <script>
+        </div>
+
+        <div class="header-navegation">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+        </div>
+
+        <script>
             var slideIndex = 1;
             showSlides(slideIndex);
-            
+
             function plusSlides(n) {
-              showSlides(slideIndex += n);
+                showSlides((slideIndex += n));
             }
-            
+
             function currentSlide(n) {
-              showSlides(slideIndex = n);
+                showSlides((slideIndex = n));
             }
-            
+
             function showSlides(n) {
-              var i;
-              var slides = document.getElementsByClassName("mySlides");
-              var dots = document.getElementsByClassName("dot");
-              if (n > slides.length) {slideIndex = 1}    
-              if (n < 1) {slideIndex = slides.length}
-              for (i = 0; i < slides.length; i++) {
-                  slides[i].style.display = "none";  
-              }
-              for (i = 0; i < dots.length; i++) {
-                  dots[i].className = dots[i].className.replace(" active", "");
-              }
-              slides[slideIndex-1].style.display = "block";  
-              dots[slideIndex-1].className += " active";
+                var i;
+                var slides = document.getElementsByClassName("mySlides");
+                var dots = document.getElementsByClassName("dot");
+                if (n > slides.length) {
+                    slideIndex = 1;
+                }
+                if (n < 1) {
+                    slideIndex = slides.length;
+                }
+                for (i = 0; i < slides.length; i++) {
+                    slides[i].style.display = "none";
+                }
+                for (i = 0; i < dots.length; i++) {
+                    dots[i].className = dots[i].className.replace(" active", "");
+                }
+                slides[slideIndex - 1].style.display = "block";
+                dots[slideIndex - 1].className += " active";
             }
 
             const hamburger = document.querySelector(".hamburger");
@@ -118,7 +146,7 @@
             const navLink = document.querySelectorAll(".nav-link");
 
             hamburger.addEventListener("click", mobileMenu);
-            navLink.forEach(n => n.addEventListener("click", closeMenu));
+            navLink.forEach((n) => n.addEventListener("click", closeMenu));
 
             function mobileMenu() {
                 hamburger.classList.toggle("active");
@@ -129,7 +157,7 @@
                 hamburger.classList.remove("active");
                 navMenu.classList.remove("active");
             }
-            </script>
+        </script>
         <!--div class="banner">
             <img src="/images/tea-geefcd29f9_800x350.jpg" alt="Banner">
             <div class="banner-description">

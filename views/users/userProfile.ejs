@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+        integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/styles-index.css">
+    <link rel="stylesheet" href="/css/styles-navbar.css">
+    <link rel="stylesheet" href="/css/styles-productDetails.css">
+
+    <title>Usuario: Juan</title>
+</head>
+
+<body>
+
+    <!-- INCLUDE HEADER -->
+    <%- include('../partials/header') %>
+
+        <main>
+            <section>
+                <article>
+                    <div class="product-details">
+                        <h2>
+                            <%= locals.userLogged.first_name %>
+                                <%= locals.userLogged.last_name %>
+                        </h2>
+
+                        <div class="div-price">
+                            <img class="foto-article" src="/images/avatar/<%= locals.userLogged.avatar %>"
+                                alt="Café Colombia Molido">
+                            <div class="block-description">
+                                <h1 class="titulo">
+                                    <%= locals.userLogged.isAdmin ? 'Administrador' : 'Cliente' %>
+                                </h1>
+                                <!-- Se valida si el producto tiene descuento -->
+                                <p class="p">
+                                    <%= locals.userLogged.email %>
+                                </p>
+                                <p class="p">
+                                    <%= locals.userLogged.province %>
+                                </p>
+                                <p class="p">
+                                    <%= locals.userLogged.location %>
+                                </p>
+                                <p class="p">
+                                    <%= locals.userLogged.street %>
+                                </p>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="div-button">
+
+                        <a href="/product/edit/"><input type="submit" value="Editar" disabled></a>
+
+                        <form class="form-delete" method="post" action="/product/delete/zz?_method=DELETE">
+                            <input type="submit" value="Eliminar" disabled>
+                        </form>
+                    </div>
+
+                </article>
+            </section>
+        </main>
+
+        <!-- INCLUDE FOOTER -->
+        <%- include('../partials/footer') %>
+
+</body>
+
+</html>

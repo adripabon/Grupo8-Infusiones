@@ -30,10 +30,16 @@ let model = function(tableName) {
         all() {
             return this.readFile();
         },
-        filter(field, text){
+        filter(field, text, method){
             let rows = this.readFile();
-            
-           return rows.filter(elemento => elemento[field] === text);
+            let userObject
+
+            /* Filtra y devuelve un array con el resultado, lo otro devuelve el primer elemento encontrado. */
+            if(method === 1)
+                userObject = rows.filter(elemento => elemento[field] === text);
+            else
+                userObject = rows.find(elemento => elemento[field] === text);
+            return userObject
         },
         find(id) {
             let rows = this.readFile();

@@ -21,7 +21,7 @@ const productController = {
 
     let products = []
     if(typeProduct){
-      products = productsModel.filter('category',typeProduct)
+      products = productsModel.filter('category', typeProduct, 1)
       //console.log(productsModel.filter('category',typeProduct));
     }else{
       products = productsModel.all()

@@ -39,6 +39,17 @@ input{
 input:focus{
     outline: none;
 }
+
+.remember{
+    position: static;
+    padding: 0px 5px;
+}
+
+.group-remember{
+    display: flex;
+    align-items: center;
+}
+
 label {
     color:#c6c6c6;
     position: absolute;
@@ -76,6 +87,10 @@ input:valid~label{
 .button-login:hover{
     background-color:#55B28C;
     
+}
+
+.barra{
+    color: crimson;
 }
 
 @media (min-width: 768px) {
