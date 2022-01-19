@@ -1,6 +1,6 @@
 const jsonTable = require('../data/jsonTable')
-const productsModel = jsonTable('products')
-
+//const productsModel = jsonTable('products')
+let db = require("../database/models");
 
 /* Contine los controladores del index */
 const mainController = {
@@ -8,9 +8,18 @@ const mainController = {
         res.render('index',{about, 'menu': listaPlatos})
     }, */
     index: (req, res) => {
-        const products = productsModel.all()
+        //const products = productsModel.all()
+        
+        db.Products.findAll({
+            include: [
+              { association: "typeProduct" },
+              { association: "categoryProducts" }
+            ]
+          }).then((products) => {
+            res.render("index", { products });
+          })
 
-        res.render('index',{ products: products });
+        //res.render('index',{ products: products });
     }
 }
 

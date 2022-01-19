@@ -37,3 +37,11 @@
 ● Si se encontró con algún impedimento: Se debe reforzar los conocimientos en session.
 ● Qué va a hacer hoy: Culminar con el sprint 5.
 ```
+
+# DAILY 6
+
+```
+● Qué hizo ayer: Se inicia con el proceso de implementar el tema de base de datos.
+● Si se encontró con algún impedimento: Se debe reforzar los conocimientos en session.
+● Qué va a hacer hoy: Culminar con el sprint 6.
+```

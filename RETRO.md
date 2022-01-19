@@ -47,3 +47,13 @@
 4. Hacer menos: Desconectarnos del proyecto.
 5. Dejar de hacer: Dejar a último momento.
 ```
+
+# RETROSPECTIVA SPRINT 6
+
+```
+1. Comenzar a hacer: Entender e implementar el tema de base de datos.
+2. Hacer más: Programar reuniones para revisar el avance.
+3. Continuar haciendo: Reuniones de trabajo.
+4. Hacer menos: Desconectarnos del proyecto.
+5. Dejar de hacer: Dejar a último momento.
+```

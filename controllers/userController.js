@@ -1,5 +1,5 @@
-const jsonTable = require("../data/jsonTable");
-const userModel = jsonTable("users");
+let db = require("../database/models");
+const Op = db.Sequelize.Op;
 
 /* Se requiere el resultado de validaciones solamente */
 const { validationResult } = require('express-validator');
@@ -8,29 +8,33 @@ const bcrypt = require('bcryptjs')
 
 /* Contine los controladores de user */
 const userController = {
-    login: (req, res) => {
+    login: async (req, res) => {
         res.render('users/login');
     },
-    loginProcess: (req, res) =>{
+    loginProcess: async (req, res) =>{
          
-         let userToLoguin = userModel.filter('email', req.body.email, 2)
+        //let userToLoguin = userModel.filter('email', req.body.email, 2)
 		
+		let userToLoguin = await db.Users.findAll({
+			where: { email: req.body.email }
+		});
+
         //Valida si el usuario esta o no en bd
-		if(userToLoguin){
-			//console.log("aqui");
-            //console.log(userToLoguin);
+		if(userToLoguin.length > 0){
+			console.log("aqui");
+            console.log(userToLoguin[0].password);
             //console.log(userToLoguin.email + 'Aqui');
 			//Valida si el hash almacenado es igual a la contraseña ingresada en el form
-			let isOkThePassword = bcrypt.compareSync(req.body.password, userToLoguin.password)
+			let isOkThePassword = bcrypt.compareSync(req.body.password, userToLoguin[0].password)
 			if( isOkThePassword ){
 				//Se inicicaliza la variable de sesión
 				//Se elimina la propiedad password de la sesión por seguridad
 				
-                delete userToLoguin.password
-                delete userToLoguin.secondPassword
+                delete userToLoguin[0].password
+                delete userToLoguin[0].secondPassword
 
 				//Genera una sessión con el usuario logueado, lo que no tiene es el password por seguridad.
-                req.session.userLogged = userToLoguin
+                req.session.userLogged = userToLoguin[0]
 
 				//Si el usuario solicito recordar su usuario, se genera una cookie.
 				if(req.body.remember){
@@ -62,11 +66,11 @@ const userController = {
 		}
 		
     },
-    register: (req, res) => {
+    register: async (req, res) => {
 
         res.render('users/register');
     },
-    registerProcess: (req, res) =>{
+    registerProcess: async (req, res) =>{
         const resultValidation = validationResult(req);
 		
 		if (resultValidation.errors.length > 0) {
@@ -79,12 +83,15 @@ const userController = {
 		//console.log(req.body, req.file);
 
 		//Validamos que no exista el usuario con el mismo mail
-		let userInDB = userModel.filter('email', req.body.email, 2)
         
-		if(userInDB && userInDB != ''){
+		let userInDB = await db.Users.findAll({
+			where: { email: req.body.email }
+		});
+
+		if( userInDB.length > 0 ){
             //console.log(userInDB + "-" + req.body.email);
 			return res.render('users/register', {
-				/* DEvuelve un objeto literal */
+				/* Devuelve un objeto literal */
 				errors: { 
 					email: {
 						msg: 'Este email ya esta registrado'
@@ -96,23 +103,22 @@ const userController = {
 
         let row = {
             ...req.body,
+			id_profile: 2, 
             password: bcrypt.hashSync(req.body.password, 10),
-            secondPassword: bcrypt.hashSync(req.body.secondPassword, 10),
+            second_password: bcrypt.hashSync(req.body.secondPassword, 10),
             avatar: req.file.filename
         }
 
-        //console.log(row);
-
-        let userInsert = userModel.create(row)
-        
-        res.render('users/login');
-
+		db.Users.create(row)
+		.then(user => {
+			res.render("users/login")
+		})
     },
-    profile: (req, res) => {
+    profile: async (req, res) => {
         let user = []
         res.render('users/userProfile', { user })
     },
-    logout: (req, res) =>{
+    logout: async (req, res) =>{
         //Se elimina la cookie generada
 		res.clearCookie('userCoffte')
 		//Se destruye la sesión

@@ -1,95 +1,127 @@
-const jsonTable = require("../data/jsonTable");
-const productsModel = jsonTable("products");
-
-const categoryProduct = jsonTable("categoryProduct");
-const typeProduct = jsonTable("typeProduct");
+let db = require("../database/models");
+const Op = db.Sequelize.Op;
 
 /* Contine los controladores del index */
 const productController = {
 
-  /*  index: (req,res)=>{
-         res.render('index',{about, 'menu': listaPlatos})
-     }, */
-  
-  productCart: (req, res) => {
+  productCart: async (req, res) => {
     res.render("products/productCart");
   },
-  listProducts: (req, res) =>{
-    let typeProduct = req.query.type
+  listProducts: async (req, res) => {
+    let typeProduct = req.query.type;
+
+    res.locals.typeProduct = typeProduct;
+
+    let products = [];
+    if (typeProduct) {
+
+      db.Products.findAll({
+        include: [
+          { association: "typeProduct" },
+          {
+            association: "categoryProducts",
+            where: { name: { [Op.like]: `%${typeProduct}%` } },
+          },
+        ],
+      }).then((products) => {
+        res.render("products/list-products", { products });
+      });
+
+    } else {
+      db.Products.findAll({
+        include: [
+          { association: "typeProduct" },
+          { association: "categoryProducts" },
+        ],
+      }).then((products) => {
+        res.render("products/list-products", { products });
+      });
     
-    res.locals.typeProduct = typeProduct
-
-    let products = []
-    if(typeProduct){
-      products = productsModel.filter('category', typeProduct, 1)
-      //console.log(productsModel.filter('category',typeProduct));
-    }else{
-      products = productsModel.all()
     }
-    res.render('products/list-products', {products})
+    
   },
-  productDetails: (req, res) => {
-    let id = req.params.id;
+  productDetails: async (req, res) => {
 
-    const product = productsModel.find(id);
+    let product = await db.Products.findByPk(req.params.id, {
+      include: [
+        { association: "typeProduct" },
+        { association: "categoryProducts" },
+      ],
+    })
 
     res.render("products/productDetails", { product });
   },
-  edit: (req, res) => {
-    let id = req.params.id;
-    const product = productsModel.find(id);
-    const category = categoryProduct.all()
-    const type = typeProduct.all()
-    res.render("products/edit-myProducts", { product, category, type });
+  edit: async (req, res) => {
+    
+    const product = await db.Products.findByPk(req.params.id);
+    const category = await db.CategoryProducts.findAll();
+    const type =  await db.TypeProducts.findAll();
+
+    Promise.all([product, category, type]).then(
+      ([product, category, type]) =>{
+        res.render("products/edit-myProducts", { product, category, type });
+      })
+    
   },
 
-  update: (req, res) => {
+  update: async (req, res) => {
     let id = req.params.id;
-    let product = productsModel.find(id);
+    let product = await db.Products.findByPk(id);
+    let image = product.image;
     //console.log(req.file);
-    if (req.file)
-        image = req.file.filename;
-    else 
-        image = product.image;
+    
+    if (req.file) 
+      image = req.file.filename;
 
-    product = {
-      id: product.id,
-      ...req.body,
-      image: image,
-    };
-
-    id = productsModel.update(product);
-
-    res.render("products/productDetails", { product });
+    db.Products.update({
+      name: req.body.name,
+      description: req.body.description,
+      price: req.body.price,
+      discount: req.body.discount,
+      id_category_product: req.body.category,
+      id_type_product: req.body.type,
+      image: image 
+    },{
+      where: { id_products: id }
+    }).then( 
+      db.Products.findByPk(id)
+      .then(product => {
+        res.render("products/productDetails", { product})
+      })
+    )   
   },
-  create: (req, res) => {
+  create: async (req, res) => {
     res.render("products/myProducts");
   },
-  processCreate: (req,res) => {
-    let id = productsModel.nextId()
-    let image = ''
+  processCreate: async (req, res) => {
+    let image = "";
 
-    if (req.file)
-        image = req.file.filename;
+    if (req.file) image = req.file.filename;
 
     let product = {
-        id:id,
-        ...req.body,
-        image:image
-    }
+      ...req.body,
+      id_category_product: req.body.category,
+      id_type_product: req.body.type,
+      image: image,
+    };
+    delete product.type
+    delete product.category
 
-    id = productsModel.create(product);
-
-    res.render("products/productDetails", { product });
-
+    db.Products.create(product)
+    .then(product => {
+      res.render("products/productDetails", { product })
+    })
+    
+    //res.render("products/productDetails", { product });
   },
-  delete: ( req, res ) => {
-      let id = req.params.id
-      productsModel.delete(id)
-      
+  delete: async (req, res) => {
+   
+    db.Products.destroy({
+      where: { id_products:req.params.id }
+    }).then(
       res.redirect('/')
-  }
-
+    )
+  },
 };
 
 module.exports = productController;
