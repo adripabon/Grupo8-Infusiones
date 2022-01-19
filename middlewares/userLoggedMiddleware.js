@@ -1,7 +1,6 @@
-const jsonTable = require("../data/jsonTable");
-const userModel = jsonTable("users");
+let db = require("../database/models");
 
-function userLoggedMiddleware (req, res, next){
+async function userLoggedMiddleware (req, res, next){
     //1. Permite buscar si existe una cookie, si existe habilita la sessión.
     //2. Pregunta si se tiene una sessión.
 
@@ -10,22 +9,36 @@ function userLoggedMiddleware (req, res, next){
     let userFromCookie = undefined
     //console.log(req.cookies);
     if(req.cookies.userCoffte != undefined){
-        console.log('Entra a cookie');
+        //console.log('Entra a cookie');
         userEmailInCookie = req.cookies.userCoffte
-        userFromCookie = userModel.filter('email', userEmailInCookie, 2)
-        delete userFromCookie.password
-        delete userFromCookie.secondPassword
+
+        //console.log('email: ', userEmailInCookie);
+
+        userFromCookie = await db.Users.findAll({
+			where: { email: userEmailInCookie }
+		});
+
+        //console.log('userBD: ', userFromCookie);
+        delete userFromCookie[0].password
+        delete userFromCookie[0].secondPassword
+        
+        if( userFromCookie[0].id_profile === 1 ){
+            userFromCookie[0].isAdmin = true 
+        }
+
+        
     }    
 
     //Tambien se validara, si existe una cookie, el sistema lo logueará de forma automática.
-    if(userFromCookie){
-        req.session.userLogged = userFromCookie
+    if( userFromCookie){
+        req.session.userLogged = userFromCookie[0]
     }
    
     //Variable de control de usuario legueado.
     res.locals.isLogged = false
     if(req.session && req.session.userLogged){
         res.locals.isLogged = true
+        console.log(req.session.userLogged);
         res.locals.userLogged = req.session.userLogged
     }
 

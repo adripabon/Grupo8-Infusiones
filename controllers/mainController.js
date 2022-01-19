@@ -1,5 +1,3 @@
-const jsonTable = require('../data/jsonTable')
-//const productsModel = jsonTable('products')
 let db = require("../database/models");
 
 /* Contine los controladores del index */

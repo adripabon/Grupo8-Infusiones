@@ -21,8 +21,8 @@ const userController = {
 
         //Valida si el usuario esta o no en bd
 		if(userToLoguin.length > 0){
-			console.log("aqui");
-            console.log(userToLoguin[0].password);
+			//console.log("aqui");
+            // console.log(userToLoguin[0].password);
             //console.log(userToLoguin.email + 'Aqui');
 			//Valida si el hash almacenado es igual a la contraseña ingresada en el form
 			let isOkThePassword = bcrypt.compareSync(req.body.password, userToLoguin[0].password)
@@ -32,6 +32,10 @@ const userController = {
 				
                 delete userToLoguin[0].password
                 delete userToLoguin[0].secondPassword
+
+				if( userToLoguin[0].id_profile === 1 ){
+					userToLoguin[0].isAdmin = true
+				}
 
 				//Genera una sessión con el usuario logueado, lo que no tiene es el password por seguridad.
                 req.session.userLogged = userToLoguin[0]
