@@ -11,10 +11,11 @@ const guestMiddleware = require('../middlewares/guestUserMiddleware')
 const authMiddleware = require('../middlewares/authUserMiddleware')
 
 const validationRegisterMiddleware = require('../middlewares/validationRegisterMiddleware')
+const validationLoginMiddleware = require('../middlewares/validationLoginMiddleware')
 /* Inicio de sesión */
 //Valida, si hay un usuario en sessión, no le carga el formulario de login.
 router.get("/login", guestMiddleware, userController.login);
-router.post("/login", userController.loginProcess);
+router.post("/login", validationLoginMiddleware, userController.loginProcess);
 
 //Valida, si hay un usuario en sessión, no le carga el formulario de register.
 router.get("/register", guestMiddleware, userController.register);

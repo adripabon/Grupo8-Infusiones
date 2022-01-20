@@ -41,7 +41,12 @@
 
                     <div class="grupo">
                         <input type="password" class="usuario" name="password">
-                        <label>Password</label>
+                        <% if (locals.errors && errors.password) { %>
+                            <span class="barra">
+                                <%= errors.password.msg %>
+                            </span>
+                            <% } %>
+                                <label>Password</label>
                     </div>
                     <div class="grupo group-remember">
                         <input type="checkbox" class="usuario" name="remember">

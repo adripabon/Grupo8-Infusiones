@@ -38,11 +38,11 @@
                                             <%= locals.userLogged.first_name %>
                                         </p>
                                         <p>
-                                            Administrador: <%= locals.userLogged.isAdmin===true ? ' Si' : ' No' %>
+                                            Administrador: <%= locals.userLogged.id_profile===1 ? ' Si' : ' No' %>
                                         </p>
                                     </div>
                                 </a>
-                                <% if (locals.userLogged.isAdmin) { %>
+                                <% if (locals.userLogged.id_profile===1) { %>
                                     <a href="/product/myProducts">Nuevo producto</a>
                                     <% } %>
                                         <a href="/user/logout">Cerrar sesión</a>

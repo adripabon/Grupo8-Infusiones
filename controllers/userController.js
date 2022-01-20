@@ -12,9 +12,19 @@ const userController = {
         res.render('users/login');
     },
     loginProcess: async (req, res) =>{
-         
+        
+		const resultValidation = validationResult(req);
+
         //let userToLoguin = userModel.filter('email', req.body.email, 2)
 		
+		if (resultValidation.errors.length > 0) {
+			return res.render('users/login', {
+				/* DEvuelve un objeto literal */
+				errors: resultValidation.mapped(),
+				oldData: req.body
+			});
+		}
+
 		let userToLoguin = await db.Users.findAll({
 			where: { email: req.body.email }
 		});
@@ -32,10 +42,6 @@ const userController = {
 				
                 delete userToLoguin[0].password
                 delete userToLoguin[0].secondPassword
-
-				if( userToLoguin[0].id_profile === 1 ){
-					userToLoguin[0].isAdmin = true
-				}
 
 				//Genera una sessión con el usuario logueado, lo que no tiene es el password por seguridad.
                 req.session.userLogged = userToLoguin[0]

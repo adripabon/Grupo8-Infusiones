@@ -20,13 +20,7 @@ async function userLoggedMiddleware (req, res, next){
 
         //console.log('userBD: ', userFromCookie);
         delete userFromCookie[0].password
-        delete userFromCookie[0].secondPassword
-        
-        if( userFromCookie[0].id_profile === 1 ){
-            userFromCookie[0].isAdmin = true 
-        }
-
-        
+        delete userFromCookie[0].secondPassword        
     }    
 
     //Tambien se validara, si existe una cookie, el sistema lo logueará de forma automática.
@@ -38,7 +32,7 @@ async function userLoggedMiddleware (req, res, next){
     res.locals.isLogged = false
     if(req.session && req.session.userLogged){
         res.locals.isLogged = true
-        console.log(req.session.userLogged);
+        //console.log(req.session.userLogged);
         res.locals.userLogged = req.session.userLogged
     }
 

@@ -22,58 +22,64 @@
       <div class="productsBox">
         <form class="myProducts" method="POST" action="/product/edit/<%= product.id_products %>?_method=PUT"
           enctype="multipart/form-data">
-          <h1>Edicion de producto</h1>
+          <h1>Edición de producto</h1>
           <label>Nombre de mi producto:</label>
           <input type="text" name="name" class="myProducts" value="<%= product.name %>"
             placeholder="Café Colina Grano 454g Juan Valdez" />
-          <br />
+          <% if (locals.errors && errors.name) { %>
+            <span class="barra">
+              <%= errors.name.msg %>
+            </span>
+            <% } %>
+              <br />
 
-          <label>Descripcion:</label>
-          <input type="text" name="description" class="myProducts" value="<%= product.description %>"
-            placeholder="Cafe descafeinado con un gusto especial a vainilla" />
-          <br />
+              <label>Descripcion:</label>
+              <input type="text" name="description" class="myProducts" value="<%= product.description %>"
+                placeholder="Cafe descafeinado con un gusto especial a vainilla" />
+              <br />
 
-          <label>Pone la imagen de tu producto aquí</label>
-          <input class="fyle" type="file" accept=".jpg, .png, .jpeg, .svg" name="image" id="image" class="myProducts" />
+              <label>Pone la imagen de tu producto aquí</label>
+              <input class="fyle" type="file" accept=".jpg, .png, .jpeg, .svg" name="image" id="image"
+                class="myProducts" />
 
-          <br />
+              <br />
 
-          <label>Categoría:</label>
+              <label>Categoría:</label>
 
-          <div class="radio">
-            <% category.forEach(categoryRow=> { %>
-              <input type="radio" id="<%= categoryRow.name %>" value="<%= categoryRow.id_category_product %>"
-                name="category" class="myProducts" <%=categoryRow.id_category_product===product.id_category_product
-                ? 'checked' : null %>
-              />
-              <label for="<%= categoryRow.name %>">
-                <%= categoryRow.description %>
-              </label>
-              <% }) %>
-          </div>
+              <div class="radio">
+                <% category.forEach(categoryRow=> { %>
+                  <input type="radio" id="<%= categoryRow.name %>" value="<%= categoryRow.id_category_product %>"
+                    name="category" class="myProducts" <%=categoryRow.id_category_product==product.id_category_product
+                    ? 'checked' : null %>
+                  />
+                  <label for="<%= categoryRow.name %>">
+                    <%= categoryRow.description %>
+                  </label>
+                  <% }) %>
+              </div>
 
-          <label>Precio:</label>
-          <input class="price" type="text" value="<%=product.price%>" name="price" placeholder="$200" />
-          <br />
+              <label>Precio:</label>
+              <input class="price" type="text" value="<%=product.price%>" name="price" placeholder="$200" />
+              <br />
 
-          <label>Descuento:</label>
-          <input class="discount" type="text" value="<%= product.discount %>" name="discount" placeholder="20%" />
-          <br />
+              <label>Descuento:</label>
+              <input class="discount" type="text" value="<%= product.discount %>" name="discount" placeholder="20%" />
+              <br />
 
-          <label>Tipo de producto</label>
-          <div class="radio">
-            <% type.forEach(typeRow=> { %>
-              <input type="radio" id="<%= typeRow.name %>" value="<%= typeRow.id_type_product %>" name="type"
-                class="myProducts" <%=typeRow.id_type_product===product.id_type_product ? 'checked' : null %>
-              />
-              <label for="<%= typeRow.name %>">
-                <%= typeRow.description %>
-              </label>
-              <% }) %>
-          </div>
+              <label>Tipo de producto</label>
+              <div class="radio">
+                <% type.forEach(typeRow=> { console.log('Tipo ', product.id_type_product)%>
+                  <input type="radio" id="<%= typeRow.name %>" value="<%= typeRow.id_type_product %>" name="type"
+                    class="myProducts" <%=typeRow.id_type_product==product.id_type_product ? 'checked' : null %>
+                  />
+                  <label for="<%= typeRow.name %>">
+                    <%= typeRow.description %>
+                  </label>
+                  <% }) %>
+              </div>
 
-          <button type="submit">Guardar producto</button>
-          <br />
+              <button type="submit">Guardar producto</button>
+              <br />
         </form>
       </div>
     </main>

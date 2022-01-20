@@ -1,6 +1,9 @@
 let db = require("../database/models");
 const Op = db.Sequelize.Op;
 
+/* Se requiere el resultado de validaciones solamente */
+const { validationResult } = require('express-validator');
+
 /* Contine los controladores del index */
 const productController = {
 
@@ -65,6 +68,28 @@ const productController = {
   },
 
   update: async (req, res) => {
+    const resultValidation = validationResult(req);
+
+    if (resultValidation.errors.length > 0) {
+			const category = await db.CategoryProducts.findAll();
+      const type =  await db.TypeProducts.findAll();
+  
+      Promise.all([category, type]).then(
+        ([category, type]) =>{
+          
+          let oldData = req.body
+          oldData.id_category_product = req.body.category
+          oldData.id_type_product = req.body.type
+          return res.render('products/edit-myProducts', {
+            /* DEvuelve un objeto literal */
+            errors: resultValidation.mapped(),
+            product: oldData,
+            category: category, 
+            type: type
+          });
+      })
+		}
+    
     let id = req.params.id;
     let product = await db.Products.findByPk(id);
     let image = product.image;
@@ -94,6 +119,28 @@ const productController = {
     res.render("products/myProducts");
   },
   processCreate: async (req, res) => {
+    const resultValidation = validationResult(req);
+
+    if (resultValidation.errors.length > 0) {
+			const category = await db.CategoryProducts.findAll();
+      const type =  await db.TypeProducts.findAll();
+  
+      Promise.all([category, type]).then(
+        ([category, type]) =>{
+          
+          let oldData = req.body
+          oldData.id_category_product = req.body.category
+          oldData.id_type_product = req.body.type
+          return res.render('products/edit-myProducts', {
+            /* DEvuelve un objeto literal */
+            errors: resultValidation.mapped(),
+            product: oldData,
+            category: category, 
+            type: type
+          });
+      })
+		}
+    
     let image = "";
 
     if (req.file) image = req.file.filename;

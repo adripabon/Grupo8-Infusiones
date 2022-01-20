@@ -34,7 +34,7 @@
                                 alt="Café Colombia Molido">
                             <div class="block-description">
                                 <h1 class="titulo">
-                                    <%= locals.userLogged.isAdmin ? 'Administrador' : 'Cliente' %>
+                                    <%= locals.userLogged.id_profile===1 ? 'Administrador' : 'Cliente' %>
                                 </h1>
                                 <!-- Se valida si el producto tiene descuento -->
                                 <p class="p">

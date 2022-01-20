@@ -2,6 +2,9 @@ const { application } = require('express');
 const express = require('express')
 const router = express.Router()
 
+//Se inicicaliza el middleware de validación.
+const validationProductsMiddleware = require('../middlewares/validationProductsMiddleware')
+
 //Se invoca el middleware de multer para la carga de archivos.
 const multerMiddleware = require('../middlewares/multerMiddleware')
 const productController = require('../controllers/productController')
@@ -18,7 +21,7 @@ router.get("/list-products",productController.listProducts )
 /* CREATE PRODUCT */
 //Valida si tiene sessión y si es un administrador.
 router.get("/myProducts", authUserMiddleware, isAdminMiddleware, productController.create);
-router.post("/create",multerMiddleware.single('image'), productController.processCreate )
+router.post("/create", multerMiddleware.single('image'), validationProductsMiddleware, isAdminMiddleware, productController.processCreate )
 
 /* GET PRODUCT */
 router.get("/product-details/:id", productController.productDetails);
@@ -26,7 +29,7 @@ router.get("/product-details/:id", productController.productDetails);
 /* EDIT PRODUCT */
 //Valida si tiene sessión y si es un administrador.
 router.get("/edit/:id", authUserMiddleware, isAdminMiddleware, productController.edit)
-router.put("/edit/:id",multerMiddleware.single('image'), productController.update )
+router.put("/edit/:id",multerMiddleware.single('image'), validationProductsMiddleware, isAdminMiddleware, productController.update )
 
 /* DELET PRODUCT */
 //Valida si tiene sessión y si es un administrador.
