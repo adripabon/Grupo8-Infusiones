@@ -26,9 +26,17 @@
     <%- include('../partials/header') %>
 
         <main>
+
             <form action="/user/register" method="POST" id="form" enctype="multipart/form-data">
                 <div class="form">
                     <h1>Crea tu cuenta</h1>
+                    <div class="grupo">
+                        <span class="barra">
+                            <ul class="ul-errors">
+
+                            </ul>
+                        </span>
+                    </div>
                     <div class="grupo">
                         <input type="text" name="first_name" id="first_name"
                             value="<%= locals.oldData ? oldData.first_name : null %>" />
@@ -100,8 +108,8 @@
 
                     <div class="grupo">
                         <div class="image-upload-wrap">
-                            <input class="file-upload-input" type='file' name="avatar" onchange="readURL(this);"
-                                accept="image/*" required />
+                            <input class="file-upload-input" type='file' name="avatar" id="avatar"
+                                onchange="readURL(this);" accept="image/*" required />
                             <div class="drag-text">
                                 <h3>Arrastra o selecciona una imagen</h3>
                             </div>
@@ -128,6 +136,7 @@
                 </div>
             </form>
         </main>
+        <script src="/js/validationUser.js"></script>
         <!-- INCLUDE FOOTER -->
         <%- include('../partials/footer') %>
 </body>

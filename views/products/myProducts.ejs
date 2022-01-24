@@ -24,17 +24,25 @@
 
         <form class="myProducts" method="post" action="/product/create" enctype="multipart/form-data">
           <h1>Mis productos</h1>
+          <div class="grupo">
+            <span class="barra">
+              <ul class="ul-errors">
+
+              </ul>
+            </span>
+          </div>
           <label>Nombre de mi producto:</label>
-          <input type="text" name="name" class="myProducts" placeholder="Café Colina Grano 454g Juan Valdez" />
+          <input type="text" name="name" id="name" class="myProducts"
+            placeholder="Café Colina Grano 454g Juan Valdez" />
           <br />
 
           <label>Descripcion:</label>
-          <input type="text" name="description" class="myProducts"
+          <input type="text" name="description" id="description" class="myProducts"
             placeholder="Cafe descafeinado con un gusto especial a vainilla" />
           <br />
 
           <label>Pone la imagen de tu producto aqui</label>
-          <input class="fyle" type="file" accept=".jpg, .png, .jpeg, .svg" name="image" class="myProducts" />
+          <input class="fyle" type="file" accept=".jpg, .png, .jpeg, .svg" name="image" id="image" class="myProducts" />
           <br />
 
           <label>Categoria:</label>
@@ -72,6 +80,7 @@
         </form>
       </div>
     </main>
+    <script src="/js/validationProduct.js"></script>
     <!-- INCLUDE FOOTER -->
     <%- include('../partials/footer') %>
 </body>
