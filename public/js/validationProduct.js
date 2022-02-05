@@ -8,7 +8,7 @@ function validationObj(obj, label, type, numCaracteres = 0){
         }
 
         if( numCaracteres > 0 ){
-            if(!obj.value.length < numCaracteres){
+            if(obj.value.length < numCaracteres){
                 errors.push(`El ${label} debe tener al menos ${numCaracteres}`)
             }
         }

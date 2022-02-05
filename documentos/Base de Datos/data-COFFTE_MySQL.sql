@@ -10,6 +10,9 @@ INSERT INTO cofftea.category_product (id_category_product, description, name) VA
 INSERT INTO cofftea.category_product (id_category_product, description, name) VALUES(3, 'Café', 'café');
 
 
+INSERT INTO cofftea.profile (id_profile, description) VALUES(1, 'Administrador');
+INSERT INTO cofftea.profile (id_profile, description) VALUES(2, 'Usuario');
+
 INSERT INTO cofftea.users (id_users, first_name, last_name, email, password, second_password, province, location, street, avatar, id_profile) VALUES(1, 'Juan Fernando', 'Tautiva López', 'jtautiva@hyg.com.co', '$2a$10$c5xqL4TDr3nC8XIVDKo6HOWN7/pU0pIXOkh8BogYk9xAl1bo8roKi', '$2a$10$t9TZlwNXP5lkTJ.aQldUeu6qUz3yGF2LCWE861iRVb9/V4kBuY.5y', 'Buenos aires', 'Las flores', 'AV siempre viva', 'AVATAR-1638190983541.gif', 1);
 INSERT INTO cofftea.users (id_users, first_name, last_name, email, password, second_password, province, location, street, avatar, id_profile) VALUES(2, 'Isabel Cristina', 'Gallego Castaño', 'icgcastano@gmail.com', '$2a$10$jfRoZ84g8OwWk8R6/u0M1OLXvpyDDqjbKKa89qBvBK0CPZzQzszxa', '$2a$10$2NffvoRrKCEXG1olVDcVN.9JBFDE6Dq7Pk59c7sBLISzWk6tAAjdK', 'Buenos aires', 'Las flores', 'AV siempre viva', 'AVATAR-1638190983541.gif', 2);
 
