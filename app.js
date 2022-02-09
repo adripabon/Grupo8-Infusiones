@@ -37,6 +37,8 @@ app.set('view engine', 'ejs')
 const mainRauters = require('./routers/mainRouters')
 const productRouters = require('./routers/productRouters')
 const userRouters = require('./routers/userRouters')
+const apiUserRoutes = require('./routers/apiRoutes/apiUserRoutes');
+const apiProductsRoutes = require('./routers/apiRoutes/apiProductsRoutes');
 
 
 app.use('/', mainRauters)
@@ -44,6 +46,9 @@ app.use('/', mainRauters)
 app.use("/product", productRouters);
 
 app.use("/user", userRouters);
+
+app.use("/api", apiUserRoutes);
+app.use("/api", apiProductsRoutes);
 
 
 /* app.get('/login',(req, res)=>{
