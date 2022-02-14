@@ -5,6 +5,8 @@
     box-sizing: border-box;
 }
 
+
+
 body {
     background-color: #f4f4f4;
 }
@@ -43,9 +45,9 @@ header .link-index{
 
 .logo img{
     align-self: stretch;
-    
     width: auto;
-    height: 70px
+    height: 65px;
+    padding-bottom: 10px;
     
 }
 
