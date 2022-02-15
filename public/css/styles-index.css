@@ -46,7 +46,7 @@ header .link-index{
 .logo img{
     align-self: stretch;
     width: auto;
-    height: 65px;
+    height: 60px;
     padding-bottom: 10px;
     
 }
@@ -442,6 +442,11 @@ footer .social .fab {
         padding: 10px 0px;
     }
 
+
+    div .quienes_somos p {
+        display:flex;
+        flex-direction:row
+    }
     /* FOOTER */
     
         footer .logo {
