@@ -69,7 +69,7 @@ const productController = {
 
   update: async (req, res) => {
     const resultValidation = validationResult(req);
-
+    console.log('Error ', resultValidation.errors.length);
     if (resultValidation.errors.length > 0) {
 			const category = await db.CategoryProducts.findAll();
       const type =  await db.TypeProducts.findAll();
