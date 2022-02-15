@@ -4,8 +4,12 @@ const Op = db.Sequelize.Op;
 const apiUserController={
 
     list:(req, res) =>{
-    db.Users.findAll()
+    db.Users.findAll({
+        attributes:['id_users','first_name', 'last_name', 'email', 'province', 'location', 'street', 'avatar', 'id_profile'],
+        include: ['profile']
+    })
      .then(users=>{
+        
          let resultado = {
              count : {count:users.length},
              users : users,
