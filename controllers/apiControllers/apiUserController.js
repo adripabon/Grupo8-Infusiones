@@ -12,7 +12,11 @@ const apiUserController={
         
          let resultado = {
              count : {count:users.length},
-             users : users,
+             users : {
+                url: "/api/users/"+ users.id_users,     
+                 ...users,
+             }
+             
          }
          res.json(resultado)
         }) 
