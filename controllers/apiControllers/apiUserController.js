@@ -1,3 +1,4 @@
+const { json } = require("express/lib/response");
 let db = require("../../database/models");
 const Op = db.Sequelize.Op;
 
@@ -9,14 +10,20 @@ const apiUserController={
         include: ['profile']
     })
      .then(users=>{
-        
+
+        let usersArray = [];
+        let userObj 
+        users.map( user => {
+            
+            let url_detail = `/api/user/${user.id_users}` 
+            userObj = { user,  url_detail: url_detail }
+            usersArray.push(userObj)
+        })
+         
+        //console.log(userArray)
          let resultado = {
              count : {count:users.length},
-             users : {
-                url: "/api/users/"+ users.id_users,     
-                 ...users,
-             }
-             
+             users : usersArray
          }
          res.json(resultado)
         }) 
