@@ -19,7 +19,7 @@ const apiUserController={
             userObj = { user,  url_detail: url_detail }
             usersArray.push(userObj)
         })
-         
+
         //console.log(userArray)
          let resultado = {
              count : {count:users.length},

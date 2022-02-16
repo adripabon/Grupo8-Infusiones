@@ -11,9 +11,19 @@ const apiProductsController={
           ]
     })
      .then(products=>{
+        let productsArray = [];
+        let productObj 
+        products.map( product => {
+            
+            let url_detail = `/api/product/${product.id_products}` 
+            productObj = { product,  url_detail: url_detail }
+            productsArray.push(productObj)
+        })
+
+        //console.log(userArray)
          let resultado = {
              count : {count:products.length},
-             products : products,
+             products : productsArray
          }
          res.json(resultado)
         }) 
