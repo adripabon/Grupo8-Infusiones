@@ -10,9 +10,28 @@ const apiCategoriesController={
         include: ['categoryProduct']
     })
      .then(category=>{
+         countByCategory = [];
+         categoryByOne = []
+         category.map(cat=>{
+             categoryProduct = {
+                 categoryName : cat.name,
+                 catProduct : cat.categoryProduct
+             }
+             
+            countByCategory.push(categoryProduct)
+         });
 
+         countByCategory.map(catByOne=>{
+           
+           let result = {
+               categoryName : catByOne.categoryName,
+               count : catByOne.catProduct.length,
+            }
+            categoryByOne.push(result)
+         })
          let resultado = {
              count : {count:category.length},
+             countByCategory : categoryByOne,
              category : category 
          }
          res.json(resultado)
