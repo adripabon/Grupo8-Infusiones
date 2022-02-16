@@ -6,24 +6,14 @@ const apiUserController={
 
     list:(req, res) =>{
     db.Users.findAll({
-        attributes:['id_users','first_name', 'last_name', 'email', 'province', 'location', 'street', 'avatar', 'id_profile'],
+        attributes:['id_users','first_name', 'last_name', 'email', [db.sequelize.fn('CONCAT', '/api/user/',  db.Sequelize.col('id_users')), 'url_detail'] ],
         include: ['profile']
     })
      .then(users=>{
 
-        let usersArray = [];
-        let userObj 
-        users.map( user => {
-            
-            let url_detail = `/api/user/${user.id_users}` 
-            userObj = { user,  url_detail: url_detail }
-            usersArray.push(userObj)
-        })
-         
-        //console.log(userArray)
          let resultado = {
              count : {count:users.length},
-             users : usersArray
+             users : users
          }
          res.json(resultado)
         }) 
@@ -31,12 +21,16 @@ const apiUserController={
     },
 
     detail:(req,res)=>{
-        db.Users.findByPk(req.params.id)
-        .then(user=>{
-            delete user.password,
-            delete user.secondPassword
+        db.Users.findAll({
+            attributes:['id_users','first_name', 'last_name', 'email', 'province', 'location', 'street', [db.sequelize.fn('CONCAT', 'http://localhost:3000/images/avatar/',  db.Sequelize.col('avatar')), 'avatar'], 'id_profile'],
+            where: {
+                id_users: Number(req.params.id)
+            }
+        })
+        .then( user => {
+            
             let resultado = {
-                ...user
+                user: user
             }
             res.json(resultado)
         }) 
