@@ -1,0 +1,82 @@
+/* HEADER */
+
+header .header-block{
+    position: relative;
+    z-index: 20;
+    background: linear-gradient(to left, #DBD5A4, #649173);
+    border-radius: 0px 0px 42px 42px;   
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+header .link-index{
+    width: 55%;
+}
+
+.logo img{
+    align-self: stretch;
+    width: auto;
+    height: 60px;
+    padding-bottom: 10px;
+    
+}
+
+header img{
+    width: 100%;
+}
+
+header .menu{
+    display: none;
+
+}
+
+header nav ul {
+    
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #273940;
+    align-content: center;
+    border-radius: 6px;
+}
+  
+header nav ul li {
+    float: left;
+}
+
+header nav ul li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 10px 12px;
+}
+
+/*BANNER*/
+
+.banner{
+    position: relative;
+    top: -36px;
+    z-index: 1;
+}
+
+.banner img {
+    width: 100%;
+}
+
+.banner-description{
+    text-align: center;
+    padding: 5px 10px;
+}
+
+.price{
+    width: auto;
+    padding: 0px 10px 0px 0px;
+    color: #54594D;
+    text-align: left;
+    font-weight: 400;
+    font-style: italic;
+    
+}

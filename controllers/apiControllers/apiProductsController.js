@@ -33,7 +33,7 @@ db.CategoryProducts.findAll({
         
      }
      categoriasArray.push(resultado)
-     console.log(categoriasArray[0].countByCategory);
+     
     }) 
  .catch(err=>{console.log(err)}) 
  
