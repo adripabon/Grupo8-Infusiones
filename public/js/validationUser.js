@@ -21,13 +21,18 @@ function validationObj(obj, label, type){
             errors.push('La contraseña debe ser una combinación de al menos una mayúscula, una minúscula, mínimo 8 a 20 caracteres')
         }
     }else if (type === 4){
-        var filePath = obj.value;
+        var filePath 
+        if(obj.value){
+            filePath = obj.value
+        }else if(obj.defaultValue){
+            filePath = obj.defaultValue
+        }
           
         var allowedExtensions = /(\.jpg|\.jpeg|\.png|\.gif)$/i;
           
         if (!allowedExtensions.exec(filePath)) {
             errors.push('Receurde que las extensiones permitidas son .jpg, .jpeg, .png o .gif')
-            fileInput.value = '';
+            filePath.value = '';
         } 
     }
     return errors
