@@ -32,13 +32,8 @@ p {
     text-align: center;
 }
 
- section .products{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-}
 
- section .title-product{
+section .title-product{
     text-align: center;
     padding-bottom: 10px;
     display: flex;
@@ -50,7 +45,7 @@ p {
 
 
 
- section article a {
+section article a {
     margin-bottom: 10px;
 }
 
@@ -62,18 +57,18 @@ p {
 }
 
  .article-products-seccion .product-section{
-    width: 85%;
-    text-align: center;
-    margin: auto;
+     width: 85%;
+     text-align: center;
+     margin: auto;
     border-radius: 15px;
     position: relative;
 }
 
- .article-products-seccion .product-section img{
+.article-products-seccion .product-section img{
     border-radius: 50%;
 }
 
- .product-section-title{
+.product-section-title{
     display: none;
 }
 
@@ -93,19 +88,15 @@ p {
     
     margin: 3px 0px 9px 0px;
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
 }
 
-#quienes_somos{
-    margin: 0px;
-    padding:0px;
-}
+
 .article-products{
     box-shadow: 0 3px 12px rgba(0,0,0,.1);
     margin: 8px 15px;
     display: flex;
-    justify-content: flex-start;
     align-items: center;
     position: relative;
 }
@@ -117,7 +108,7 @@ p {
     text-transform: capitalize;
 }
 
- section .div-price{
+section .div-price{
     height: 50px;
     display: flex;
     flex-wrap: wrap;
@@ -125,7 +116,7 @@ p {
     align-items: center;
 }
 
- section .price-discount{
+section .price-discount{
     width: 100%;
     display: flex;
     color: #999;
@@ -133,12 +124,12 @@ p {
     text-decoration: line-through;
 }
 
- section .price{
+section .price{
     width: auto;
     display: flex;
 }
 
- section .div-discount{
+section .div-discount{
     border: 1px solid #F2CA69;
     position: absolute;
     top: 20px;
@@ -151,7 +142,7 @@ p {
     justify-content: space-around;
 }
 
- .div-edit{
+.div-edit{
     position: absolute;
     right: 5px;
     top: 5px;
@@ -165,16 +156,16 @@ p {
     padding: 5px;
 }
 
- section .discount{
+section .discount{
     /* width: 30%; */
     display: flex;
     color: #5A7356;
     font-weight: bold;
 }
 
- .div-bag {
+.div-bag {
     width: 100%;
-    background-color: #2c2a29;
+    background-color: #fcb7af;
     border-radius: 0;
     color: #fff;
     border-top: 1px solid #c4c4c4;
@@ -194,7 +185,19 @@ p {
     transition:all .4s ease;
 }
 
-.article-products:hover .div-product{
+ .destacados{
+    background-color: #ffda9e;
+    width:100%;
+} 
+ #destacados{
+    font-family:'Amatic SC', cursive;
+    color:white;
+    font-size:60px;
+    display: flex;
+    justify-content: center;
+    } 
+    
+    .article-products:hover .div-product{
     box-shadow: 0px 0px 20px 7px rgba(65,65,65,0.32);
     top: -10px;
 }
@@ -266,11 +269,43 @@ footer .social .fab {
 /* responsive devices*/
 
 
-  @media (max-width: 768px){
+@media (max-width: 768px){
     .quienes_somos{
         display:none
     }
-} 
+    .slideshow-container{
+        display:none
+    }
+    img{
+     width:100%
+    }
+    
+    .destacados{
+        background-color: #ffda9e;
+        display: flex;
+    }
+    
+    .article-products{
+        justify-content:center
+    }
+    section .products{
+        margin-top: 59px;
+       display: flex;
+       flex-wrap: wrap;
+       justify-content: center;
+       /*border:1px solid#273940*/
+    }
+
+     .category {
+        font-size:40px;
+        font-family: 'Amatic SC', cursive;
+        color: #bf9780;
+    }
+
+    .bar{
+        background-color:white
+    }
+}
 
 /* TABLET */
 @media (min-width: 768px) {
@@ -278,42 +313,143 @@ footer .social .fab {
     header .header-block{
         height: 100px;
     }
-       
+    
     header .link-index{
         width: 25%;
     }
-
-
+    
+    
     
     header .menu{
         display: flex;
     }
-
+    
     header .burger-menu{
         display: none;
     }
-
+    
     header .header-block{
         justify-content: space-evenly;
     }
-
+    
     .banner-description{
         position: absolute;
         text-align: center;
         width: 350px;
-        left: 20px;
-        bottom: 50px;
+        left: 20rem;
+        bottom: 50rem;
         background-color: #F2C0A2;
         fill-opacity: 0.7;
         border: 1px solid #f0b189;
     }
+    
 
+    /*definicion de las cajas con sus baaackgrounds*/
+    #quienes_somos_1{
+        /* border: 1px solid red;  */
+        margin-top:1%;
+        height: 100vh;
+    width: 100vw;
+    background-image:url(http://localhost:3000/images/coffee_quienes_somos.jpeg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#quienes_somos_2{
+    /* border: 1px solid red;  */
+    height: 100vh;
+    width: 100vw;
+    background-image:url(http://localhost:3000/images/quienes_somos_2_filtro.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+#quienes_somos_3{
+    /* border: 1px solid red;  */
+    height: 100vh;
+    width: 100vw;
+    background-image:url(http://localhost:3000/images/quienes_somos_3_empty.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    }
+    
+
+    /*estilos de textos*/
+    #quienes_somos_1_text{
+        font-family: 'Amatic SC', cursive;
+        position: relative;
+        top: 5%;
+        font-size:100px;
+        color: white;
+        transition: all 1000ms;
+    }
+    
+
+    #quienes_somos_2_text{
+        font-family: 'Amatic SC', cursive;
+        font-size:80px;
+        position: relative;
+        top: 20%;
+        color: white;
+        transition: all 1000ms ;
+
+    }
+    #quienes_somos_3_text{
+        font-family: 'Amatic SC', cursive;
+        font-size:110px;
+        position: relative;
+        top: 10%;
+        color: white;
+        transition: all 1000ms ;
+        
+    }
+    
+    /*hovers de las cajas con textos*/
+    
+    #quienes_somos_1_text:hover{
+        box-shadow: 0 3px 12px rgb(0 0 0 / 10%);
+        font-size:105px;
+        background-color: rgba(0,3,12,0.32);
+        transition: all 1000ms ;
+    }
+    #quienes_somos_2_text:hover{
+        box-shadow: 0 3px 12px rgb(0 0 0 / 10%);
+        font-size:85px;
+        background-color: rgba(0,3,12,0.32);
+        transition: all 1000ms ;
+    }
+    #quienes_somos_3_text:hover{
+        font-size:115px;
+        transition: all 1000ms ;
+    }
+    
+    #quienes_somos_3_img{
+        position: relative;
+        left: 40%;
+        top:12%;
+        width: 20%;
+        transition:all 0.5s;
+    }
+    
+    #quienes_somos_3_img:hover{
+        transform: rotate(360deg);
+    }
+    
+    /*fin de cajas con textos*/
+    
     /* MAIN */
+    section .products{
+       display: flex;
+       flex-wrap: wrap;
+       justify-content: flex-start;
+    }
     .div-product {
         width: 100%;
     }
 
-     section article img {
+    section article img {
         width: 90%;
     }
 
@@ -324,20 +460,20 @@ footer .social .fab {
     }
 
     .article-products-seccion{
-       
+
         margin: 8px 0px;
         width: 33%;
     }
 
     .article-products{
-       
+
         margin: 8px 10px;
         width: 30%;
         box-shadow: 0 3px 12px rgb(0 0 0 / 10%);
     }
 
     main h1{
-        
+
         font-size: 30px;
     }
 
@@ -366,9 +502,9 @@ footer .social .fab {
         flex-direction:row
     }
 
-     
+
     /* FOOTER */
-    
+
         footer .logo {
         width: 100%;
     }
@@ -396,18 +532,15 @@ footer .social .fab {
 /* PC */
 
 @media (min-width: 1200px) {
-     .logo{
-        align-content: center;
-        width: 80%;
-    }
-
+    
     main section {
         max-width: 1200px;
         margin:auto;
-    } 
+    }
 
     main section .article-products-seccion h3{
         display: none;
+        transition: all 10ms
     }
 
     main .article-products-seccion .product-section-title{
@@ -426,8 +559,10 @@ footer .social .fab {
     }
 
     main .article-products-seccion .product-section:hover img{
-        box-shadow: 0px 0px 13px 5px #BEBEBE; 
+        box-shadow: 0px 0px 13px 5px #BEBEBE;
         filter: brightness(75%);
+        transition: all 10ms ;
+
     }
 
     main .article-products-seccion .product-section:hover .product-section-title{
@@ -449,7 +584,7 @@ footer .social .fab {
     header .banner-description{
         text-align: center;
         padding: 5px 10px;
-        
+
     }
 
     header .link-index {
@@ -459,7 +594,7 @@ footer .social .fab {
     /* MAIN */
 
     main h1{
-        
+
         font-size: 40px;
     }
 
@@ -476,11 +611,11 @@ footer .social .fab {
 
     main section .div-price{
         margin: 4px 10px
-    }  
+    }
 
     .div-bag{
         visibility: hidden;
-        transition:all .1s ease;        
+        transition:all .1s ease;
     }
 
     .article-products:hover .div-bag {
@@ -516,4 +651,4 @@ footer .social .fab {
         padding: 10px;
         margin:auto
     }
-} 
+}

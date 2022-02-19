@@ -11,9 +11,9 @@ const validations = [
 	body('email')
 		.notEmpty().withMessage('Tienes que escribir un correo electrónico').bail()
 		.isEmail().withMessage('Debes escribir un formato de correo válido'),
-	body('password').notEmpty().withMessage('Tienes que escribir una contraseña')
-		.isLength({ min: 8 }).withMessage('La contraseña debe tener al menos 8 caracteres')
-		.matches(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z\d@$.!%*#?&]{8,}$/, "i").withMessage('La contraseña debe ser una combinación de al menos una mayúscula, una minúscula, mínimo 8 a 20 caracteres'),
+	body('password').notEmpty().withMessage('Tienes que escribir una contraseña'),
+		// .isLength({ min: 8 }).withMessage('La contraseña debe tener al menos 8 caracteres')
+		// .matches(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z\d@$.!%*#?&]{8,}$/, "i").withMessage('La contraseña debe ser una combinación de al menos una mayúscula, una minúscula, mínimo 8 a 20 caracteres'),
     body('secondPassword').custom((value, { req }) => {
 		let password = req.body.password
         let secondPassword = req.body.secondPassword
