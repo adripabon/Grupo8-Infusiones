@@ -36,5 +36,6 @@ router.put("/edit/:id",multerMiddleware.single('image'), validationProductsMiddl
 router.delete("/delete/:id", authUserMiddleware, isAdminMiddleware, productController.delete )
 
 router.post("/carritoAdd/:id",productController.carritoAdd )
+router.post("/carritoDelete/:id",productController.carritoDelete )
 
 module.exports = router

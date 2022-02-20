@@ -18,7 +18,9 @@
     <%- include('../partials/header')  %>
     
     <main>
-        
+        <% let contar = 0; %>
+        <%  let precioAcumulado = 0  %>
+        <%  let descuentoAcumulado = 0  %>
         <% if(productosCarrito!=undefined && user!=undefined){ %> 
             <% productosCarrito.map(product=>{  %> 
         <section class="section-productCart">
@@ -28,15 +30,15 @@
                         <tr class="title-shop-table">
                             <td class="product-remove" >&nbsp;</td>
                             <td class="product-thumbnail">&nbsp;</td>
-                            <td class="product-name">Producto</td>
-                            <td class="product-price">Precio</td>
+                            <td class="product-name" id="td-product-name">Producto</td>
+                            <td class="product-price" id="td-product-price">Precio</td>
                             <td class="product-quantity">Cantidad</td>
                             <td class="product-subtotal">Subtotal</td>
                         </tr>
                         <tr class="cart-item">
-                            <td class="product-remove">
-                                <a href="#" class="remove" >×</a> 
-                            </td>
+                             <td class="product-remove">
+                                <a href="/product/carritoDelete/<%= product.id_products %> " class="remove" >×</a> 
+                            </td> 
                             <td class="product-thumbnail">
                                 <a href="#"><img src="/images/<%= product.image %>" class="size-woocommerce_thumbnail" ></a>
                             </td>
@@ -58,42 +60,44 @@
                             </td>
                         </tr>
                         <tr class="cart-item">
-                            <td class="product-remove">
+                            <!-- <td class="product-remove">
                                 <a href="#" class="remove" >×</a> 
-                            </td>
+                            </td> -->
                         </tr>                        
                     </tbody>
                 </table>
                 
-                
-                <%  let precioAcumulado = 0  %>
-                <%  let descuentoAcumulado = 0  %>
+               
+                <% contar +=1 %>  
                 <%   precioAcumulado = precioAcumulado + product.price %> 
                 <%product.discount? descuentoAcumulado = descuentoAcumulado + product.discount: 0 %> 
-                <div class="detail">
-                    <h3 class="title-detail">TOTAL DEL CARRITO</h3>
-                    <span>Enviado a <p class="send"><%= user.location %> </p></span>                      
-                    <span>Descuento <p class="discount"><%= descuentoAcumulado %> </p></span>
-                    <span>Total<p class="total">$ <%= precioAcumulado  %></p></span>
-                </div>
             </form>
-            
+             <% if(contar == productosCarrito.length ){ %> 
+            <div class="detail">
+                <h3 class="title-detail">TOTAL DEL CARRITO</h3>
+                <span> <p class="send">Enviado a <%= user.location %> </p></span>                      
+                <span> <p class="discount">Descuento: %<%= descuentoAcumulado %> </p></span>
+                <span><p class="total">Total $<%= precioAcumulado  %></p></span>
+            </div>
+            <% } %> 
             <% }) %> 
-        <% } %> 
-       <% if(productosCarrito==undefined){ %>  
-    <div class="no_producto_seleccionado" style="display: flex; flex-direction: column;  flex-wrap: nowrap; align-content: center;justify-content: center; align-items: center;">
-        <h1 style="font-family: Amatic SC, cursiva;margin-bottom:2%; font-size: 50px; background-color: #bf9780;">NO TIENES NINGUN PRODUCTO SELECCIONADO</h1>
-        <h2 style="font-family: Amatic SC, cursiva; font-size: 40px; margin-bottom:2%;">Sigue navegando, en nuestros productos, que la fuerza te acompañe!</h2>
-        <iframe src="https://giphy.com/embed/Wn74RUT0vjnoU98Hnt"  width="480" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><a href="https://giphy.com/gifs/baby-yoda-Wn74RUT0vjnoU98Hnt"></a>
-    </div>
-    <% } %> 
+            <% } %> 
+            
+            <% if(user!=undefined && productosCarrito==undefined){ %>  
+                <div class="no_producto_seleccionado" style="display: flex; flex-direction: column;  flex-wrap: nowrap; align-content: center;justify-content: center; align-items: center;">
+                    <h1 style="font-family: Amatic SC, cursiva;margin-bottom:2%; font-size: 50px; background-color: #bf9780;">NO TIENES NINGUN PRODUCTO SELECCIONADO</h1>
+                    <h2 style="font-family: Amatic SC, cursiva; font-size: 40px; margin-bottom:2%;">Sigue navegando, en nuestros productos, que la fuerza te acompañe!</h2>
+                    <iframe src="https://giphy.com/embed/Wn74RUT0vjnoU98Hnt"  width="480" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><a href="https://giphy.com/gifs/baby-yoda-Wn74RUT0vjnoU98Hnt"></a>
+                </div>
+                <% } %> 
 
-    <% if(user==undefined){ %> 
-    <div class="no_sesion" style="display: flex; flex-direction: column;  flex-wrap: nowrap; align-content: center;justify-content: center; align-items: center;">
-        <h1 style="font-family: Amatic SC, cursiva;margin-bottom:2%; font-size: 50px; background-color: #bf9780; color: aliceblue;">INICIA SESION Y EXPLORA NUESTROS PRODUCTOS</h1>
-        <iframe src="https://giphy.com/embed/Wn74RUT0vjnoU98Hnt"  width="480" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><a href="https://giphy.com/gifs/baby-yoda-Wn74RUT0vjnoU98Hnt"></a>
-    </div>
-    <% } %> 
+                
+                <% if(user==undefined){ %> 
+                    <div class="no_sesion" style="display: flex; flex-direction: column;  flex-wrap: nowrap; align-content: center;justify-content: center; align-items: center;">
+                        <h1 style="font-family: Amatic SC, cursiva;margin-bottom:2%; font-size: 50px; background-color: #bf9780; color: aliceblue;">INICIA SESION Y EXPLORA NUESTROS PRODUCTOS</h1>
+                        <iframe src="https://giphy.com/embed/Wn74RUT0vjnoU98Hnt"  width="480" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><a href="https://giphy.com/gifs/baby-yoda-Wn74RUT0vjnoU98Hnt"></a>
+                    </div>
+                    <% } %> 
     </section>
     </main>
     

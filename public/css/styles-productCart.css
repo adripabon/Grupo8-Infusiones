@@ -42,7 +42,6 @@ main section .product-thumbnail, .product-name, .product-price, .product-quantit
     font-size: 1rem;
     text-align: center;
     color: #333;
-    font-size: 1rem;
 }
 
 main section .product-remove{
@@ -89,6 +88,24 @@ main section form .detail{
     justify-content: space-around;
 }
 
+.detail{
+    margin: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.detail h3, p {
+    padding: 5px;
+}
+
+.detail h3 {
+    font-size:20px;
+}
+
+.detail p{
+    font-size:15px;
+}
 main section form .detail .title-detail{
     display: flex;
     width: 100%;
@@ -105,7 +122,24 @@ main section .detail .price{
     bottom: 0px;
     width: 100%;
 } */
-
+.section-productCart{
+flex-direction: column;
+align-content: center;
+flex-wrap: nowrap;
+justify-content: flex-end;
+align-items: center;
+}
+@media (max-width: 768px) {
+    .product-quantity{
+        display: none;
+    }
+    .product-subtotal{
+        display: none;
+    }
+    #td-product-name, #td-product-price {
+        display:none;
+    }
+}
 @media (min-width: 1200px) {
     
 
