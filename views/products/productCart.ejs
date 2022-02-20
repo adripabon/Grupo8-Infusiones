@@ -37,7 +37,9 @@
                         </tr>
                         <tr class="cart-item">
                              <td class="product-remove">
-                                <a href="/product/carritoDelete/<%= product.id_products %> " class="remove" >×</a> 
+                                 <form action="/product/carritoDelete/<%= product.id_products %>"method="post">  
+                                                            <input type="submit" value="x">
+                                 </form>
                             </td> 
                             <td class="product-thumbnail">
                                 <a href="#"><img src="/images/<%= product.image %>" class="size-woocommerce_thumbnail" ></a>

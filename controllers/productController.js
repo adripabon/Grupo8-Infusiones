@@ -63,7 +63,6 @@ const productController = {
     res.render("products/productDetails", { product });
   },
   carritoAdd: async(req,res) =>{
-    console.log(req.session.carritoArray)
     if(req.session.carritoArray == undefined ){ req.session.carritoArray = []}
     let carritoArray = req.session.carritoArray
     req.session.carritoArray 
@@ -75,12 +74,13 @@ const productController = {
       carritoArray.push(product);
       req.session.carritoArray = carritoArray
       res.redirect("/product/product-cart")
-    })    
+    })      
   },
 
   carritoDelete: (req,res)=>{
-    
-    carritoArray.find(product=>console.log(product.id == req.params.id))
+    console.log("Dd");
+    carritoArray.find(product=>console.log(product.id_product == req.params.id))
+    res.redirect("/")
   },
   edit: async (req, res) => {
     
@@ -121,7 +121,6 @@ const productController = {
     let id = req.params.id;
     let product = await db.Products.findByPk(id);
     let image = product.image;
-    //console.log(req.file);
     
     if (req.file) 
       image = req.file.filename;
