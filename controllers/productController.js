@@ -2,27 +2,27 @@ let db = require("../database/models");
 const Op = db.Sequelize.Op;
 const session = require('express-session');
 
+
 /* Se requiere el resultado de validaciones solamente */
 const { validationResult } = require('express-validator');
 //const { where } = require("sequelize/dist");
 
 /* Contine los controladores del index */
 const productController = {
-
+  
   productCart: async (req, res) => {
     let user=req.session.userLogged 
     let productosCarrito = req.session.carritoArray
-    console.log(productosCarrito);
     res.render("products/productCart", {productosCarrito, user});
   },
   listProducts: async (req, res) => {
     let typeProduct = req.query.type;
-
+    
     res.locals.typeProduct = typeProduct;
-
+    
     let products = [];
     if (typeProduct) {
-
+      
       db.Products.findAll({
         attributes:['id_products','name', 'description', 'price', 'id_type_product', 'image', [db.sequelize.fn('CONCAT', false), 'isSelected']  ],
         include: [
@@ -36,7 +36,7 @@ const productController = {
         res.render("products/list-products",{ products });
       })
       .catch(err=>{console.log(err);});
-
+      
     } else {
       db.Products.findAll({
         attributes:['id_products','name', 'description', 'price', 'id_type_product', 'image', [db.sequelize.fn('CONCAT', false), 'isSelected']  ],
@@ -47,11 +47,12 @@ const productController = {
       }).then((products) => {
         res.render("products/list-products", { products });
       });
-    
+      
     }
     
   },
   productDetails: async (req, res) => {
+    //req.session.carritoArray = [];
     let product = await db.Products.findByPk(req.params.id, {
       attributes:['id_products','name', 'description', 'price', 'id_type_product', 'image', [db.sequelize.fn('CONCAT', false), 'isSelected']  ],
       include: [
@@ -62,14 +63,17 @@ const productController = {
     res.render("products/productDetails", { product });
   },
   carritoAdd: async(req,res) =>{
-    req.session.carritoArray = [];
+    console.log(req.session.carritoArray)
+    if(req.session.carritoArray == undefined ){ req.session.carritoArray = []}
     let carritoArray = req.session.carritoArray
+    req.session.carritoArray 
     db.Products.findByPk( req.params.id ,
       { 
-      attributes:['id_products','name', 'description', 'price', 'id_type_product', 'image', [db.sequelize.fn('CONCAT', false), 'isSelected']  ],
-       },
+        attributes:['id_products','name', 'description', 'price', 'id_type_product', 'image', [db.sequelize.fn('CONCAT', false), 'isSelected']  ],
+      },
   ).then(product=>{
-      carritoArray.push(product)
+      carritoArray.push(product);
+      req.session.carritoArray = carritoArray
       res.redirect("/product/product-cart")
     })    
   },
