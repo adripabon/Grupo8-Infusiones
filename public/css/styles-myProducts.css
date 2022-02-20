@@ -6,6 +6,11 @@
     margin: 0
 }
 
+.ul-errors{
+    color: red;
+    margin: 10px;
+}
+
 .slideshow-container {
     display: none;
 }

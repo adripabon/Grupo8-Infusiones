@@ -24,8 +24,15 @@
         <form class="myProducts" method="POST" action="/product/edit/<%= product.id_products %>?_method=PUT"
           enctype="multipart/form-data">
           <h1>Edición de producto</h1>
+          <div class="grupo">
+            <span class="barra">
+              <ul class="ul-errors">
+
+              </ul>
+            </span>
+          </div>
           <label>Nombre de mi producto:</label>
-          <input type="text" name="name" class="myProducts" value="<%= product.name %>"
+          <input type="text" name="name" id="name" class="myProducts" value="<%= product.name %>"
             placeholder="Café Colina Grano 454g Juan Valdez" />
           <% if (locals.errors && errors.name) { %>
             <span class="barra">
@@ -35,13 +42,13 @@
               <br />
 
               <label>Descripcion:</label>
-              <input type="text" name="description" class="myProducts" value="<%= product.description %>"
-                placeholder="Cafe descafeinado con un gusto especial a vainilla" />
+              <input type="text" name="description" id="description" class="myProducts"
+                value="<%= product.description %>" placeholder="Cafe descafeinado con un gusto especial a vainilla" />
               <br />
 
               <label>Pone la imagen de tu producto aquí</label>
               <input class="fyle" type="file" accept=".jpg, .png, .jpeg, .svg" name="image" id="image"
-                class="myProducts" />
+                class="myProducts" value="<%= product.image %>" />
 
               <br />
 
@@ -60,16 +67,17 @@
               </div>
 
               <label>Precio:</label>
-              <input class="price" type="text" value="<%=product.price%>" name="price" placeholder="$200" />
+              <input class="price" type="text" value="<%=product.price%>" name="price" id="price" placeholder="$200" />
               <br />
 
               <label>Descuento:</label>
-              <input class="discount" type="text" value="<%= product.discount %>" name="discount" placeholder="20%" />
+              <input class="discount" type="text" value="<%= product.discount %>" name="discount" id="discount"
+                placeholder="20%" />
               <br />
 
               <label>Tipo de producto</label>
               <div class="radio">
-                <% type.forEach(typeRow=> { console.log('Tipo ', product.id_type_product)%>
+                <% type.forEach(typeRow=> { %>
                   <input type="radio" id="<%= typeRow.name %>" value="<%= typeRow.id_type_product %>" name="type"
                     class="myProducts" <%=typeRow.id_type_product==product.id_type_product ? 'checked' : null %>
                   />
@@ -84,6 +92,7 @@
         </form>
       </div>
     </main>
+    <script src="/js/validationEditProduct.js"></script>
     <!-- INCLUDE FOOTER -->
     <%- include('../partials/footer') %>
 </body>

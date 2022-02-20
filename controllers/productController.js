@@ -24,7 +24,7 @@ const productController = {
     if (typeProduct) {
       
       db.Products.findAll({
-        attributes:['id_products','name', 'description', 'price', 'id_type_product', 'image', [db.sequelize.fn('CONCAT', false), 'isSelected']  ],
+        attributes:['id_products','name', 'description', 'price', 'discount', 'id_type_product', 'image', [db.sequelize.fn('CONCAT', false), 'isSelected']  ],
         include: [
           { association: "typeProduct" },
           {

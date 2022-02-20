@@ -186,9 +186,10 @@ section .discount{
     transition:all .4s ease;
 }
 
- .destacados{
+.destacados{
     background-color: #ffda9e;
     width:100%;
+    margin: 10px;
 } 
  #destacados{
     font-family:'Amatic SC', cursive;

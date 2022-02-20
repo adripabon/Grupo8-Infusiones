@@ -206,7 +206,7 @@ main section .discount{
 
 main .div-bag {
     width: 100%;
-    background-color: #2c2a29;
+    background-color: #fcb7af;
     border-radius: 0;
     color: #fff;
     border-top: 1px solid #c4c4c4;
@@ -226,6 +226,25 @@ main .div-bag i{
     transition:all .4s ease;
 }
 
+.article-products:hover .div-product{
+    box-shadow: 0px 0px 20px 7px rgba(65,65,65,0.32);
+    top: -10px;
+}
+
+.destacados{
+    background-color: #ffda9e;
+    width:100%;
+    margin: 10px;
+} 
+#destacados{
+    font-family:'Amatic SC', cursive;
+    color:white;
+    font-size: 60px;
+    display: flex;
+    justify-content: center;
+    text-transform: uppercase;
+} 
+    
 .article-products:hover .div-product{
     box-shadow: 0px 0px 20px 7px rgba(65,65,65,0.32);
     top: -10px;
