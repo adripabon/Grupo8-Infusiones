@@ -77,6 +77,11 @@ const productController = {
       res.redirect("/product/product-cart")
     })    
   },
+
+  carritoDelete: (req,res)=>{
+    
+    carritoArray.find(product=>console.log(product.id == req.params.id))
+  },
   edit: async (req, res) => {
     
     const product = await db.Products.findByPk(req.params.id);
