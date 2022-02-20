@@ -4,6 +4,7 @@ const router = express.Router()
 
 //Se inicicaliza el middleware de validación.
 const validationProductsMiddleware = require('../middlewares/validationProductsMiddleware')
+const validationUpdateProductsMiddleware = require('../middlewares/validationUpdateProductsMiddleware')
 
 //Se invoca el middleware de multer para la carga de archivos.
 const multerMiddleware = require('../middlewares/multerMiddleware')
@@ -29,7 +30,7 @@ router.get("/product-details/:id", productController.productDetails);
 /* EDIT PRODUCT */
 //Valida si tiene sessión y si es un administrador.
 router.get("/edit/:id", authUserMiddleware, isAdminMiddleware, productController.edit)
-router.put("/edit/:id",multerMiddleware.single('image'), validationProductsMiddleware, isAdminMiddleware, productController.update )
+router.put("/edit/:id",multerMiddleware.single('image'), validationUpdateProductsMiddleware, isAdminMiddleware, productController.update )
 
 /* DELET PRODUCT */
 //Valida si tiene sessión y si es un administrador.

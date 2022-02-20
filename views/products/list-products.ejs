@@ -9,6 +9,9 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
         integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Roboto+Mono:wght@100&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="/css/styles-header.css">
     <link rel="stylesheet" href="/css/styles-slide.css">
     <link rel="stylesheet" href="/css/styles-navbar.css">
@@ -22,9 +25,12 @@
 
         <main>
             <section>
-                <h1>
-                    <%= locals.typeProduct ? locals.typeProduct : 'todos' %>
-                </h1>
+                <div class="destacados">
+                    <h2 id="destacados">
+                        <%= locals.typeProduct ? locals.typeProduct : 'todos' %>
+                    </h2>
+                </div>
+
                 <div class="products">
                     <!-- Consulta todos los productos destacados type=mas-vendido -->
                     <% products.forEach(product=> { %>
