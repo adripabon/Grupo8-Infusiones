@@ -134,7 +134,63 @@ const userController = {
 		//Se destruye la sesión
 		req.session.destroy()
 		return res.redirect('/')
-    }
+    },
+	edit: async (req, res) => {
+    
+		db.Users.findByPk(req.params.id)
+		.then((user) => {
+            res.render("users/edit-user", { 
+				errors: [],
+				oldData: user
+			 });
+          })
+		
+	},
+	
+	update: async (req, res) => {
+		const resultValidation = validationResult(req);
+		
+		if (resultValidation.errors.length > 0) {
+			return res.render('users/edit-user', {
+				/* DEvuelve un objeto literal */
+				errors: resultValidation.mapped(),
+				oldData: req.body
+			});
+		}
+
+		let id = req.params.id;
+		let user = await db.Users.findByPk(id);
+		let image = user.avatar;
+
+		
+		//console.log(req.body);
+		
+		if (req.file) 
+		  image = req.file.filename;
+
+		let row = {
+            ...req.body, 
+            password: bcrypt.hashSync(req.body.password, 10),
+            second_password: bcrypt.hashSync(req.body.secondPassword, 10),
+			profile: user.id_profile,
+			email: user.email,
+            avatar: image
+        }
+
+		delete row.secondPassword
+		
+		//console.log(row);
+		db.Users.update({
+			...row
+		},{
+		  where: { id_users: id }
+		}).then( 
+		  db.Users.findByPk(id)
+		  .then(user => {
+			res.redirect("/")
+		  })
+		) 
+	},
 
  }
  

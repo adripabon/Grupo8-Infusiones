@@ -39,15 +39,19 @@
                                 </h1>
                                 <!-- Se valida si el producto tiene descuento -->
                                 <p class="p">
+                                    <strong>Email: </strong>
                                     <%= locals.userLogged.email %>
                                 </p>
                                 <p class="p">
+                                    <strong>Provincia: </strong>
                                     <%= locals.userLogged.province %>
                                 </p>
                                 <p class="p">
+                                    <strong>Localidad: </strong>
                                     <%= locals.userLogged.location %>
                                 </p>
                                 <p class="p">
+                                    <strong>Calle: </strong>
                                     <%= locals.userLogged.street %>
                                 </p>
 
@@ -56,11 +60,7 @@
                     </div>
                     <div class="div-button">
 
-                        <a href="/product/edit/"><input type="submit" value="Editar" disabled></a>
-
-                        <form class="form-delete" method="post" action="/product/delete/zz?_method=DELETE">
-                            <input type="submit" value="Eliminar" disabled>
-                        </form>
+                        <a href="/user/edit/<%= locals.userLogged.id_users %>"><input type="submit" value="Editar"></a>
                     </div>
 
                 </article>
