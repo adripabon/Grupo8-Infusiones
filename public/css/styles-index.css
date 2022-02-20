@@ -134,7 +134,8 @@ section .div-discount{
     position: absolute;
     top: 20px;
     left: 0px;
-    background-color: #F2CA69;
+    background-color: #ffda9e;
+    color:white;
     border-radius: 0px 40px 40px 0px;
     width: 20%;
     display: flex;
@@ -146,7 +147,7 @@ section .div-discount{
     position: absolute;
     right: 5px;
     top: 5px;
-    background-color: #F2CA69;
+    background-color: #ffda9e;
     box-shadow: 0 3px 10px rgb(0 0 0 / 39%);
 }
 
@@ -349,7 +350,7 @@ footer .social .fab {
         /* border: 1px solid red;  */
         margin-top:1%;
         height: 100vh;
-    width: 100vw;
+    width: 100%;
     background-image:url(http://localhost:3000/images/coffee_quienes_somos.jpeg);
     background-position: center;
     background-size: cover;
@@ -359,7 +360,7 @@ footer .social .fab {
 #quienes_somos_2{
     /* border: 1px solid red;  */
     height: 100vh;
-    width: 100vw;
+    width: 100%;
     background-image:url(http://localhost:3000/images/quienes_somos_2_filtro.jpg);
     background-position: center;
     background-size: cover;
@@ -368,7 +369,7 @@ footer .social .fab {
 #quienes_somos_3{
     /* border: 1px solid red;  */
     height: 100vh;
-    width: 100vw;
+    width: 100%;
     background-image:url(http://localhost:3000/images/quienes_somos_3_empty.jpg);
     background-position: center;
     background-size: cover;
@@ -400,7 +401,6 @@ footer .social .fab {
         font-family: 'Amatic SC', cursive;
         font-size:110px;
         position: relative;
-        top: 10%;
         color: white;
         transition: all 1000ms ;
         
@@ -428,7 +428,6 @@ footer .social .fab {
     #quienes_somos_3_img{
         position: relative;
         left: 40%;
-        top:12%;
         width: 20%;
         transition:all 0.5s;
     }

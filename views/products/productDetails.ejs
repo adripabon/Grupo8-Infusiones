@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="/css/styles-index.css">
     <link rel="stylesheet" href="/css/styles-navbar.css">
     <link rel="stylesheet" href="/css/styles-productDetails.css">
-
+    <script type="text/javascript" src="/js/carrito_button.js"></script>
     <title>Productos</title>
 </head>
 
@@ -27,7 +27,6 @@
                     <div class="product-details">
                         <h2>Visualizando el producto: <%= product.name %>
                         </h2>
-
                         <div class="div-price">
                             <img class="foto-article" src="/images/<%= product.image %>" alt="Café Colombia Molido">
                             <div class="block-description">
@@ -55,9 +54,11 @@
                             </p>
                         </div>
 
+                    <form action="/product/carritoAdd/<%= product.id_products %>" method="post">
                         <div class="carrito">
-                            <a href="./product-cart"><i class="fas fa-cart-plus"></i></a>
+                            <a href="products/product-cart"><i class="fas fa-cart-plus"></i><input name="isSelected" value="Agregar al carrito" type="submit"></a>
                         </div>
+                    </form>
 
                     </div>
                     <div class="div-button">

@@ -12,7 +12,7 @@ const productController = require('../controllers/productController')
 const isAdminMiddleware = require('../middlewares/isAdminMiddleware')
 const authUserMiddleware = require('../middlewares/authUserMiddleware')
 
-router.get("/product-cart/:id", productController.productCart);
+router.get("/product-cart", productController.productCart);
 
 /* LIST PRODUCT */
 router.get("/list-products",productController.listProducts )
@@ -35,5 +35,6 @@ router.put("/edit/:id",multerMiddleware.single('image'), validationProductsMiddl
 //Valida si tiene sessión y si es un administrador.
 router.delete("/delete/:id", authUserMiddleware, isAdminMiddleware, productController.delete )
 
+router.post("/carritoAdd/:id",productController.carritoAdd )
 
 module.exports = router

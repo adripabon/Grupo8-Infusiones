@@ -7,6 +7,7 @@
     <title>CoffTee</title>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Roboto+Mono:wght@100&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/styles-header.css">
     <link rel="stylesheet" href="/css/styles-index.css">
     <link rel="stylesheet" href="/css/styles-navbar.css">
@@ -15,8 +16,11 @@
 <body>
     <!-- INCLUDE HEADER -->
     <%- include('../partials/header')  %>
-
+    
     <main>
+        
+        <% if(productosCarrito!=undefined && user!=undefined){ %> 
+            <% productosCarrito.map(product=>{  %> 
         <section class="section-productCart">
             <form class="form-productCart">
                 <table class="shop-table" cellspacing="0">
@@ -34,13 +38,13 @@
                                 <a href="#" class="remove" >×</a> 
                             </td>
                             <td class="product-thumbnail">
-                                <a href="#"><img src="https://www.tiendajuanvaldez.com/wp-content/uploads/2020/05/COLINA-GRANO-454-G-FRONT1-600x600.jpg" class="size-woocommerce_thumbnail" ></a>
+                                <a href="#"><img src="/images/<%= product.image %>" class="size-woocommerce_thumbnail" ></a>
                             </td>
                             <td class="product-name" >
-                                <a href="#">Café Colina Grano 454g Juan Valdez</a> 
+                                <a href="#"><%= product.name %> </a> 
                             </td>
                             <td class="product-price" data-title="Precio">
-                                <span class="product-price-currencySymbol">$</span>20,500 
+                                <span class="product-price-currencySymbol">$</span><%= product.price %>  
                             </td>
                             <td class="product-quantity" data-title="Cantidad">
                                 <div class="quantity">
@@ -50,46 +54,47 @@
                                 </div>
                             </td>
                             <td class="product-subtotal" data-title="Subtotal">
-                                <span class="woocommerce-Price-amount amount"><bdi><span class="woocommerce-Price-currencySymbol">$</span>20,500</bdi></span> 
+                                <span class="woocommerce-Price-amount amount"><bdi><span class="woocommerce-Price-currencySymbol">$</span><%= product.price %> </bdi></span> 
                             </td>
                         </tr>
                         <tr class="cart-item">
                             <td class="product-remove">
                                 <a href="#" class="remove" >×</a> 
                             </td>
-                            <td class="product-thumbnail">
-                                <a href="#"><img src="https://www.tiendajuanvaldez.com/wp-content/uploads/2020/05/COLINA-GRANO-454-G-FRONT1-600x600.jpg" class="size-woocommerce_thumbnail" ></a>
-                            </td>
-                            <td class="product-name" >
-                                <a href="#">Café Colina Grano 454g Juan Valdez</a> 
-                            </td>
-                            <td class="product-price" data-title="Precio">
-                                <span class="product-price-currencySymbol">$</span>20,500 
-                            </td>
-                            <td class="product-quantity" data-title="Cantidad">
-                                <div class="quantity">
-                                    <input type="button" value="-" class="minus">
-                                    <input type="text" class="quantity-input-text" value="1" title="Cantidad" size="4" placeholder="" inputmode="numeric">
-                                    <input type="button" value="+" class="plus">
-                                </div>
-                            </td>
-                            <td class="product-subtotal" data-title="Subtotal">
-                                <span class="woocommerce-Price-amount amount"><bdi><span class="woocommerce-Price-currencySymbol">$</span>20,500</bdi></span> 
-                            </td>
                         </tr>                        
                     </tbody>
                 </table>
+                
+                
+                <%  let precioAcumulado = 0  %>
+                <%  let descuentoAcumulado = 0  %>
+                <%   precioAcumulado = precioAcumulado + product.price %> 
+                <%product.discount? descuentoAcumulado = descuentoAcumulado + product.discount: 0 %> 
                 <div class="detail">
                     <h3 class="title-detail">TOTAL DEL CARRITO</h3>
-                    <span>Subtotal <p class="price-discount">$ 1700</p></span>
-                    <span>Enviado a <p class="send">Cordoba</p></span>
-                    <span>Precio <p class="price">$ 1241</p></span>                      
-                    <span>Descuento <p class="discount">27%</p></span>
-                    <span>Total<p class="total">$ 1241</p></span>
+                    <span>Enviado a <p class="send"><%= user.location %> </p></span>                      
+                    <span>Descuento <p class="discount"><%= descuentoAcumulado %> </p></span>
+                    <span>Total<p class="total">$ <%= precioAcumulado  %></p></span>
                 </div>
             </form>
             
-        </section>
+            <% }) %> 
+        <% } %> 
+       <% if(productosCarrito==undefined){ %>  
+    <div class="no_producto_seleccionado" style="display: flex; flex-direction: column;  flex-wrap: nowrap; align-content: center;justify-content: center; align-items: center;">
+        <h1 style="font-family: Amatic SC, cursiva;margin-bottom:2%; font-size: 50px; background-color: #bf9780;">NO TIENES NINGUN PRODUCTO SELECCIONADO</h1>
+        <h2 style="font-family: Amatic SC, cursiva; font-size: 40px; margin-bottom:2%;">Sigue navegando, en nuestros productos, que la fuerza te acompañe!</h2>
+        <iframe src="https://giphy.com/embed/Wn74RUT0vjnoU98Hnt"  width="480" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><a href="https://giphy.com/gifs/baby-yoda-Wn74RUT0vjnoU98Hnt"></a>
+    </div>
+    <% } %> 
+
+    <% if(user==undefined){ %> 
+    <div class="no_sesion" style="display: flex; flex-direction: column;  flex-wrap: nowrap; align-content: center;justify-content: center; align-items: center;">
+        <h1 style="font-family: Amatic SC, cursiva;margin-bottom:2%; font-size: 50px; background-color: #bf9780; color: aliceblue;">INICIA SESION Y EXPLORA NUESTROS PRODUCTOS</h1>
+        <iframe src="https://giphy.com/embed/Wn74RUT0vjnoU98Hnt"  width="480" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><a href="https://giphy.com/gifs/baby-yoda-Wn74RUT0vjnoU98Hnt"></a>
+    </div>
+    <% } %> 
+    </section>
     </main>
     
     <!-- INCLUDE FOOTER -->
