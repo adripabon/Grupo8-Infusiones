@@ -267,14 +267,109 @@ footer .social .fab {
     font-size: 2rem
 }
 
+/* TEXTOS QUIENES SOMOS */
+
+/*definicion de las cajas con sus baaackgrounds*/
+#quienes_somos_1{
+    /* border: 1px solid red;  */
+    margin-top:1%;
+    height: 100vh;
+    width: 100%;
+    background-image:url(http://localhost:3000/images/coffee_quienes_somos.jpeg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#quienes_somos_2{
+    /* border: 1px solid red;  */
+    height: 100vh;
+    width: 100%;
+    background-image:url(http://localhost:3000/images/quienes_somos_2_filtro.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+#quienes_somos_3{
+    /* border: 1px solid red;  */
+    height: 100vh;
+    width: 100%;
+    background-image:url(http://localhost:3000/images/quienes_somos_3_empty.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+
+/*estilos de textos*/
+#quienes_somos_1_text{
+    font-family: 'Amatic SC', cursive;
+    position: relative;
+    top: 5%;
+    font-size:100px;
+    color: white;
+    transition: all 1000ms;
+}
+
+
+#quienes_somos_2_text{
+    font-family: 'Amatic SC', cursive;
+    font-size:80px;
+    position: relative;
+    top: 20%;
+    color: white;
+    transition: all 1000ms ;
+
+}
+#quienes_somos_3_text{
+    font-family: 'Amatic SC', cursive;
+    font-size:110px;
+    position: relative;
+    color: white;
+    transition: all 1000ms ;
+    
+}
+
+/*hovers de las cajas con textos*/
+
+#quienes_somos_1_text:hover{
+    box-shadow: 0 3px 12px rgb(0 0 0 / 10%);
+    font-size:105px;
+    background-color: rgba(0,3,12,0.32);
+    transition: all 1000ms ;
+}
+#quienes_somos_2_text:hover{
+    box-shadow: 0 3px 12px rgb(0 0 0 / 10%);
+    font-size:85px;
+    background-color: rgba(0,3,12,0.32);
+    transition: all 1000ms ;
+}
+#quienes_somos_3_text:hover{
+    font-size:115px;
+    transition: all 1000ms ;
+}
+
+#quienes_somos_3_img{
+    position: relative;
+    left: 40%;
+    width: 20%;
+    transition:all 0.5s;
+}
+
+#quienes_somos_3_img:hover{
+    transform: rotate(360deg);
+}
+
 
 /* responsive devices*/
 
 
 @media (max-width: 768px){
-    .quienes_somos{
+    #quienes_somos_3, .quienes_somos{
         display:none
     }
+
+    
     .slideshow-container{
         display:none
     }
@@ -343,98 +438,6 @@ footer .social .fab {
         background-color: #F2C0A2;
         fill-opacity: 0.7;
         border: 1px solid #f0b189;
-    }
-    
-
-    /*definicion de las cajas con sus baaackgrounds*/
-    #quienes_somos_1{
-        /* border: 1px solid red;  */
-        margin-top:1%;
-        height: 100vh;
-    width: 100%;
-    background-image:url(http://localhost:3000/images/coffee_quienes_somos.jpeg);
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-}
-
-#quienes_somos_2{
-    /* border: 1px solid red;  */
-    height: 100vh;
-    width: 100%;
-    background-image:url(http://localhost:3000/images/quienes_somos_2_filtro.jpg);
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-}
-#quienes_somos_3{
-    /* border: 1px solid red;  */
-    height: 100vh;
-    width: 100%;
-    background-image:url(http://localhost:3000/images/quienes_somos_3_empty.jpg);
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    }
-    
-
-    /*estilos de textos*/
-    #quienes_somos_1_text{
-        font-family: 'Amatic SC', cursive;
-        position: relative;
-        top: 5%;
-        font-size:100px;
-        color: white;
-        transition: all 1000ms;
-    }
-    
-
-    #quienes_somos_2_text{
-        font-family: 'Amatic SC', cursive;
-        font-size:80px;
-        position: relative;
-        top: 20%;
-        color: white;
-        transition: all 1000ms ;
-
-    }
-    #quienes_somos_3_text{
-        font-family: 'Amatic SC', cursive;
-        font-size:110px;
-        position: relative;
-        color: white;
-        transition: all 1000ms ;
-        
-    }
-    
-    /*hovers de las cajas con textos*/
-    
-    #quienes_somos_1_text:hover{
-        box-shadow: 0 3px 12px rgb(0 0 0 / 10%);
-        font-size:105px;
-        background-color: rgba(0,3,12,0.32);
-        transition: all 1000ms ;
-    }
-    #quienes_somos_2_text:hover{
-        box-shadow: 0 3px 12px rgb(0 0 0 / 10%);
-        font-size:85px;
-        background-color: rgba(0,3,12,0.32);
-        transition: all 1000ms ;
-    }
-    #quienes_somos_3_text:hover{
-        font-size:115px;
-        transition: all 1000ms ;
-    }
-    
-    #quienes_somos_3_img{
-        position: relative;
-        left: 40%;
-        width: 20%;
-        transition:all 0.5s;
-    }
-    
-    #quienes_somos_3_img:hover{
-        transform: rotate(360deg);
     }
     
     /*fin de cajas con textos*/
