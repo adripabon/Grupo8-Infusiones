@@ -80,3 +80,10 @@ header nav ul li a {
     font-style: italic;
     
 }
+
+@media (max-width: 768px){
+    .logo img{
+        height: 40px;
+    }
+
+}

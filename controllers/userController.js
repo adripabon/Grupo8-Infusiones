@@ -121,7 +121,11 @@ const userController = {
 
 		db.Users.create(row)
 		.then(user => {
-			res.render("users/login")
+			console.log(user)
+			delete row.password
+			delete row.secondPassword
+			req.session.userLogged = row
+			res.redirect("/")
 		})
     },
     profile: async (req, res) => {

@@ -18,10 +18,17 @@
     <%- include('../partials/header')  %>
     
     <main>
+      
         <% let contar = 0; %>
         <%  let precioAcumulado = 0  %>
         <%  let descuentoAcumulado = 0  %>
-        <% if(productosCarrito!=undefined && user!=undefined || user!=undefined && productosCarrito.length>0){ %> 
+        <% if(productosCarrito!=undefined && user!=undefined){ %>
+            <% if(productosCarrito.length == 0){ %>
+                <div class="no_producto_seleccionado" style="display: flex; flex-direction: column;  flex-wrap: nowrap; align-content: center;justify-content: center; align-items: center;">
+                    <h1 style="font-family: Amatic SC, cursiva;margin-bottom:2%; font-size: 50px; background-color: #bf9780;">NO TIENES NINGUN PRODUCTO SELECCIONADO</h1>
+                    <h2 style="font-family: Amatic SC, cursiva; font-size: 40px; margin-bottom:2%;">Sigue navegando, en nuestros productos, que la fuerza te acompañe!</h2>
+                    <iframe src="https://giphy.com/embed/Wn74RUT0vjnoU98Hnt"  width="480" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><a href="https://giphy.com/gifs/baby-yoda-Wn74RUT0vjnoU98Hnt"></a>
+                </div>                <% } %>   
             <% productosCarrito.map(product=>{  %> 
                 <section class="section-productCart">
                         <table class="shop-table" cellspacing="0">
@@ -79,11 +86,14 @@
                 <span> <p class="discount">Descuento: %<%= descuentoAcumulado %> </p></span>
                 <span><p class="total">Total $<%= precioAcumulado  %></p></span>
             </div>
+
+              
+            
             <% } %> 
             <% }) %> 
             <% } %> 
             
-            <% if(user!=undefined && productosCarrito==undefined || user!=undefined && productosCarrito.length == 0 ){ %>  
+            <% if(user!=undefined && productosCarrito==undefined){ %>  
                 <div class="no_producto_seleccionado" style="display: flex; flex-direction: column;  flex-wrap: nowrap; align-content: center;justify-content: center; align-items: center;">
                     <h1 style="font-family: Amatic SC, cursiva;margin-bottom:2%; font-size: 50px; background-color: #bf9780;">NO TIENES NINGUN PRODUCTO SELECCIONADO</h1>
                     <h2 style="font-family: Amatic SC, cursiva; font-size: 40px; margin-bottom:2%;">Sigue navegando, en nuestros productos, que la fuerza te acompañe!</h2>

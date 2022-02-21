@@ -82,9 +82,7 @@ const productController = {
     db.Products.findByPk(req.params.id)
     .then(product=>{
       let carritoArrayFiltrado = carritoArray.filter(result=>{
-         if(product.id_products == result.id_products){
-           return true
-         }
+         return result.id_products != product.id_products
       })
       console.log(carritoArrayFiltrado);
      req.session.carritoArray= carritoArrayFiltrado
@@ -148,7 +146,7 @@ const productController = {
     }).then( 
       db.Products.findByPk(id)
       .then(product => {
-        res.render("products/productDetails", { product})
+        res.redirect("/")
       })
     )   
   },

@@ -24,60 +24,6 @@ p {
     text-align: center;
 }
 
-/* HEADER */
-
-header .header-block{
-    position: relative;
-    z-index: 20;
-    background: linear-gradient(to left, #DBD5A4, #649173);
-    border-radius: 0px 0px 42px 42px;   
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    flex-wrap: wrap;
-}
-
-header .link-index{
-    width: 55%;
-}
-
-.logo img{
-    align-self: stretch;
-    width: auto;
-    height: 65px;
-    padding-bottom: 10px;
-    
-}
-
-header img{
-    width: 100%;
-}
-
-header .menu{
-    display: none;
-
-}
-
-header nav ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #273940;
-    align-content: center;
-    border-radius: 6px;
-}
-  
-header nav ul li {
-    float: left;
-}
-
-header nav ul li a {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 10px 12px;
-}
 
 /*BANNER*/
 
@@ -324,40 +270,7 @@ footer .social .fab {
 
 /* TABLET */
 @media (min-width: 768px) {
-    
-    header .header-block{
-        height: 100px;
-    }
-       
-    header .link-index{
-        width: 25%;
-    }
-
-   
-    
-    header .menu{
-        display: flex;
-    }
-
-    header .burger-menu{
-        display: none;
-    }
-
-    header .header-block{
-        justify-content: space-evenly;
-    }
-
-    .banner-description{
-        position: absolute;
-        text-align: center;
-        width: 350px;
-        left: 20px;
-        bottom: 50px;
-        background-color: #F2C0A2;
-        fill-opacity: 0.7;
-        border: 1px solid #f0b189;
-    }
-
+  
     /* MAIN */
     .div-product {
         width: 100%;
@@ -434,35 +347,16 @@ footer .social .fab {
 /* PC */
 
 @media (min-width: 1200px) {
-    .logo{
-        align-content: center;
-        width: 80%;
-    }
+   
 
     main {
         max-width: 1200px;
         margin:auto;
     }    
 
-    header .header-block {
-        padding: 10px;
-        margin:auto;
-    }
+   
 
-    .banner {
-        margin: auto;
-
-    }
-
-    header .banner-description{
-        text-align: center;
-        padding: 5px 10px;
-        
-    }
-
-    header .link-index {
-        width: 20%;
-    }
+   
 
     /* MAIN */
 
