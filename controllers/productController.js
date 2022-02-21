@@ -78,9 +78,19 @@ const productController = {
   },
 
   carritoDelete: (req,res)=>{
-    console.log("Dd");
-    carritoArray.find(product=>console.log(product.id_product == req.params.id))
-    res.redirect("/")
+    let carritoArray = req.session.carritoArray
+    db.Products.findByPk(req.params.id)
+    .then(product=>{
+      let carritoArrayFiltrado = carritoArray.filter(result=>{
+         if(product.id_products == result.id_products){
+           return true
+         }
+      })
+      console.log(carritoArrayFiltrado);
+     req.session.carritoArray= carritoArrayFiltrado
+     res.redirect("/product/product-cart")
+    })
+     .catch(err=>console.log(err))
   },
   edit: async (req, res) => {
     

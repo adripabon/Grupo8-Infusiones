@@ -21,29 +21,28 @@
         <% let contar = 0; %>
         <%  let precioAcumulado = 0  %>
         <%  let descuentoAcumulado = 0  %>
-        <% if(productosCarrito!=undefined && user!=undefined){ %> 
+        <% if(productosCarrito!=undefined && user!=undefined || user!=undefined && productosCarrito.length>0){ %> 
             <% productosCarrito.map(product=>{  %> 
-        <section class="section-productCart">
-            <form class="form-productCart">
-                <table class="shop-table" cellspacing="0">
-                    <tbody>
-                        <tr class="title-shop-table">
-                            <td class="product-remove" >&nbsp;</td>
-                            <td class="product-thumbnail">&nbsp;</td>
-                            <td class="product-name" id="td-product-name">Producto</td>
-                            <td class="product-price" id="td-product-price">Precio</td>
-                            <td class="product-quantity">Cantidad</td>
-                            <td class="product-subtotal">Subtotal</td>
-                        </tr>
-                        <tr class="cart-item">
-                             <td class="product-remove">
-                                 <form action="/product/carritoDelete/<%= product.id_products %>"method="post">  
-                                                            <input type="submit" value="x">
-                                 </form>
-                            </td> 
-                            <td class="product-thumbnail">
-                                <a href="#"><img src="/images/<%= product.image %>" class="size-woocommerce_thumbnail" ></a>
-                            </td>
+                <section class="section-productCart">
+                        <table class="shop-table" cellspacing="0">
+                            <tbody>
+                                <tr class="title-shop-table">
+                                    <td class="product-remove" >&nbsp;</td>
+                                    <td class="product-thumbnail">&nbsp;</td>
+                                    <td class="product-name" id="td-product-name">Producto</td>
+                                    <td class="product-price" id="td-product-price">Precio</td>
+                                    <td class="product-quantity">Cantidad</td>
+                                    <td class="product-subtotal">Subtotal</td>
+                                </tr>
+                                <tr class="cart-item">
+                                    <td class="product-remove">
+                                    </td> 
+                                    <td class="product-thumbnail">
+                                        <form action="/product/carritoDelete/<%= product.id_products %>" method="get">  
+                                          <input type="submit" value="x"> 
+                                        </form>
+                                        <a href="#"><img src="/images/<%= product.image %>" class="size-woocommerce_thumbnail" ></a>
+                                    </td>
                             <td class="product-name" >
                                 <a href="#"><%= product.name %> </a> 
                             </td>
@@ -73,7 +72,6 @@
                 <% contar +=1 %>  
                 <%   precioAcumulado = precioAcumulado + product.price %> 
                 <%product.discount? descuentoAcumulado = descuentoAcumulado + product.discount: 0 %> 
-            </form>
              <% if(contar == productosCarrito.length ){ %> 
             <div class="detail">
                 <h3 class="title-detail">TOTAL DEL CARRITO</h3>
@@ -85,7 +83,7 @@
             <% }) %> 
             <% } %> 
             
-            <% if(user!=undefined && productosCarrito==undefined){ %>  
+            <% if(user!=undefined && productosCarrito==undefined || user!=undefined && productosCarrito.length == 0 ){ %>  
                 <div class="no_producto_seleccionado" style="display: flex; flex-direction: column;  flex-wrap: nowrap; align-content: center;justify-content: center; align-items: center;">
                     <h1 style="font-family: Amatic SC, cursiva;margin-bottom:2%; font-size: 50px; background-color: #bf9780;">NO TIENES NINGUN PRODUCTO SELECCIONADO</h1>
                     <h2 style="font-family: Amatic SC, cursiva; font-size: 40px; margin-bottom:2%;">Sigue navegando, en nuestros productos, que la fuerza te acompañe!</h2>
