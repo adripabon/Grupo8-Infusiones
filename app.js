@@ -40,6 +40,7 @@ const userRouters = require('./routers/userRouters')
 const apiUserRoutes = require('./routers/apiRoutes/apiUserRoutes');
 const apiProductsRoutes = require('./routers/apiRoutes/apiProductsRoutes');
 const apiCategoriesRoutes = require('./routers/apiRoutes/apiCategoriesRoutes');
+const apiSalesInvoiceRoutes = require('./routers/apiRoutes/apiSalesInvoiceRoutes')
 
 
 app.use('/', mainRauters)
@@ -51,6 +52,7 @@ app.use("/user", userRouters);
 app.use("/api", apiUserRoutes);
 app.use("/api", apiProductsRoutes);
 app.use("/api", apiCategoriesRoutes);
+app.use("/api", apiSalesInvoiceRoutes)
 
 
 /* app.get('/login',(req, res)=>{
