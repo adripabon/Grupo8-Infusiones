@@ -15,6 +15,7 @@
     padding: 0rem 1.5rem;
     max-width: 1024px;
     margin: auto;
+    height: 65px;
 }
 
 .hamburger {
@@ -28,7 +29,7 @@
     margin: 5px auto;
     -webkit-transition: all 0.3s ease-in-out;
     transition: all 0.3s ease-in-out;
-    background-color: #101010;
+    background-color: white;
 }
 
 .nav-menu {

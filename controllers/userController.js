@@ -118,13 +118,15 @@ const userController = {
             second_password: bcrypt.hashSync(req.body.secondPassword, 10),
             avatar: req.file.filename
         }
-
+		
 		db.Users.create(row)
 		.then(user => {
 			console.log(user)
 			delete row.password
 			delete row.secondPassword
+			row.id_users = user.id_users
 			req.session.userLogged = row
+			//console.log(row);
 			res.redirect("/")
 		})
     },
@@ -183,6 +185,7 @@ const userController = {
 
 		delete row.secondPassword
 		
+		
 		//console.log(row);
 		db.Users.update({
 			...row
@@ -191,6 +194,9 @@ const userController = {
 		}).then( 
 		  db.Users.findByPk(id)
 		  .then(user => {
+			row.id_users = id
+			console.log(row);
+			req.session.userLogged = row
 			res.redirect("/")
 		  })
 		) 
