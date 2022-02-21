@@ -118,11 +118,11 @@ main section .detail .price{
 
 /* FOOTER */
 
-/* footer {
+ footer {
     position: fixed;
     bottom: 0px;
     width: 100%;
-} */
+} 
 .section-productCart{
 flex-direction: column;
 align-content: center;

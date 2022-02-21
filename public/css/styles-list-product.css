@@ -201,62 +201,75 @@ main .div-bag i{
 
 
 /* FOOTER */
-
+/* 
 footer {
-    /* background-color: #9aa681;
-    border: 3px solid #5A7356; */
-    background: linear-gradient(to left, #DBD5A4, #649173);
+    
+    background: linear-gradient(to left, #DBD5A4, #649173); 
+    
 }
 
 .section-block {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    align-items: center;
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: flex-start;
+   align-items: center;
 }
 
 footer ul li {
-    list-style-type: none;
+   list-style-type: none;
 }
 
 footer article a{
-    color: #333;
-    padding-left: 7px;
+   
+   color: white;
+   padding-left: 7px;
+}
+h4{
+   color: white;
+   padding-bottom: 3px;
 }
 
 footer .logo {
-    width: 70%;
+   width: 70%;
 }
 
 footer .footer-logo{
-    width: 100%;
-    text-align: center;
+   width: 100%;
+   text-align: center;
 }
 
 footer .footer-article{
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    padding-left: 5px;
-    flex-direction: column;
+   display: flex;
+   flex-wrap: wrap;
+   align-items: flex-start;
+   padding-left: 5px;
+   flex-direction: column;
 }
 
 footer .footer-contact{
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    padding-left: 5px;
-    padding-top: 10px;
+   width: 100%;
+   display: flex;
+   flex-direction: column;
+   padding-left: 5px;
+   padding-top: 10px;
+   align-items: center;
+}
+
+a{
+   padding-top: 5px;
 }
 
 footer .social {
-    width: 100%;
-    text-align: right;
+   width: 100%;
+   text-align: right;
+   padding-top: 5px;
 }
 
 footer .social .fab {
-    font-size: 2rem
-}
+   font-size: 2rem
+} */
+
+
 
 
 /* responsive devices*/
@@ -320,7 +333,7 @@ footer .social .fab {
 
     /* FOOTER */
     
-        footer .logo {
+        /* footer .logo {
         width: 100%;
     }
 
@@ -340,7 +353,7 @@ footer .social .fab {
         display: flex;
         flex-direction: column;
         padding: 10px 40px 0px;
-    }
+    } */
 
 }
 
@@ -398,7 +411,7 @@ footer .social .fab {
 
     /* FOOTER */
 
-    footer .footer-logo{
+    /* footer .footer-logo{
         width: 35%;
     }
 
@@ -417,5 +430,5 @@ footer .social .fab {
         max-width: 1200px;
         padding: 10px;
         margin:auto
-    }
+    } */
 }
