@@ -12,12 +12,12 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Roboto+Mono:wght@100&display=swap"
         rel="stylesheet">
-    
-        <link rel="stylesheet" href="/css/styles-header.css">
-        <link rel="stylesheet" href="/css/styles-slide.css">
-        <link rel="stylesheet" href="/css/styles-navbar.css">
-        <link rel="stylesheet" href="/css/styles-list-product.css">
-        <link rel="stylesheet" href="/css/styles-index.css">
+
+    <link rel="stylesheet" href="/css/styles-header.css">
+    <link rel="stylesheet" href="/css/styles-slide.css">
+    <link rel="stylesheet" href="/css/styles-navbar.css">
+    <link rel="stylesheet" href="/css/styles-list-product.css">
+    <link rel="stylesheet" href="/css/styles-index.css">
 
 </head>
 
@@ -38,8 +38,11 @@
                     <% products.forEach(product=> { %>
                         <article class="article-products">
                             <div class="coffee div-product">
+
+
                                 <div class="div-edit"><a href="/product/edit/<%= product.id_products %>"><i
                                             class="fas fa-edit"></i></a></div>
+
                                 <a href="/product/product-details/<%= product.id_products %>">
                                     <div class="div-img-bag">
                                         <img src="/images/<%= product.image %>" alt="">
@@ -68,7 +71,7 @@
                                         <h3 class="title-product">
                                             <%= product.name %>
                                         </h3>
-                                        
+
                                         <a href="/product/product-details/<%= product.id_products %>">
                                             <div class="div-bag">¡Comprar ya!<i class="fas fa-cart-plus"></i></div>
                                         </a>

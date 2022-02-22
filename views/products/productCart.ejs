@@ -1,117 +1,176 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CoffTee</title>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+        integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Roboto+Mono:wght@100&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Roboto+Mono:wght@100&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="/css/styles-header.css">
     <link rel="stylesheet" href="/css/styles-index.css">
     <link rel="stylesheet" href="/css/styles-navbar.css">
     <link rel="stylesheet" href="/css/styles-productCart.css">
 </head>
+
 <body>
     <!-- INCLUDE HEADER -->
-    <%- include('../partials/header')  %>
-    
-    <main>
-      
-        <% let contar = 0; %>
-        <%  let precioAcumulado = 0  %>
-        <%  let descuentoAcumulado = 0  %>
-        <% if(productosCarrito!=undefined && user!=undefined){ %>
-            <% if(productosCarrito.length == 0){ %>
-                <div class="no_producto_seleccionado" style="display: flex; flex-direction: column;  flex-wrap: nowrap; align-content: center;justify-content: center; align-items: center;">
-                    <h1 style="font-family: Amatic SC, cursiva;margin-bottom:2%; font-size: 50px; background-color: #bf9780;">NO TIENES NINGUN PRODUCTO SELECCIONADO</h1>
-                    <h2 style="font-family: Amatic SC, cursiva; font-size: 40px; margin-bottom:2%;">Sigue navegando, en nuestros productos, que la fuerza te acompañe!</h2>
-                    <iframe src="https://giphy.com/embed/Wn74RUT0vjnoU98Hnt"  width="480" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><a href="https://giphy.com/gifs/baby-yoda-Wn74RUT0vjnoU98Hnt"></a>
-                </div>                <% } %>   
-            <% productosCarrito.map(product=>{  %> 
-                <section class="section-productCart">
-                        <table class="shop-table" cellspacing="0">
-                            <tbody>
-                                <tr class="title-shop-table">
-                                    <td class="product-remove" >&nbsp;</td>
-                                    <td class="product-thumbnail">&nbsp;</td>
-                                    <td class="product-name" id="td-product-name">Producto</td>
-                                    <td class="product-price" id="td-product-price">Precio</td>
-                                    <td class="product-quantity">Cantidad</td>
-                                    <td class="product-subtotal">Subtotal</td>
-                                </tr>
-                                <tr class="cart-item">
-                                    <td class="product-remove">
-                                    </td> 
-                                    <td class="product-thumbnail">
-                                        <form action="/product/carritoDelete/<%= product.id_products %>" method="get">  
-                                          <input type="submit" value="x"> 
-                                        </form>
-                                        <a href="#"><img src="/images/<%= product.image %>" class="size-woocommerce_thumbnail" ></a>
-                                    </td>
-                            <td class="product-name" >
-                                <a href="#"><%= product.name %> </a> 
-                            </td>
-                            <td class="product-price" data-title="Precio">
-                                <span class="product-price-currencySymbol">$</span><%= product.price %>  
-                            </td>
-                            <td class="product-quantity" data-title="Cantidad">
-                                <div class="quantity">
-                                    <input type="button" value="-" class="minus">
-                                    <input type="text" class="quantity-input-text" value="1" title="Cantidad" size="4" placeholder="" inputmode="numeric">
-                                    <input type="button" value="+" class="plus">
+    <%- include('../partials/header') %>
+
+        <main>
+
+            <% let contar=0; %>
+                <% let precioAcumulado=0 %>
+                    <% let descuentoAcumulado=0 %>
+                        <% if(productosCarrito!=undefined && user!=undefined){ %>
+                            <% if(productosCarrito.length==0){ %>
+                                <div class="no_producto_seleccionado"
+                                    style="display: flex; flex-direction: column;  flex-wrap: nowrap; align-content: center;justify-content: center; align-items: center;">
+                                    <h1
+                                        style="font-family: Amatic SC, cursiva;margin-bottom:2%; font-size: 50px; background-color: #bf9780;">
+                                        NO TIENES NINGUN PRODUCTO SELECCIONADO</h1>
+                                    <h2 style="font-family: Amatic SC, cursiva; font-size: 40px; margin-bottom:2%;">
+                                        Sigue navegando, en nuestros productos, que la fuerza te acompañe!</h2>
+                                    <iframe src="https://giphy.com/embed/Wn74RUT0vjnoU98Hnt" width="480" height="480"
+                                        frameBorder="0" class="giphy-embed" allowFullScreen></iframe><a
+                                        href="https://giphy.com/gifs/baby-yoda-Wn74RUT0vjnoU98Hnt"></a>
                                 </div>
-                            </td>
-                            <td class="product-subtotal" data-title="Subtotal">
-                                <span class="woocommerce-Price-amount amount"><bdi><span class="woocommerce-Price-currencySymbol">$</span><%= product.price %> </bdi></span> 
-                            </td>
-                        </tr>
-                        <tr class="cart-item">
-                            <!-- <td class="product-remove">
+                                <% } %>
+                                    <% productosCarrito.map(product=>{ %>
+                                        <section class="section-productCart">
+                                            <table class="shop-table" cellspacing="0">
+                                                <tbody>
+                                                    <tr class="title-shop-table">
+                                                        <td class="product-remove">&nbsp;</td>
+                                                        <td class="product-thumbnail">&nbsp;</td>
+                                                        <td class="product-name" id="td-product-name">Producto</td>
+                                                        <td class="product-price" id="td-product-price">Precio</td>
+                                                        <td class="product-quantity">Cantidad</td>
+                                                        <td class="product-subtotal">Subtotal</td>
+                                                    </tr>
+                                                    <tr class="cart-item">
+                                                        <td class="product-remove">
+                                                        </td>
+                                                        <td class="product-thumbnail">
+                                                            <form
+                                                                action="/product/carritoDelete/<%= product.id_products %>"
+                                                                method="get">
+                                                                <input type="submit" value="x">
+                                                            </form>
+                                                            <a href="#"><img src="/images/<%= product.image %>"
+                                                                    class="size-woocommerce_thumbnail"></a>
+                                                        </td>
+                                                        <td class="product-name">
+                                                            <a href="#">
+                                                                <%= product.name %>
+                                                            </a>
+                                                        </td>
+                                                        <td class="product-price" data-title="Precio">
+                                                            <span class="product-price-currencySymbol">$</span>
+                                                            <%= product.price %>
+                                                        </td>
+                                                        <td class="product-quantity" data-title="Cantidad">
+                                                            <div class="quantity">
+                                                                <input type="hidden" value="-" class="minus">
+                                                                <input type="text" class="quantity-input-text" value="1"
+                                                                    title="Cantidad" size="4" placeholder=""
+                                                                    inputmode="numeric">
+                                                                <input type="hidden" value="+" class="plus">
+                                                            </div>
+                                                        </td>
+                                                        <td class="product-subtotal" data-title="Subtotal">
+                                                            <span class="woocommerce-Price-amount amount"><bdi><span
+                                                                        class="woocommerce-Price-currencySymbol">$</span>
+                                                                    <%= product.price %>
+                                                                </bdi></span>
+                                                        </td>
+                                                    </tr>
+                                                    <tr class="cart-item">
+                                                        <!-- <td class="product-remove">
                                 <a href="#" class="remove" >×</a> 
                             </td> -->
-                        </tr>                        
-                    </tbody>
-                </table>
-                
-               
-                <% contar +=1 %>  
-                <%   precioAcumulado = precioAcumulado + product.price %> 
-                <%product.discount? descuentoAcumulado = descuentoAcumulado + product.discount: 0 %> 
-             <% if(contar == productosCarrito.length ){ %> 
-            <div class="detail">
-                <h3 class="title-detail">TOTAL DEL CARRITO</h3>
-                <span> <p class="send">Enviado a <%= user.location %> </p></span>                      
-                <span> <p class="discount">Descuento: %<%= descuentoAcumulado %> </p></span>
-                <span><p class="total">Total $<%= precioAcumulado  %></p></span>
-            </div>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
 
-              
-            
-            <% } %> 
-            <% }) %> 
-            <% } %> 
-            
-            <% if(user!=undefined && productosCarrito==undefined){ %>  
-                <div class="no_producto_seleccionado" style="display: flex; flex-direction: column;  flex-wrap: nowrap; align-content: center;justify-content: center; align-items: center;">
-                    <h1 style="font-family: Amatic SC, cursiva;margin-bottom:2%; font-size: 50px; background-color: #bf9780;">NO TIENES NINGUN PRODUCTO SELECCIONADO</h1>
-                    <h2 style="font-family: Amatic SC, cursiva; font-size: 40px; margin-bottom:2%;">Sigue navegando, en nuestros productos, que la fuerza te acompañe!</h2>
-                    <iframe src="https://giphy.com/embed/Wn74RUT0vjnoU98Hnt"  width="480" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><a href="https://giphy.com/gifs/baby-yoda-Wn74RUT0vjnoU98Hnt"></a>
-                </div>
-                <% } %> 
 
-                
-                <% if(user==undefined){ %> 
-                    <div class="no_sesion" style="display: flex; flex-direction: column;  flex-wrap: nowrap; align-content: center;justify-content: center; align-items: center;">
-                        <h1 style="font-family: Amatic SC, cursiva;margin-bottom:2%; font-size: 50px; background-color: #bf9780; color: aliceblue;">INICIA SESION Y EXPLORA NUESTROS PRODUCTOS</h1>
-                        <iframe src="https://giphy.com/embed/Wn74RUT0vjnoU98Hnt"  width="480" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><a href="https://giphy.com/gifs/baby-yoda-Wn74RUT0vjnoU98Hnt"></a>
-                    </div>
-                    <% } %> 
-    </section>
-    </main>
-    
-    <!-- INCLUDE FOOTER -->
-    <%- include('../partials/footer')  %>
+                                            <% contar +=1 %>
+                                                <% precioAcumulado=precioAcumulado + product.price %>
+                                                    <%product.discount? descuentoAcumulado=descuentoAcumulado +
+                                                        product.discount: 0 %>
+                                                        <% if(contar==productosCarrito.length ){ %>
+                                                            <div class="detail">
+                                                                <h3 class="title-detail">TOTAL DEL CARRITO</h3>
+                                                                <span>
+                                                                    <p class="send">Enviado a <%= user.location %>
+                                                                    </p>
+                                                                </span>
+                                                                <span>
+                                                                    <p class="discount">Descuento: %<%=
+                                                                            descuentoAcumulado %>
+                                                                    </p>
+                                                                </span>
+                                                                <span>
+                                                                    <p class="total">Total $<%= precioAcumulado %>
+                                                                    </p>
+                                                                </span>
+                                                            </div>
+
+
+
+                                                            <% } %>
+                                                                <% }) %>
+                                                                    <% } %>
+
+                                                                        <% if(user!=undefined &&
+                                                                            productosCarrito==undefined){ %>
+                                                                            <div class="no_producto_seleccionado"
+                                                                                style="display: flex; flex-direction: column;  flex-wrap: nowrap; align-content: center;justify-content: center; align-items: center;">
+                                                                                <h1
+                                                                                    style="font-family: Amatic SC, cursiva;margin-bottom:2%; font-size: 50px; background-color: #bf9780;">
+                                                                                    NO TIENES NINGUN PRODUCTO
+                                                                                    SELECCIONADO</h1>
+                                                                                <h2
+                                                                                    style="font-family: Amatic SC, cursiva; font-size: 40px; margin-bottom:2%;">
+                                                                                    Sigue navegando, en nuestros
+                                                                                    productos, que la fuerza te
+                                                                                    acompañe!</h2>
+                                                                                <iframe
+                                                                                    src="https://giphy.com/embed/Wn74RUT0vjnoU98Hnt"
+                                                                                    width="480" height="480"
+                                                                                    frameBorder="0" class="giphy-embed"
+                                                                                    allowFullScreen></iframe><a
+                                                                                    href="https://giphy.com/gifs/baby-yoda-Wn74RUT0vjnoU98Hnt"></a>
+                                                                            </div>
+                                                                            <% } %>
+
+
+                                                                                <% if(user==undefined){ %>
+                                                                                    <div class="no_sesion"
+                                                                                        style="display: flex; flex-direction: column;  flex-wrap: nowrap; align-content: center;justify-content: center; align-items: center;">
+                                                                                        <h1
+                                                                                            style="font-family: Amatic SC, cursiva;margin-bottom:2%; font-size: 50px; background-color: #bf9780; color: aliceblue;">
+                                                                                            INICIA SESION Y EXPLORA
+                                                                                            NUESTROS PRODUCTOS</h1>
+                                                                                        <iframe
+                                                                                            src="https://giphy.com/embed/Wn74RUT0vjnoU98Hnt"
+                                                                                            width="480" height="480"
+                                                                                            frameBorder="0"
+                                                                                            class="giphy-embed"
+                                                                                            allowFullScreen></iframe><a
+                                                                                            href="https://giphy.com/gifs/baby-yoda-Wn74RUT0vjnoU98Hnt"></a>
+                                                                                    </div>
+                                                                                    <% } %>
+                                        </section>
+        </main>
+
+        <!-- INCLUDE FOOTER -->
+        <%- include('../partials/footer') %>
 </body>
+
 </html>

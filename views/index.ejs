@@ -70,7 +70,7 @@
             <div id="quienes_somos_3">
                 <img class="quienes_somos" id="quienes_somos_3_img" src="/images/arrow.png">
                 <h1 class="quienes_somos" id="quienes_somos_3_text">
-                    ELEGI UNA DE LAS CATEGORIAS
+                    ELEGI UNA DE LAS CATEGORÍAS
                     <br>Y DISFRUTA DE TODOS NUESTROS
                     <br>PRODUCTOS
                 </h1>
@@ -89,43 +89,50 @@
                         <article class="article-products">
 
                             <div class="coffee div-product">
-                                <div class="div-edit"><a href="/product/edit/<%= product.id_products %>"><i
-                                            class="fas fa-edit"></i></a></div>
-                                <a href="/product/product-details/<%= product.id_products %>">
-                                    <div class="div-img-bag">
-                                        <img src="/images/<%= product.image %>" alt="">
-                                    </div>
-                                    <div class="div-price">
-                                        <% /* Validamos si tiene o no promoción */ %>
-                                            <% if (product.discount !=0 && product.discount !=undefined) { let
-                                                priceDiscount=product.price - ((product.discount / 100) * product.price)
-                                                priceDiscount=Math.round(priceDiscount) %>
-                                                <p class="price-discount">$ <%= product.price %>
-                                                </p>
-                                                <p class="price">$ <%= priceDiscount %>
-                                                </p>
-                                                <div class="div-discount">
-                                                    <p class="discount">
-                                                        <%= product.discount %>%
-                                                    </p>
-                                                </div>
-                                                <% }else{ %>
-                                                    <p class="price">$ <%= product.price %>
-                                                    </p>
-                                                    <% } %>
-                                    </div>
-                                    <div class="popular-products">
-                                        <h3 class="title-product">
-                                            <%= product.name %>
-                                        </h3>
-                                        <a href="/product/product-details/<%= product.id_products %>">
-                                            <div class="div-bag">¡Comprar ya!<i class="fas fa-cart-plus"></i></div>
-                                        </a>
-                                        <p class="description-product tooltiptext">
-                                            <%= //product.description %>
-                                        </p>
-                                    </div>
-                                </a>
+                                <% if (locals.userLogged) { %>
+                                    <% if (locals.userLogged.id_profile===1) { %>
+                                        <div class="div-edit"><a href="/product/edit/<%= product.id_products %>"><i
+                                                    class="fas fa-edit"></i></a></div>
+                                        <% } %>
+                                            <% } %>
+                                                <a href="/product/product-details/<%= product.id_products %>">
+                                                    <div class="div-img-bag">
+                                                        <img src="/images/<%= product.image %>" alt="">
+                                                    </div>
+                                                    <div class="div-price">
+                                                        <% /* Validamos si tiene o no promoción */ %>
+                                                            <% if (product.discount !=0 && product.discount !=undefined)
+                                                                { let priceDiscount=product.price - ((product.discount /
+                                                                100) * product.price)
+                                                                priceDiscount=Math.round(priceDiscount) %>
+                                                                <p class="price-discount">$ <%= product.price %>
+                                                                </p>
+                                                                <p class="price">$ <%= priceDiscount %>
+                                                                </p>
+                                                                <div class="div-discount">
+                                                                    <p class="discount">
+                                                                        <%= product.discount %>%
+                                                                    </p>
+                                                                </div>
+                                                                <% }else{ %>
+                                                                    <p class="price">$ <%= product.price %>
+                                                                    </p>
+                                                                    <% } %>
+                                                    </div>
+                                                    <div class="popular-products">
+                                                        <h3 class="title-product">
+                                                            <%= product.name %>
+                                                        </h3>
+                                                        <a href="/product/product-details/<%= product.id_products %>">
+                                                            <div class="div-bag">¡Comprar ya!<i
+                                                                    class="fas fa-cart-plus"></i>
+                                                            </div>
+                                                        </a>
+                                                        <p class="description-product tooltiptext">
+                                                            <%= //product.description %>
+                                                        </p>
+                                                    </div>
+                                                </a>
                             </div>
                         </article>
                         <% }}) %>
@@ -141,7 +148,7 @@
                         COFFTEA ES UN E-COMMERCE
                         <br>DESTINADO A LA COMPRA Y VENTA
                         <br>DE INSUMOS, DONDE ENCONTRARAS
-                        <br>TODO TIPO DE CAFES, TES, Y MUCHO MAS"
+                        <br>TODO TIPO DE CAFES, TES, Y MUCHO MÁS"
                     </h1>
                 </div>
             </div>

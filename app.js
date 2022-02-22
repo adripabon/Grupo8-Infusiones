@@ -41,7 +41,7 @@ const apiUserRoutes = require('./routers/apiRoutes/apiUserRoutes');
 const apiProductsRoutes = require('./routers/apiRoutes/apiProductsRoutes');
 const apiCategoriesRoutes = require('./routers/apiRoutes/apiCategoriesRoutes');
 const apiSalesInvoiceRoutes = require('./routers/apiRoutes/apiSalesInvoiceRoutes')
-
+const notFound = require('./routers/notFoundRouters')
 
 app.use('/', mainRauters)
 
@@ -53,6 +53,8 @@ app.use("/api", apiUserRoutes);
 app.use("/api", apiProductsRoutes);
 app.use("/api", apiCategoriesRoutes);
 app.use("/api", apiSalesInvoiceRoutes)
+
+app.use("*", notFound)
 
 
 /* app.get('/login',(req, res)=>{
